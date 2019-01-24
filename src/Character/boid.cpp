@@ -12,9 +12,9 @@ AIProject::Boid::Boid()
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 }
 
-void AIProject::Boid::Update()
+void AIProject::Boid::Update(const double &i_timeStep)
 {
-	m_forwardVector = ofVec2f(m_kinematic.orientation), sinf(m_kinematic.orientation));
+	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 
 	if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
 	{

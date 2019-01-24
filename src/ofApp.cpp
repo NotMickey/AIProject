@@ -9,9 +9,7 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 {
-	//myBoid.m_position += myBoid.m_forwardVector;
-
-	myBoid.Update();
+	myBoid.Update(ofGetLastFrameTime());
 }
 
 //--------------------------------------------------------------

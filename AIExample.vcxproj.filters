@@ -10,6 +10,12 @@
     <ClCompile Include="src\Character\boid.cpp">
       <Filter>src\Character</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\Kinematic\kinematicSeek.cpp">
+      <Filter>src\AILogic\Kinematic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\steeringBase.cpp">
+      <Filter>src\AILogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -18,6 +24,12 @@
     <Filter Include="src\Character">
       <UniqueIdentifier>{c64d190c-5b74-4c89-869e-e3d94b10d0e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AILogic">
+      <UniqueIdentifier>{d736111a-e875-4657-a669-480772734588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Kinematic">
+      <UniqueIdentifier>{e334f58f-e16f-4cc2-b475-b4441c3dff50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -25,6 +37,12 @@
     </ClInclude>
     <ClInclude Include="src\Character\boid.h">
       <Filter>src\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\steeringBase.h">
+      <Filter>src\AILogic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Kinematic\kinematicSeek.h">
+      <Filter>src\AILogic\Kinematic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
