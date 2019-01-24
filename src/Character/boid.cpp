@@ -4,17 +4,18 @@ AIProject::Boid::Boid()
 {
 	ofSetCircleResolution(50);
 
-	m_kinematic.position = ofVec2f(150.0f, 100.f);
+	m_kinematic.position = ofVec2f(150.0f, 100.0f);
 	m_previousPosition = m_kinematic.position;
 
-	m_kinematic.orientation = 45;
-	CalculateForwardVector();
+	m_kinematic.orientation = 0.0f;
 
-	m_forwardVector = ofVec2f(1.0f, 0.0f);
+	m_forwardVector = ofVec2f(cosf(PI / 180 * m_kinematic.orientation), sinf(PI / 180 * m_kinematic.orientation));
 }
 
 void AIProject::Boid::Update()
 {
+	m_forwardVector = ofVec2f(cosf(PI / 180 * m_kinematic.orientation), sinf(PI / 180 * m_kinematic.orientation));
+
 	if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
 	{
 		m_breadCrumbIndex++;
@@ -54,12 +55,3 @@ void AIProject::Boid::Draw()
 	}
 }
 
-void AIProject::Boid::CalculateForwardVector()
-{
-	float sin = sinf(m_kinematic.orientation);
-	float cos = cosf(m_kinematic.orientation);
-
-	ofVec2f direction = ofVec2f(0.0f, 1.0f);
-
-	m_forwardVector = ofVec2f(direction.x * cos, direction.y * sin);
-}

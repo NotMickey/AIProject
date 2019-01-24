@@ -5,6 +5,7 @@
 namespace AIProject
 {
 	constexpr float DEGTORAD = (22 / 7) * (1 / 180);
+	constexpr float RADTODEG = (7 / 22) * (180);
 
 	struct Kinematic
 	{
@@ -13,6 +14,8 @@ namespace AIProject
 
 		ofVec2f velocity;
 		float rotation;
+
+		//void Update();
 	};
 
 	class Boid
@@ -20,8 +23,6 @@ namespace AIProject
 	public:
 
 		Boid();
-
-		//ofVec2f m_position;
 
 		Kinematic m_kinematic;
 
@@ -37,7 +38,5 @@ namespace AIProject
 		ofVec2f m_previousPosition;
 
 		ofVec2f m_forwardVector;
-
-		void CalculateForwardVector();
 	};
 }
