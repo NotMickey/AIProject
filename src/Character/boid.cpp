@@ -7,14 +7,14 @@ AIProject::Boid::Boid()
 	m_kinematic.position = ofVec2f(150.0f, 100.0f);
 	m_previousPosition = m_kinematic.position;
 
-	m_kinematic.orientation = 0.0f;
+	m_kinematic.orientation = PI / 180 * 0.0f;
 
-	m_forwardVector = ofVec2f(cosf(PI / 180 * m_kinematic.orientation), sinf(PI / 180 * m_kinematic.orientation));
+	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 }
 
 void AIProject::Boid::Update()
 {
-	m_forwardVector = ofVec2f(cosf(PI / 180 * m_kinematic.orientation), sinf(PI / 180 * m_kinematic.orientation));
+	m_forwardVector = ofVec2f(m_kinematic.orientation), sinf(m_kinematic.orientation));
 
 	if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
 	{

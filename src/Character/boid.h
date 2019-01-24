@@ -4,13 +4,10 @@
 
 namespace AIProject
 {
-	constexpr float DEGTORAD = (22 / 7) * (1 / 180);
-	constexpr float RADTODEG = (7 / 22) * (180);
-
 	struct Kinematic
 	{
 		ofVec2f position;
-		float orientation; // in degrees
+		float orientation; // in radians!
 
 		ofVec2f velocity;
 		float rotation;
