@@ -4,14 +4,26 @@
 
 namespace AIProject
 {
+	constexpr float DEGTORAD = (22 / 7) * (1 / 180);
+
+	struct Kinematic
+	{
+		ofVec2f position;
+		float orientation; // in degrees
+
+		ofVec2f velocity;
+		float rotation;
+	};
+
 	class Boid
 	{
 	public:
 
 		Boid();
 
-		ofVec2f m_position;
-		ofVec2f m_forwardVector;
+		//ofVec2f m_position;
+
+		Kinematic m_kinematic;
 
 		void Update();
 		void Draw();
@@ -23,5 +35,9 @@ namespace AIProject
 		int m_breadCrumbIndex = 0;
 		ofVec2f m_breadCrumbArray[100];
 		ofVec2f m_previousPosition;
+
+		ofVec2f m_forwardVector;
+
+		void CalculateForwardVector();
 	};
 }

@@ -3,13 +3,13 @@
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-	myBoid.m_forwardVector = ofVec2f(1.0, 1.0f);
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::update()
 {
-	myBoid.m_position += myBoid.m_forwardVector;
+	//myBoid.m_position += myBoid.m_forwardVector;
 
 	myBoid.Update();
 }

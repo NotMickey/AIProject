@@ -4,15 +4,18 @@ AIProject::Boid::Boid()
 {
 	ofSetCircleResolution(50);
 
-	m_position = ofVec2f(150.0f, 100.f);
-	m_forwardVector = ofVec2f(1.0f, 0.0f);
+	m_kinematic.position = ofVec2f(150.0f, 100.f);
+	m_previousPosition = m_kinematic.position;
 
-	m_previousPosition = m_position;
+	m_kinematic.orientation = 45;
+	CalculateForwardVector();
+
+	m_forwardVector = ofVec2f(1.0f, 0.0f);
 }
 
 void AIProject::Boid::Update()
 {
-	if (m_previousPosition.distance(m_position) >= 15.0f)
+	if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
 	{
 		m_breadCrumbIndex++;
 
@@ -24,15 +27,16 @@ void AIProject::Boid::Update()
 
 		m_breadCrumbArray[m_breadCrumbIndex] = m_previousPosition;
 
-		m_previousPosition = m_position;
+		m_previousPosition = m_kinematic.position;
 	}
 }
 
 void AIProject::Boid::Draw()
 {
-	ofDrawCircle(m_position.x, m_position.y, 10);
-	ofDrawTriangle(m_forwardVector * 20.0f + m_position, m_forwardVector.getPerpendicular() * 10 + m_position,
-					m_forwardVector.getPerpendicular() * -10 + m_position);
+	// Draw the boid using its position and forward vector
+	ofDrawCircle(m_kinematic.position.x, m_kinematic.position.y, 10);
+	ofDrawTriangle(m_forwardVector * 20.0f + m_kinematic.position, m_forwardVector.getPerpendicular() * 10 + m_kinematic.position,
+					m_forwardVector.getPerpendicular() * -10 + m_kinematic.position);
 
 	if (!b_reachedLimit)
 	{
@@ -48,4 +52,14 @@ void AIProject::Boid::Draw()
 			ofDrawCircle(m_breadCrumbArray[i], 5);
 		}
 	}
+}
+
+void AIProject::Boid::CalculateForwardVector()
+{
+	float sin = sinf(m_kinematic.orientation);
+	float cos = cosf(m_kinematic.orientation);
+
+	ofVec2f direction = ofVec2f(0.0f, 1.0f);
+
+	m_forwardVector = ofVec2f(direction.x * cos, direction.y * sin);
 }
