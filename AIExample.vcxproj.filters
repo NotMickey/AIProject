@@ -13,7 +13,7 @@
     <ClCompile Include="src\AILogic\steeringBase.cpp">
       <Filter>src\AILogic</Filter>
     </ClCompile>
-    <ClCompile Include="src\AILogic\Kinematic\dynamicSeek.cpp">
+    <ClCompile Include="src\AILogic\Dynamic\DynamicSeek\dynamicSeek.cpp">
       <Filter>src\AILogic\Dynamic\DynamicSeek</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,11 +47,11 @@
     <ClInclude Include="src\AILogic\steeringBase.h">
       <Filter>src\AILogic</Filter>
     </ClInclude>
-    <ClInclude Include="src\AILogic\Kinematic\dynamicSeek.h">
-      <Filter>src\AILogic\Dynamic\DynamicSeek</Filter>
-    </ClInclude>
     <ClInclude Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.h">
       <Filter>src\AILogic\Dynamic\DynamicArrive</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\DynamicSeek\dynamicSeek.h">
+      <Filter>src\AILogic\Dynamic\DynamicSeek</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
