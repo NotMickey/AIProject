@@ -4,7 +4,7 @@
 
 namespace AIProject
 {
-	struct KinematicSteeringOutput;
+	struct DynamicSteeringOutput;
 
 	struct Kinematic
 	{
@@ -14,8 +14,7 @@ namespace AIProject
 		ofVec2f velocity;
 		float rotation;
 
-		void KinematicUpdate(const KinematicSteeringOutput &i_steering, const double &i_timeStep, const float &i_maxSpeed);
-		void DynamicUpdate();
+		void Update(const DynamicSteeringOutput &i_steering, const double &i_timeStep, const float &i_maxSpeed);
 	};
 
 	class Boid

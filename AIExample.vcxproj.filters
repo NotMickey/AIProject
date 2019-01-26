@@ -10,11 +10,11 @@
     <ClCompile Include="src\Character\boid.cpp">
       <Filter>src\Character</Filter>
     </ClCompile>
-    <ClCompile Include="src\AILogic\Kinematic\kinematicSeek.cpp">
-      <Filter>src\AILogic\Kinematic</Filter>
-    </ClCompile>
     <ClCompile Include="src\AILogic\steeringBase.cpp">
       <Filter>src\AILogic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\Kinematic\dynamicSeek.cpp">
+      <Filter>src\AILogic\Dynamic\DynamicSeek</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -27,8 +27,14 @@
     <Filter Include="src\AILogic">
       <UniqueIdentifier>{d736111a-e875-4657-a669-480772734588}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\AILogic\Kinematic">
+    <Filter Include="src\AILogic\Dynamic">
       <UniqueIdentifier>{e334f58f-e16f-4cc2-b475-b4441c3dff50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Dynamic\DynamicSeek">
+      <UniqueIdentifier>{91384259-3e5d-447e-9b01-50877d248aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Dynamic\DynamicArrive">
+      <UniqueIdentifier>{bb4545fc-64aa-45a5-920a-b827bd1c8b43}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -41,8 +47,11 @@
     <ClInclude Include="src\AILogic\steeringBase.h">
       <Filter>src\AILogic</Filter>
     </ClInclude>
-    <ClInclude Include="src\AILogic\Kinematic\kinematicSeek.h">
-      <Filter>src\AILogic\Kinematic</Filter>
+    <ClInclude Include="src\AILogic\Kinematic\dynamicSeek.h">
+      <Filter>src\AILogic\Dynamic\DynamicSeek</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.h">
+      <Filter>src\AILogic\Dynamic\DynamicArrive</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

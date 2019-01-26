@@ -180,14 +180,15 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\AILogic\Kinematic\kinematicSeek.cpp" />
+    <ClCompile Include="src\AILogic\Kinematic\dynamicSeek.cpp" />
     <ClCompile Include="src\AILogic\steeringBase.cpp" />
     <ClCompile Include="src\Character\boid.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\AILogic\Kinematic\kinematicSeek.h" />
+    <ClInclude Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.h" />
+    <ClInclude Include="src\AILogic\Kinematic\dynamicSeek.h" />
     <ClInclude Include="src\AILogic\steeringBase.h" />
     <ClInclude Include="src\Character\boid.h" />
     <ClInclude Include="src\ofApp.h" />
