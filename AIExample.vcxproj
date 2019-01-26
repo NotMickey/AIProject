@@ -180,6 +180,7 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicSeek\dynamicSeek.cpp" />
     <ClCompile Include="src\AILogic\steeringBase.cpp" />
     <ClCompile Include="src\Character\boid.cpp" />

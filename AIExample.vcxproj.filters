@@ -16,6 +16,7 @@
     <ClCompile Include="src\AILogic\Dynamic\DynamicSeek\dynamicSeek.cpp">
       <Filter>src\AILogic\Dynamic\DynamicSeek</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
