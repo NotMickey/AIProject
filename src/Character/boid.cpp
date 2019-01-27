@@ -59,6 +59,7 @@ void AIProject::Boid::Draw()
 	ofDrawTriangle(m_forwardVector * 20.0f + m_kinematic.position, m_forwardVector.getPerpendicular() * 10 + m_kinematic.position,
 					m_forwardVector.getPerpendicular() * -10 + m_kinematic.position);
 
+	// Draw the bread crumbs
 	if (!b_reachedLimit)
 	{
 		for (int i = 0; i < m_breadCrumbIndex + 1; i++)
@@ -68,7 +69,7 @@ void AIProject::Boid::Draw()
 	}
 	else
 	{
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 200; i++)
 		{
 			ofDrawCircle(m_breadCrumbArray[i], 3);
 		}
@@ -113,9 +114,9 @@ AIProject::DynamicSteeringOutput AIProject::Boid::SteerAndArrive(const int & x, 
 	ofVec2f direction = (ofVec2f(x, y) - m_kinematic.position).normalize();
 	kinematic.orientation = atan2f(direction.y, direction.x);
 
-	AIProject::DynamicArrive arrive(*this, kinematic, 150.0f, 80.0f, 10.0f, 100.0f, 5.0f);
+	AIProject::DynamicArrive arrive(*this, kinematic, 300.0f, 80.0f, 5.0f, 100.0f, 0.1f);
 
-	AIProject::DynamicAlign align(*this, kinematic, PI / 180 * 75, PI / 180 * 90, PI / 180 * 2, PI / 180 * 5, 2.0f);
+	AIProject::DynamicAlign align(*this, kinematic, PI / 180 * 90, PI / 180 * 200, PI / 180 * 5, PI / 180 * 25, 0.5f);
 
 	AIProject::DynamicSteeringOutput linear = arrive.GetSteering();
 	AIProject::DynamicSteeringOutput angular = align.GetSteering();

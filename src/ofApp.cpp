@@ -9,7 +9,7 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 {
-	myBoid.Update(ofGetLastFrameTime(), 35.0f);
+	myBoid.Update(ofGetLastFrameTime(), 500.0f);
 }
 
 //--------------------------------------------------------------
