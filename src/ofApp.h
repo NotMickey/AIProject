@@ -3,10 +3,7 @@
 #include "ofMain.h"
 
 #include "Character/boid.h"
-//namespace AIProject
-//{
-//	class Boid;
-//}
+#include "AILogic/steeringBase.h"
 
 class ofApp : public ofBaseApp{
 
@@ -28,5 +25,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 		AIProject::Boid myBoid;
-		
+		AIProject::DynamicSteeringOutput steering;
 };

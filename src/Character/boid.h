@@ -25,8 +25,10 @@ namespace AIProject
 
 		Kinematic m_kinematic;
 
-		void Update(const double &i_timeStep);
+		void Update(const DynamicSteeringOutput &i_steering, const double &i_timeStep, const float &i_maxSpeed);
 		void Draw();
+
+		ofVec2f GetForwardVec() { return m_forwardVector; }
 
 	private:
 

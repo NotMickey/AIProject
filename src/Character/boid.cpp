@@ -9,14 +9,17 @@ AIProject::Boid::Boid()
 	m_kinematic.position = ofVec2f(150.0f, 100.0f);
 	m_previousPosition = m_kinematic.position;
 
-	m_kinematic.orientation = PI / 180 * 0.0f;
+	m_kinematic.orientation = PI / 180 * 90.0f;
+
+	m_kinematic.velocity = ofVec2f(0.0f, 0.0f);
+	m_kinematic.rotation = 0.0f;
 
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 }
 
-void AIProject::Boid::Update(const double &i_timeStep)
+void AIProject::Boid::Update(const DynamicSteeringOutput &i_steering, const double &i_timeStep, const float &i_maxSpeed)
 {
-	m_kinematic.Update(DynamicSteeringOutput(), i_timeStep, 50.0f);
+	m_kinematic.Update(i_steering, i_timeStep, i_maxSpeed);
 
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 
