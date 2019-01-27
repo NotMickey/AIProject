@@ -25,6 +25,4 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 		AIProject::Boid myBoid;
-		AIProject::DynamicSteeringOutput steering;
-		int move = 0;
 };

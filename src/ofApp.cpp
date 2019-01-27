@@ -2,69 +2,14 @@
 
 #include <math.h>
 
-#include "AILogic/Dynamic/DynamicSeek/dynamicSeek.h"
-#include "AILogic/Dynamic/DynamicAlign/dynamicAlign.h"
-
 //--------------------------------------------------------------
 void ofApp::setup()
-{
-	steering.linearAcceleration = ofVec2f();
-	steering.angularAcceleration = 0.0f;
-}
+{}
 
 //--------------------------------------------------------------
 void ofApp::update()
 {
-	if (move == 0)
-	{
-		if (myBoid.m_kinematic.position.x < 1000.0f)
-		{
-			myBoid.m_kinematic.position.x += 50.0f * ofGetLastFrameTime();
-		}
-		else
-		{
-			myBoid.m_kinematic.orientation = PI / 180 * 270.0f;
-			move = 1;
-		}
-	}
-	else if (move == 1)
-	{
-		if (myBoid.m_kinematic.position.y > 0.0f)
-		{
-			myBoid.m_kinematic.position.y -= 50.0f * ofGetLastFrameTime();
-		}
-		else
-		{
-			myBoid.m_kinematic.orientation = PI / 180 * 180.0f;
-			move = 2;
-		}
-	}
-	else if (move == 2)
-	{
-		if (myBoid.m_kinematic.position.x > 0.0f)
-		{
-			myBoid.m_kinematic.position.x -= 50.0f * ofGetLastFrameTime();
-		}
-		else
-		{
-			myBoid.m_kinematic.orientation = PI / 180 * 90.0f;
-			move = 3;
-		}
-	}
-	else
-	{
-		if (myBoid.m_kinematic.position.y < 750.0f)
-		{
-			myBoid.m_kinematic.position.y += 50.0f * ofGetLastFrameTime();
-		}
-		else
-		{
-			myBoid.m_kinematic.orientation = PI / 180 * 0.0f;
-			move = 0;
-		}
-	}
-
-	myBoid.Update(steering, ofGetLastFrameTime(), 35.0f);
+	myBoid.Update(ofGetLastFrameTime(), 35.0f);
 }
 
 //--------------------------------------------------------------
@@ -102,20 +47,7 @@ void ofApp::mouseDragged(int x, int y, int button){
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
 {
-	AIProject::Kinematic kinematic;
-	kinematic.position = ofVec2f(x, y);
-
-	ofVec2f direction = (ofVec2f(x, y) - myBoid.m_kinematic.position).normalize();
-	kinematic.orientation = atan2f(direction.y, direction.x);
-
-	AIProject::DynamicSeek seek(myBoid, kinematic, 50.0f);
-	AIProject::DynamicAlign align(myBoid, kinematic, PI / 180 * 75, PI / 180 * 90, PI / 180 * 2, PI / 180 * 5, 2.0f);
-
-	AIProject::DynamicSteeringOutput linear = seek.GetSteering();
-	AIProject::DynamicSteeringOutput angular = align.GetSteering();
-
-	steering.linearAcceleration = linear.linearAcceleration;
-	steering.angularAcceleration = angular.angularAcceleration;
+	myBoid.SetTargetPosition(ofVec2f(x, y));
 }
 
 //--------------------------------------------------------------

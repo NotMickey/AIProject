@@ -2,6 +2,9 @@
 
 #include "../AILogic/steeringBase.h";
 
+#include "../AILogic/Dynamic/DynamicSeek/dynamicSeek.h"
+#include "../AILogic/Dynamic/DynamicAlign/dynamicAlign.h"
+
 AIProject::Boid::Boid()
 {
 	ofSetCircleResolution(50);
@@ -17,10 +20,19 @@ AIProject::Boid::Boid()
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 }
 
-void AIProject::Boid::Update(const DynamicSteeringOutput &i_steering, const double &i_timeStep, const float &i_maxSpeed)
+void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 {
-	m_kinematic.Update(i_steering, i_timeStep, i_maxSpeed);
+	DynamicSteeringOutput steering;
+	steering.angularAcceleration = 0.0f;
+	steering.linearAcceleration = ofVec2f(0.0f, 0.0f);
 
+	if (b_seekTargetValid)
+	{
+		steering = SeekAndSteer(m_targetPosition.x, m_targetPosition.y);
+	}
+
+	m_kinematic.Update(steering, i_timeStep, i_maxSpeed);
+	
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 
 	if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
@@ -60,6 +72,34 @@ void AIProject::Boid::Draw()
 			ofDrawCircle(m_breadCrumbArray[i], 3);
 		}
 	}
+}
+
+void AIProject::Boid::SetTargetPosition(const ofVec2f & i_targetPosition)
+{
+	m_targetPosition = i_targetPosition;
+	b_seekTargetValid = true;
+}
+
+AIProject::DynamicSteeringOutput AIProject::Boid::SeekAndSteer(const int &x, const int &y)
+{
+	DynamicSteeringOutput steering;
+
+	AIProject::Kinematic kinematic;
+	kinematic.position = ofVec2f(x, y);
+
+	ofVec2f direction = (ofVec2f(x, y) - m_kinematic.position).normalize();
+	kinematic.orientation = atan2f(direction.y, direction.x);
+
+	AIProject::DynamicSeek seek(*this, kinematic, 50.0f);
+	AIProject::DynamicAlign align(*this, kinematic, PI / 180 * 75, PI / 180 * 90, PI / 180 * 2, PI / 180 * 5, 2.0f);
+
+	AIProject::DynamicSteeringOutput linear = seek.GetSteering();
+	AIProject::DynamicSteeringOutput angular = align.GetSteering();
+
+	steering.linearAcceleration = linear.linearAcceleration;
+	steering.angularAcceleration = angular.angularAcceleration;
+
+	return steering;
 }
 
 void AIProject::Kinematic::Update(const DynamicSteeringOutput & i_steering, const double & i_timeStep, const float & i_maxSpeed)
