@@ -1,5 +1,7 @@
 #include "boid.h"
 
+#include "../AILogic/steeringBase.h";
+
 AIProject::Boid::Boid()
 {
 	ofSetCircleResolution(50);
@@ -14,6 +16,8 @@ AIProject::Boid::Boid()
 
 void AIProject::Boid::Update(const double &i_timeStep)
 {
+	m_kinematic.Update(DynamicSteeringOutput(), i_timeStep, 50.0f);
+
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 
 	if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
@@ -55,3 +59,18 @@ void AIProject::Boid::Draw()
 	}
 }
 
+void AIProject::Kinematic::Update(const DynamicSteeringOutput & i_steering, const double & i_timeStep, const float & i_maxSpeed)
+{
+	position += velocity * i_timeStep + 0.5f * i_steering.linearAcceleration * i_timeStep * i_timeStep;
+
+	orientation += rotation * i_timeStep + 0.5f * i_steering.angularAcceleration * i_timeStep * i_timeStep;
+
+	velocity += i_steering.linearAcceleration * i_timeStep;
+	rotation += i_steering.angularAcceleration * i_timeStep;
+
+	if (velocity.lengthSquared() > i_maxSpeed * i_maxSpeed)
+	{
+		velocity.normalize();
+		velocity *= i_maxSpeed;
+	}
+}

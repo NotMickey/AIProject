@@ -6,8 +6,8 @@ namespace AIProject
 {
 	struct DynamicSteeringOutput
 	{
-		ofVec2f linearAcceleration;
-		float angularAcceleration;
+		ofVec2f linearAcceleration = ofVec2f();
+		float angularAcceleration = 0.0f;
 	};
 
 	class SteeringBase
