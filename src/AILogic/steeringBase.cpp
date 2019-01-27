@@ -9,3 +9,12 @@ float AIProject::SteeringBase::GetNewOrientation(const float & i_orientation, co
 
 	return i_orientation;
 }
+
+float AIProject::MapToRange(const float & i_orientation)
+{
+	float inDeg = 180 / PI * i_orientation;
+
+	inDeg = inDeg - 360 * (floorf((inDeg + 180) / 360));
+
+	return PI / 180 * inDeg;
+}

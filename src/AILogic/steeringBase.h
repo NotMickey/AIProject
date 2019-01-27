@@ -18,5 +18,7 @@ namespace AIProject
 
 		float GetNewOrientation(const float &i_orientation, const ofVec2f &i_velocity);
 	};
+
+	float MapToRange(const float &i_orientation);
 }
 
