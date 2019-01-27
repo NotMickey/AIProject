@@ -15,6 +15,55 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 {
+	if (move == 0)
+	{
+		if (myBoid.m_kinematic.position.x < 1000.0f)
+		{
+			myBoid.m_kinematic.position.x += 50.0f * ofGetLastFrameTime();
+		}
+		else
+		{
+			myBoid.m_kinematic.orientation = PI / 180 * 270.0f;
+			move = 1;
+		}
+	}
+	else if (move == 1)
+	{
+		if (myBoid.m_kinematic.position.y > 0.0f)
+		{
+			myBoid.m_kinematic.position.y -= 50.0f * ofGetLastFrameTime();
+		}
+		else
+		{
+			myBoid.m_kinematic.orientation = PI / 180 * 180.0f;
+			move = 2;
+		}
+	}
+	else if (move == 2)
+	{
+		if (myBoid.m_kinematic.position.x > 0.0f)
+		{
+			myBoid.m_kinematic.position.x -= 50.0f * ofGetLastFrameTime();
+		}
+		else
+		{
+			myBoid.m_kinematic.orientation = PI / 180 * 90.0f;
+			move = 3;
+		}
+	}
+	else
+	{
+		if (myBoid.m_kinematic.position.y < 750.0f)
+		{
+			myBoid.m_kinematic.position.y += 50.0f * ofGetLastFrameTime();
+		}
+		else
+		{
+			myBoid.m_kinematic.orientation = PI / 180 * 0.0f;
+			move = 0;
+		}
+	}
+
 	myBoid.Update(steering, ofGetLastFrameTime(), 35.0f);
 }
 
@@ -22,7 +71,10 @@ void ofApp::update()
 void ofApp::draw()
 {
 	ofBackground(0);  // Clear the screen with a black color
-	ofSetColor(255);  // Set the drawing color to white
+
+	ofColor color;
+	color.r = 255; color.g = 255, color.b = 0;
+	ofSetColor(color);  // Set the drawing color to yellow
 
 	myBoid.Draw();
 }

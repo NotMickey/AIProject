@@ -26,4 +26,5 @@ class ofApp : public ofBaseApp{
 
 		AIProject::Boid myBoid;
 		AIProject::DynamicSteeringOutput steering;
+		int move = 0;
 };

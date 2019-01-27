@@ -35,7 +35,7 @@ namespace AIProject
 		bool b_reachedLimit = false;
 
 		int m_breadCrumbIndex = 0;
-		ofVec2f m_breadCrumbArray[100];
+		ofVec2f m_breadCrumbArray[200];
 		ofVec2f m_previousPosition;
 
 		ofVec2f m_forwardVector;

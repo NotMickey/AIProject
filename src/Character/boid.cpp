@@ -6,10 +6,10 @@ AIProject::Boid::Boid()
 {
 	ofSetCircleResolution(50);
 
-	m_kinematic.position = ofVec2f(150.0f, 100.0f);
+	m_kinematic.position = ofVec2f(0, 750);
 	m_previousPosition = m_kinematic.position;
 
-	m_kinematic.orientation = PI / 180 * 90.0f;
+	m_kinematic.orientation = PI / 180 * 0.0f;
 
 	m_kinematic.velocity = ofVec2f(0.0f, 0.0f);
 	m_kinematic.rotation = 0.0f;
@@ -27,7 +27,7 @@ void AIProject::Boid::Update(const DynamicSteeringOutput &i_steering, const doub
 	{
 		m_breadCrumbIndex++;
 
-		if (m_breadCrumbIndex == 100)
+		if (m_breadCrumbIndex == 200)
 		{
 			m_breadCrumbIndex = 0;
 			b_reachedLimit = true;
@@ -50,14 +50,14 @@ void AIProject::Boid::Draw()
 	{
 		for (int i = 0; i < m_breadCrumbIndex + 1; i++)
 		{
-			ofDrawCircle(m_breadCrumbArray[i], 5);
+			ofDrawCircle(m_breadCrumbArray[i], 3);
 		}
 	}
 	else
 	{
 		for (int i = 0; i < 100; i++)
 		{
-			ofDrawCircle(m_breadCrumbArray[i], 5);
+			ofDrawCircle(m_breadCrumbArray[i], 3);
 		}
 	}
 }
