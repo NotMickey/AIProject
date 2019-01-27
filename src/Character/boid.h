@@ -31,7 +31,10 @@ namespace AIProject
 		ofVec2f GetForwardVec() { return m_forwardVector; }
 
 		void SetTargetPosition(const ofVec2f &i_targetPosition);
+
 		DynamicSteeringOutput SeekAndSteer(const int &x, const int &y);
+
+		DynamicSteeringOutput SteerAndArrive(const int &x, const int &y);
 
 	private:
 

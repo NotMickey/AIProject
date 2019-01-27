@@ -4,6 +4,7 @@
 
 #include "../AILogic/Dynamic/DynamicSeek/dynamicSeek.h"
 #include "../AILogic/Dynamic/DynamicAlign/dynamicAlign.h"
+#include "../AILogic/Dynamic/DynamicArrive/dynamicArrive.h"
 
 AIProject::Boid::Boid()
 {
@@ -28,7 +29,7 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 
 	if (b_seekTargetValid)
 	{
-		steering = SeekAndSteer(m_targetPosition.x, m_targetPosition.y);
+		steering = SteerAndArrive(m_targetPosition.x, m_targetPosition.y);
 	}
 
 	m_kinematic.Update(steering, i_timeStep, i_maxSpeed);
@@ -94,6 +95,29 @@ AIProject::DynamicSteeringOutput AIProject::Boid::SeekAndSteer(const int &x, con
 	AIProject::DynamicAlign align(*this, kinematic, PI / 180 * 75, PI / 180 * 90, PI / 180 * 2, PI / 180 * 5, 2.0f);
 
 	AIProject::DynamicSteeringOutput linear = seek.GetSteering();
+	AIProject::DynamicSteeringOutput angular = align.GetSteering();
+
+	steering.linearAcceleration = linear.linearAcceleration;
+	steering.angularAcceleration = angular.angularAcceleration;
+
+	return steering;
+}
+
+AIProject::DynamicSteeringOutput AIProject::Boid::SteerAndArrive(const int & x, const int & y)
+{
+	DynamicSteeringOutput steering;
+
+	AIProject::Kinematic kinematic;
+	kinematic.position = ofVec2f(x, y);
+
+	ofVec2f direction = (ofVec2f(x, y) - m_kinematic.position).normalize();
+	kinematic.orientation = atan2f(direction.y, direction.x);
+
+	AIProject::DynamicArrive arrive(*this, kinematic, 150.0f, 80.0f, 10.0f, 100.0f, 5.0f);
+
+	AIProject::DynamicAlign align(*this, kinematic, PI / 180 * 75, PI / 180 * 90, PI / 180 * 2, PI / 180 * 5, 2.0f);
+
+	AIProject::DynamicSteeringOutput linear = arrive.GetSteering();
 	AIProject::DynamicSteeringOutput angular = align.GetSteering();
 
 	steering.linearAcceleration = linear.linearAcceleration;
