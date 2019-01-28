@@ -2,10 +2,8 @@
 
 #include "../DynamicAlign/dynamicAlign.h"
 
-AIProject::DynamicFace::DynamicFace(Boid & i_character, const ofVec2f & i_targetPosition, const float & i_maxRotation, const float & i_maxAngAcc,
-										const float & i_targetAngle, const float & i_slowAngle, const float & i_timeToTarget) :
-					m_character(i_character), m_targetPosition(i_targetPosition), m_maxRotation(i_maxRotation), m_maxAngAcc(i_maxAngAcc),
-					m_targetAngle(i_targetAngle), m_slowAngle(i_slowAngle), m_timeToTarget(i_timeToTarget)
+AIProject::DynamicFace::DynamicFace(Boid & i_character, const ofVec2f & i_targetPosition) :
+									m_character(i_character), m_targetPosition(i_targetPosition)
 { }
 
 AIProject::DynamicSteeringOutput AIProject::DynamicFace::GetSteering()
@@ -25,7 +23,7 @@ AIProject::DynamicSteeringOutput AIProject::DynamicFace::GetSteering()
 		Kinematic target;
 		target.orientation = atan2f(direction.y, direction.x);
 
-		DynamicAlign align(m_character, target, m_maxRotation, m_maxAngAcc, m_targetAngle, m_slowAngle, m_timeToTarget);
+		DynamicAlign align(m_character, target, PI / 180 * 90, PI / 180 * 200, PI / 180 * 5, PI / 180 * 25, 0.5f);
 
 		steering = align.GetSteering();
 	}

@@ -20,5 +20,6 @@ namespace AIProject
 	};
 
 	float MapToRange(const float &i_orientation);
+	float RandomBinomial();
 }
 

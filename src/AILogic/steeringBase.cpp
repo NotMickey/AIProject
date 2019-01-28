@@ -18,3 +18,8 @@ float AIProject::MapToRange(const float & i_orientation)
 
 	return PI / 180 * inDeg;
 }
+
+float AIProject::RandomBinomial()
+{
+	return ofRandom(1) - ofRandom(1);
+}
