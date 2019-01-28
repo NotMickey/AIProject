@@ -22,6 +22,12 @@
     <ClCompile Include="src\AILogic\Dynamic\DynamicAlign\dynamicAlign.cpp">
       <Filter>src\AILogic\Dynamic\DynamicAlign</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\DynamicFace\dynamicFace.cpp">
+      <Filter>src\AILogic\Dynamic\DynamicFace</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\DynamicWander\dynamicWander.cpp">
+      <Filter>src\AILogic\Dynamic\DynamicWander</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -45,6 +51,12 @@
     <Filter Include="src\AILogic\Dynamic\DynamicAlign">
       <UniqueIdentifier>{b0733f38-5dd6-4fc9-baca-eac923e9080a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AILogic\Dynamic\DynamicFace">
+      <UniqueIdentifier>{522d3315-00ce-45ae-bd45-85579a10e21b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Dynamic\DynamicWander">
+      <UniqueIdentifier>{bb558137-2708-4744-84fa-1edd789f5a04}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -64,6 +76,12 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\Dynamic\DynamicAlign\dynamicAlign.h">
       <Filter>src\AILogic\Dynamic\DynamicAlign</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\DynamicFace\dynamicFace.h">
+      <Filter>src\AILogic\Dynamic\DynamicFace</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\DynamicWander\dynamicWander.h">
+      <Filter>src\AILogic\Dynamic\DynamicWander</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

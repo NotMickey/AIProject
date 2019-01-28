@@ -5,12 +5,13 @@
 #include "../AILogic/Dynamic/DynamicSeek/dynamicSeek.h"
 #include "../AILogic/Dynamic/DynamicAlign/dynamicAlign.h"
 #include "../AILogic/Dynamic/DynamicArrive/dynamicArrive.h"
+#include "../AILogic/Dynamic/DynamicWander/dynamicWander.h"
 
 AIProject::Boid::Boid()
 {
 	ofSetCircleResolution(50);
 
-	m_kinematic.position = ofVec2f(0, 750);
+	m_kinematic.position = ofVec2f(512, 384);
 	m_previousPosition = m_kinematic.position;
 
 	m_kinematic.orientation = PI / 180 * 0.0f;
@@ -31,6 +32,8 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 	{
 		steering = SteerAndArrive(m_targetPosition.x, m_targetPosition.y);
 	}
+
+	steering = Wander();
 
 	m_kinematic.Update(steering, i_timeStep, i_maxSpeed);
 	
@@ -125,6 +128,13 @@ AIProject::DynamicSteeringOutput AIProject::Boid::SteerAndArrive(const int & x, 
 	steering.angularAcceleration = angular.angularAcceleration;
 
 	return steering;
+}
+
+AIProject::DynamicSteeringOutput AIProject::Boid::Wander()
+{
+	DynamicWander wander(*this, 30.0f, 10.0f, 120.0f, 5.0f);
+
+	return wander.GetSteering();
 }
 
 void AIProject::Kinematic::Update(const DynamicSteeringOutput & i_steering, const double & i_timeStep, const float & i_maxSpeed)

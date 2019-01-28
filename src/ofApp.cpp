@@ -9,7 +9,19 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 {
-	myBoid.Update(ofGetLastFrameTime(), 500.0f);
+	myBoid.Update(ofGetLastFrameTime(), 15.0f);
+
+	if (myBoid.m_kinematic.position.x > 1034.0f)
+		myBoid.m_kinematic.position.x = -10.0f;
+
+	if (myBoid.m_kinematic.position.x < -10.0f)
+		myBoid.m_kinematic.position.x = 1034.0f;
+
+	if (myBoid.m_kinematic.position.y > 778.0f)
+		myBoid.m_kinematic.position.y = -10.0f;
+
+	if (myBoid.m_kinematic.position.y < -10.0f)
+		myBoid.m_kinematic.position.y = 778.0f;
 }
 
 //--------------------------------------------------------------

@@ -36,6 +36,8 @@ namespace AIProject
 
 		DynamicSteeringOutput SteerAndArrive(const int &x, const int &y);
 
+		DynamicSteeringOutput Wander();
+
 	private:
 
 		bool b_reachedLimit = false;

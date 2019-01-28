@@ -182,7 +182,9 @@
   <ItemGroup>
     <ClCompile Include="src\AILogic\Dynamic\DynamicAlign\dynamicAlign.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.cpp" />
+    <ClCompile Include="src\AILogic\Dynamic\DynamicFace\dynamicFace.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicSeek\dynamicSeek.cpp" />
+    <ClCompile Include="src\AILogic\Dynamic\DynamicWander\dynamicWander.cpp" />
     <ClCompile Include="src\AILogic\steeringBase.cpp" />
     <ClCompile Include="src\Character\boid.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -191,7 +193,9 @@
   <ItemGroup>
     <ClInclude Include="src\AILogic\Dynamic\DynamicAlign\dynamicAlign.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.h" />
+    <ClInclude Include="src\AILogic\Dynamic\DynamicFace\dynamicFace.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicSeek\dynamicSeek.h" />
+    <ClInclude Include="src\AILogic\Dynamic\DynamicWander\dynamicWander.h" />
     <ClInclude Include="src\AILogic\steeringBase.h" />
     <ClInclude Include="src\Character\boid.h" />
     <ClInclude Include="src\ofApp.h" />
