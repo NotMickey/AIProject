@@ -133,8 +133,10 @@ AIProject::DynamicSteeringOutput AIProject::Boid::SteerAndArrive(const int & x, 
 AIProject::DynamicSteeringOutput AIProject::Boid::Wander()
 {
 	DynamicWander wander(*this, 3.0f, 10.0f, 120.0f, 5.0f);
+	//return wander.GetSteering();
 
-	return wander.GetSteering();
+	//DynamicWander wander(*this, 60.0f, 5.0f, 75.0f, 45.0f);
+	return wander.GetSteeringAlt();
 }
 
 void AIProject::Kinematic::Update(const DynamicSteeringOutput & i_steering, const double & i_timeStep, const float & i_maxSpeed)

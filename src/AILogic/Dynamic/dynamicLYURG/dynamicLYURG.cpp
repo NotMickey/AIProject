@@ -13,7 +13,7 @@ AIProject::DynamicSteeringOutput AIProject::DynamicLYURG::GetSteering()
 		return steering;
 	else
 	{
-		ofVec2f direction = m_character.m_kinematic.velocity.normalize();
+		ofVec2f direction = m_character.m_kinematic.velocity.getNormalized();
 
 		Kinematic target;
 		target.orientation = atan2f(direction.y, direction.x);

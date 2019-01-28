@@ -14,6 +14,8 @@ namespace AIProject
 
 		DynamicSteeringOutput GetSteering();
 
+		DynamicSteeringOutput GetSteeringAlt();
+
 	private:
 		float m_wanderOffset;
 		float m_wanderRadius;

@@ -28,6 +28,9 @@
     <ClCompile Include="src\AILogic\Dynamic\DynamicWander\dynamicWander.cpp">
       <Filter>src\AILogic\Dynamic\DynamicWander</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\dynamicLYURG\dynamicLYURG.cpp">
+      <Filter>src\AILogic\Dynamic\DynamicLYURG</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -57,6 +60,9 @@
     <Filter Include="src\AILogic\Dynamic\DynamicWander">
       <UniqueIdentifier>{bb558137-2708-4744-84fa-1edd789f5a04}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AILogic\Dynamic\DynamicLYURG">
+      <UniqueIdentifier>{8944fd9d-a684-477c-bee2-35ed347e8a99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -82,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\Dynamic\DynamicWander\dynamicWander.h">
       <Filter>src\AILogic\Dynamic\DynamicWander</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\dynamicLYURG\dynamicLYURG.h">
+      <Filter>src\AILogic\Dynamic\DynamicLYURG</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
