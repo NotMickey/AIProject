@@ -132,7 +132,7 @@ AIProject::DynamicSteeringOutput AIProject::Boid::SteerAndArrive(const int & x, 
 
 AIProject::DynamicSteeringOutput AIProject::Boid::Wander()
 {
-	DynamicWander wander(*this, 30.0f, 10.0f, 120.0f, 5.0f);
+	DynamicWander wander(*this, 3.0f, 10.0f, 120.0f, 5.0f);
 
 	return wander.GetSteering();
 }
