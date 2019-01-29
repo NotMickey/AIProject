@@ -8,6 +8,7 @@ namespace AIProject
 
 	struct Kinematic
 	{
+
 		int id = 0;
 
 		ofVec2f position;
@@ -22,8 +23,9 @@ namespace AIProject
 	class Boid
 	{
 	public:
+		Boid(const int &i_mass);
 
-		Boid();
+		int m_mass;
 
 		Kinematic m_kinematic;
 

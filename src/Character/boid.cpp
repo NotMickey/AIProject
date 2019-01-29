@@ -7,7 +7,7 @@
 #include "../AILogic/Dynamic/DynamicArrive/dynamicArrive.h"
 #include "../AILogic/Dynamic/DynamicWander/dynamicWander.h"
 
-AIProject::Boid::Boid()
+AIProject::Boid::Boid(const int &i_mass) : m_mass(i_mass)
 {
 	ofSetCircleResolution(50);
 

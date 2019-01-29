@@ -1,6 +1,6 @@
 #include "blendedSteering.h"
 
-AIProject::BlendedSteering::BlendedSteering(BehaviourAndWeight (&i_behaviourAndWeight)[], const int & i_arraySize,
+AIProject::BlendedSteering::BlendedSteering(BehaviourAndWeight i_behaviourAndWeight[], const int & i_arraySize,
 												const float & i_maxAcceleration, const float & i_maxRotation) :
 							m_BehaviourAndWeight(i_behaviourAndWeight), m_arraySize(i_arraySize), m_maxAcceleration(i_maxAcceleration),
 							m_maxRotation(i_maxRotation)

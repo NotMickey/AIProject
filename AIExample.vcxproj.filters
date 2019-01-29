@@ -37,6 +37,12 @@
     <ClCompile Include="src\AILogic\Dynamic\DynamicVelocity\dynamicVelocity.cpp">
       <Filter>src\AILogic\Dynamic\DynamicVelocity</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\BlendedSteering\blendedSteering.cpp">
+      <Filter>src\AILogic\BlendedSteering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\Flocking\flocking.cpp">
+      <Filter>src\AILogic\Flocking</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -75,6 +81,12 @@
     <Filter Include="src\AILogic\Dynamic\DynamicVelocity">
       <UniqueIdentifier>{1ea6cf00-8e44-44d9-bcbd-e3b9fa50528a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AILogic\BlendedSteering">
+      <UniqueIdentifier>{42ecbdb8-8192-4e00-a814-eb11ec368191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Flocking">
+      <UniqueIdentifier>{9a3a7c02-859d-4f09-9d9a-dee6d1cf30df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -109,6 +121,12 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\Dynamic\DynamicVelocity\dynamicVelocity.h">
       <Filter>src\AILogic\Dynamic\DynamicVelocity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\BlendedSteering\blendedSteering.h">
+      <Filter>src\AILogic\BlendedSteering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Flocking\flocking.h">
+      <Filter>src\AILogic\Flocking</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
