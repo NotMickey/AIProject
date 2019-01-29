@@ -34,6 +34,9 @@
     <ClCompile Include="src\AILogic\Dynamic\DynamicSeparation\dynamicSeparation.cpp">
       <Filter>src\AILogic\Dynamic\DynamicSeparation</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\DynamicVelocity\dynamicVelocity.cpp">
+      <Filter>src\AILogic\Dynamic\DynamicVelocity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -69,6 +72,9 @@
     <Filter Include="src\AILogic\Dynamic\DynamicSeparation">
       <UniqueIdentifier>{aa580419-0ea2-4772-a33f-8a5c6a72b48b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AILogic\Dynamic\DynamicVelocity">
+      <UniqueIdentifier>{1ea6cf00-8e44-44d9-bcbd-e3b9fa50528a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -100,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\Dynamic\DynamicSeparation\dynamicSeparation.h">
       <Filter>src\AILogic\Dynamic\DynamicSeparation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\DynamicVelocity\dynamicVelocity.h">
+      <Filter>src\AILogic\Dynamic\DynamicVelocity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -19,6 +19,12 @@ namespace AIProject
 		float GetNewOrientation(const float &i_orientation, const ofVec2f &i_velocity);
 	};
 
+	struct BehaviourAndWeight
+	{
+		SteeringBase* behaviour = nullptr;
+		float weight = 0.0f;
+	};
+
 	float MapToRange(const float &i_orientation);
 	float RandomBinomial();
 }
