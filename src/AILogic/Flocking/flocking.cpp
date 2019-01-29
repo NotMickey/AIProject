@@ -9,7 +9,7 @@
 #include "../Dynamic/DynamicVelocity/dynamicVelocity.h"
 #include "../Dynamic/DynamicArrive/dynamicArrive.h"
 
-void AIProject::Flocking::SimulateFlocking(Boid(&i_boids)[], const int & i_size, const float &i_avoidBoidWeight, const float &i_matchLeaderWeight,
+void AIProject::Flocking::SimulateFlocking(Boid i_boids[], const int & i_size, const float &i_avoidBoidWeight, const float &i_matchLeaderWeight,
 								const float &i_moveTowardsCenterWeight)
 {
 	ofVec2f center = CalculateCenterOfMass(i_boids, i_size);
@@ -38,11 +38,15 @@ void AIProject::Flocking::SimulateFlocking(Boid(&i_boids)[], const int & i_size,
 		behaviours[1].behaviour = new DynamicVelocity(i_boids[i], leader.m_kinematic, 150.0f, 1.0f);
 		behaviours[2].behaviour = new DynamicArrive(i_boids[i], target, 200.0f, 80.0f, 5.0f, 30.0f, 1.0f);
 
-		
+		i_boids[i].currentSteering = blendSteering.GetSteering();
+
+		delete behaviours[0].behaviour;
+		delete behaviours[1].behaviour;
+		delete behaviours[2].behaviour;
 	}
 }
 
-ofVec2f AIProject::Flocking::CalculateCenterOfMass(Boid(&i_boids)[], const int & i_size)
+ofVec2f AIProject::Flocking::CalculateCenterOfMass(Boid i_boids[], const int & i_size)
 {
 	ofVec2f center(0.0f, 0.0f);
 
@@ -58,13 +62,15 @@ ofVec2f AIProject::Flocking::CalculateCenterOfMass(Boid(&i_boids)[], const int &
 	return center;
 }
 
-AIProject::Boid & AIProject::Flocking::GetFlockLeader(Boid(&i_boids)[], const int & i_size)
+AIProject::Boid & AIProject::Flocking::GetFlockLeader(Boid i_boids[], const int & i_size)
 {
-	for (int i = 0; i < i_size; i++)
+	int i = 0;
+
+	for (i = 0; i < i_size; i++)
 	{
 		if (i_boids[i].m_mass > 1)
-			return i_boids[i];
+			break;
 	}
 
-	return Boid(2);
+	return i_boids[i];
 }

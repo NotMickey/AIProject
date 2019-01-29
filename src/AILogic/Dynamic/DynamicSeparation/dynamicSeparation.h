@@ -8,7 +8,7 @@ namespace AIProject
 	class DynamicSeparation : public SteeringBase
 	{
 	public:
-		DynamicSeparation(Boid &i_character, Boid (&i_targets)[], const int &i_size, const float &i_threshold, const float &i_constant,
+		DynamicSeparation(Boid &i_character, Boid i_targets[], const int &i_size, const float &i_threshold, const float &i_constant,
 			const float &i_maxAcceleration);
 
 		DynamicSteeringOutput GetSteering();
@@ -21,7 +21,7 @@ namespace AIProject
 
 		float m_maxAcceleration;
 
-		Boid (&m_targets)[];
+		Boid * m_targets;
 
 		Boid &m_character;
 	};

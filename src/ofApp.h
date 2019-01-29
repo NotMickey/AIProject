@@ -24,5 +24,6 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		AIProject::Boid myBoid;
+		AIProject::Boid myBoid = AIProject::Boid(2);
+
 };

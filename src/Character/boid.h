@@ -2,13 +2,12 @@
 
 #include "ofMain.h"
 
+#include "../AILogic/steeringBase.h"
+
 namespace AIProject
 {
-	struct DynamicSteeringOutput;
-
 	struct Kinematic
 	{
-
 		int id = 0;
 
 		ofVec2f position;
@@ -28,6 +27,8 @@ namespace AIProject
 		int m_mass;
 
 		Kinematic m_kinematic;
+
+		DynamicSteeringOutput currentSteering;
 
 		void Update(const double &i_timeStep, const float &i_maxSpeed);
 		void Draw();

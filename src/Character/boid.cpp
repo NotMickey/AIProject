@@ -1,6 +1,6 @@
 #include "boid.h"
 
-#include "../AILogic/steeringBase.h";
+#include "../AILogic/steeringBase.h"
 
 #include "../AILogic/Dynamic/DynamicSeek/dynamicSeek.h"
 #include "../AILogic/Dynamic/DynamicAlign/dynamicAlign.h"
@@ -27,8 +27,6 @@ AIProject::Boid::Boid(const int &i_mass) : m_mass(i_mass)
 void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 {
 	DynamicSteeringOutput steering;
-	steering.angularAcceleration = 0.0f;
-	steering.linearAcceleration = ofVec2f(0.0f, 0.0f);
 
 	if (b_seekTargetValid)
 	{
@@ -37,7 +35,7 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 
 	steering = Wander();
 
-	m_kinematic.Update(steering, i_timeStep, i_maxSpeed);
+	m_kinematic.Update(currentSteering, i_timeStep, i_maxSpeed);
 	
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 
