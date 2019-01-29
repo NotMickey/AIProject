@@ -4,24 +4,40 @@
 
 //--------------------------------------------------------------
 void ofApp::setup()
-{}
+{
+	flock[7].m_mass = 46.0f;
+
+	for (int i = 0; i < 8; i++)
+	{
+		flock[i].m_kinematic.position += i * 2;
+	}
+}
 
 //--------------------------------------------------------------
 void ofApp::update()
 { 
-	myBoid.Update(ofGetLastFrameTime(), 15.0f);
+	flockHandler.SimulateFlocking(flock, 7, 200.0f, 20.0f, 50.0f);
 
-	if (myBoid.m_kinematic.position.x > 1034.0f)
-		myBoid.m_kinematic.position.x = -10.0f;
+	flock[7].currentSteering = flock[7].Wander();
 
-	if (myBoid.m_kinematic.position.x < -10.0f)
-		myBoid.m_kinematic.position.x = 1034.0f;
+	double frameTime = ofGetLastFrameTime();
 
-	if (myBoid.m_kinematic.position.y > 778.0f)
-		myBoid.m_kinematic.position.y = -10.0f;
+	for (int i = 0; i < 8; i++)
+	{
+		flock[i].Update(frameTime, 35.0f);
 
-	if (myBoid.m_kinematic.position.y < -10.0f)
-		myBoid.m_kinematic.position.y = 778.0f;
+		if (flock[i].m_kinematic.position.x > 1034.0f)
+			flock[i].m_kinematic.position.x = -10.0f;
+
+		if (flock[i].m_kinematic.position.x < -10.0f)
+			flock[i].m_kinematic.position.x = 1034.0f;
+
+		if (flock[i].m_kinematic.position.y > 778.0f)
+			flock[i].m_kinematic.position.y = -10.0f;
+
+		if (flock[i].m_kinematic.position.y < -10.0f)
+			flock[i].m_kinematic.position.y = 778.0f;
+	}
 }
 
 //--------------------------------------------------------------
@@ -32,8 +48,14 @@ void ofApp::draw()
 	ofColor color;
 	color.r = 255; color.g = 255, color.b = 0;
 	ofSetColor(color);  // Set the drawing color to yellow
+	flock[7].Draw();
 
-	myBoid.Draw();
+	ofSetColor(255);
+
+	for (int i = 0; i < 7; i++)
+	{
+		flock[i].Draw();
+	}
 }
 
 //--------------------------------------------------------------
@@ -58,9 +80,7 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
-{
-	myBoid.SetTargetPosition(ofVec2f(x, y));
-}
+{}
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){

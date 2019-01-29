@@ -7,6 +7,25 @@
 #include "../AILogic/Dynamic/DynamicArrive/dynamicArrive.h"
 #include "../AILogic/Dynamic/DynamicWander/dynamicWander.h"
 
+AIProject::Boid::Boid()
+{
+	m_mass = 1;
+
+	ofSetCircleResolution(50);
+
+	m_kinematic.position = ofVec2f(512, 384);
+	m_previousPosition = m_kinematic.position;
+
+	m_kinematic.orientation = PI / 180 * 0.0f;
+
+	m_kinematic.velocity = ofVec2f(0.0f, 0.0f);
+	m_kinematic.rotation = 0.0f;
+
+	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
+
+	m_kinematic.id = rand() % 100000;
+}
+
 AIProject::Boid::Boid(const int &i_mass) : m_mass(i_mass)
 {
 	ofSetCircleResolution(50);
@@ -39,7 +58,7 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 	
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 
-	if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
+	/*if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
 	{
 		m_breadCrumbIndex++;
 
@@ -52,7 +71,7 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 		m_breadCrumbArray[m_breadCrumbIndex] = m_previousPosition;
 
 		m_previousPosition = m_kinematic.position;
-	}
+	}*/
 }
 
 void AIProject::Boid::Draw()

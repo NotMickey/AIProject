@@ -5,6 +5,8 @@
 #include "Character/boid.h"
 #include "AILogic/steeringBase.h"
 
+#include "AILogic/Flocking/flocking.h";
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -24,6 +26,6 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		AIProject::Boid myBoid = AIProject::Boid(2);
-
+		AIProject::Boid flock[8];
+		AIProject::Flocking flockHandler;
 };

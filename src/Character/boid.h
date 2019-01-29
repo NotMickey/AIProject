@@ -22,6 +22,7 @@ namespace AIProject
 	class Boid
 	{
 	public:
+		Boid();
 		Boid(const int &i_mass);
 
 		int m_mass;

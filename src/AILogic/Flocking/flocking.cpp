@@ -8,41 +8,38 @@
 #include "../Dynamic/DynamicSeparation/dynamicSeparation.h"
 #include "../Dynamic/DynamicVelocity/dynamicVelocity.h"
 #include "../Dynamic/DynamicArrive/dynamicArrive.h"
+#include "../Dynamic/dynamicLYURG/dynamicLYURG.h"
 
 void AIProject::Flocking::SimulateFlocking(Boid i_boids[], const int & i_size, const float &i_avoidBoidWeight, const float &i_matchLeaderWeight,
 								const float &i_moveTowardsCenterWeight)
 {
-	ofVec2f center = CalculateCenterOfMass(i_boids, i_size);
+	ofVec2f center = i_boids[7].m_kinematic.position;
 	Kinematic target;
 	target.position = center;
 
 	Boid &leader = GetFlockLeader(i_boids, i_size);
 
-	BehaviourAndWeight avoidBoids;
-	avoidBoids.weight = i_avoidBoidWeight;
-	BehaviourAndWeight matchLeader;
-	matchLeader.weight = i_matchLeaderWeight;
-	BehaviourAndWeight moveTowardsCenter;
-	moveTowardsCenter.weight = i_moveTowardsCenterWeight;
-
-	BehaviourAndWeight behaviours[3];
+	BehaviourAndWeight behaviours[4];
 	behaviours[0].weight = i_avoidBoidWeight;
 	behaviours[1].weight = i_matchLeaderWeight;
 	behaviours[2].weight = i_moveTowardsCenterWeight;
+	behaviours[3].weight = i_moveTowardsCenterWeight;
 
-	BlendedSteering blendSteering(behaviours, 3, 150.0f, 70.0f);
+	BlendedSteering blendSteering(behaviours, 4, 150.0f, 70.0f);
 
 	for (int i = 0; i < i_size; i++)
 	{
-		behaviours[0].behaviour = new DynamicSeparation(i_boids[i], i_boids, i_size, 15.0f, 4.0f, 150.0f);
+		behaviours[0].behaviour = new DynamicSeparation(i_boids[i], i_boids, i_size, 25.0f, 50.0f, 1500.0f);
 		behaviours[1].behaviour = new DynamicVelocity(i_boids[i], leader.m_kinematic, 150.0f, 1.0f);
 		behaviours[2].behaviour = new DynamicArrive(i_boids[i], target, 200.0f, 80.0f, 5.0f, 30.0f, 1.0f);
+		behaviours[3].behaviour = new DynamicLYURG(i_boids[i]);
 
 		i_boids[i].currentSteering = blendSteering.GetSteering();
 
 		delete behaviours[0].behaviour;
 		delete behaviours[1].behaviour;
 		delete behaviours[2].behaviour;
+		delete behaviours[3].behaviour;
 	}
 }
 
