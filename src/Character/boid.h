@@ -8,6 +8,8 @@ namespace AIProject
 
 	struct Kinematic
 	{
+		int id = 0;
+
 		ofVec2f position;
 		float orientation; // in radians!
 

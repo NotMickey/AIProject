@@ -8,7 +8,7 @@ void ofApp::setup()
 
 //--------------------------------------------------------------
 void ofApp::update()
-{
+{ 
 	myBoid.Update(ofGetLastFrameTime(), 15.0f);
 
 	if (myBoid.m_kinematic.position.x > 1034.0f)

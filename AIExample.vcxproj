@@ -185,6 +185,7 @@
     <ClCompile Include="src\AILogic\Dynamic\DynamicFace\dynamicFace.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\dynamicLYURG\dynamicLYURG.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicSeek\dynamicSeek.cpp" />
+    <ClCompile Include="src\AILogic\Dynamic\DynamicSeparation\dynamicSeparation.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicWander\dynamicWander.cpp" />
     <ClCompile Include="src\AILogic\steeringBase.cpp" />
     <ClCompile Include="src\Character\boid.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="src\AILogic\Dynamic\DynamicFace\dynamicFace.h" />
     <ClInclude Include="src\AILogic\Dynamic\dynamicLYURG\dynamicLYURG.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicSeek\dynamicSeek.h" />
+    <ClInclude Include="src\AILogic\Dynamic\DynamicSeparation\dynamicSeparation.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicWander\dynamicWander.h" />
     <ClInclude Include="src\AILogic\steeringBase.h" />
     <ClInclude Include="src\Character\boid.h" />

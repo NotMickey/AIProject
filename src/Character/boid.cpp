@@ -20,6 +20,8 @@ AIProject::Boid::Boid()
 	m_kinematic.rotation = 0.0f;
 
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
+
+	m_kinematic.id = rand() % 100000;
 }
 
 void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
