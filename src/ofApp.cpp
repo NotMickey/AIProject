@@ -7,16 +7,16 @@ void ofApp::setup()
 {
 	flock[7].m_mass = 46.0f;
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 7; i++)
 	{
-		flock[i].m_kinematic.position += i * 2;
+		flock[i].m_kinematic.position += i * 5;
 	}
 }
 
 //--------------------------------------------------------------
 void ofApp::update()
 { 
-	flockHandler.SimulateFlocking(flock, 7, 200.0f, 20.0f, 50.0f);
+	flockHandler.SimulateFlocking(flock, 7, 2000.0f, 2.0f, 15.0f);
 
 	flock[7].currentSteering = flock[7].Wander();
 
@@ -46,9 +46,6 @@ void ofApp::draw()
 	ofBackground(0);  // Clear the screen with a black color
 
 	ofColor color;
-	color.r = 255; color.g = 255, color.b = 0;
-	ofSetColor(color);  // Set the drawing color to yellow
-	flock[7].Draw();
 
 	ofSetColor(255);
 
@@ -56,6 +53,10 @@ void ofApp::draw()
 	{
 		flock[i].Draw();
 	}
+
+	color.r = 255; color.g = 0; color.b = 0;
+	ofSetColor(color);  // Set the drawing color to yellow
+	flock[7].Draw();
 }
 
 //--------------------------------------------------------------
