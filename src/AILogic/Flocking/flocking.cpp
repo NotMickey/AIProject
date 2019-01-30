@@ -13,7 +13,7 @@
 void AIProject::Flocking::SimulateFlocking(Boid i_boids[], const int & i_size, const float &i_avoidBoidWeight, const float &i_matchLeaderWeight,
 								const float &i_moveTowardsCenterWeight)
 {
-	ofVec2f center = i_boids[7].m_kinematic.position;
+	ofVec2f center = i_boids[i_size].m_kinematic.position;
 	Kinematic target;
 	target.position = center;
 

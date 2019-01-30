@@ -11,6 +11,9 @@ void ofApp::setup()
 	{
 		flock[i].m_kinematic.position += i * 5;
 	}
+
+	ofSetWindowShape(1920, 1080);
+	ofSetWindowPosition(0 ,0);
 }
 
 //--------------------------------------------------------------
@@ -24,19 +27,22 @@ void ofApp::update()
 
 	for (int i = 0; i < 8; i++)
 	{
-		flock[i].Update(frameTime, 35.0f);
+		if (i == 7)
+			flock[i].Update(frameTime, 20.0f);
+		else
+			flock[i].Update(frameTime, 35.0f);
 
-		if (flock[i].m_kinematic.position.x > 1034.0f)
+		if (flock[i].m_kinematic.position.x > ofGetWidth() + 10.0f)
 			flock[i].m_kinematic.position.x = -10.0f;
 
 		if (flock[i].m_kinematic.position.x < -10.0f)
-			flock[i].m_kinematic.position.x = 1034.0f;
+			flock[i].m_kinematic.position.x = ofGetWidth() + 10.0f;
 
-		if (flock[i].m_kinematic.position.y > 778.0f)
+		if (flock[i].m_kinematic.position.y > ofGetHeight() + 10.0f)
 			flock[i].m_kinematic.position.y = -10.0f;
 
 		if (flock[i].m_kinematic.position.y < -10.0f)
-			flock[i].m_kinematic.position.y = 778.0f;
+			flock[i].m_kinematic.position.y = ofGetHeight() + 10.0f;
 	}
 }
 
