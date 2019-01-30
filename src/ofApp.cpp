@@ -102,20 +102,6 @@ void ofApp::mouseDragged(int x, int y, int button){
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
 {
-	AIProject::Kinematic kinematic;
-	kinematic.position = ofVec2f(x, y);
-
-	ofVec2f direction = (ofVec2f(x, y) - myBoid.m_kinematic.position).normalize();
-	kinematic.orientation = atan2f(direction.y, direction.x);
-
-	AIProject::DynamicSeek seek(myBoid, kinematic, 50.0f);
-	AIProject::DynamicAlign align(myBoid, kinematic, PI / 180 * 75, PI / 180 * 90, PI / 180 * 2, PI / 180 * 5, 2.0f);
-
-	AIProject::DynamicSteeringOutput linear = seek.GetSteering();
-	AIProject::DynamicSteeringOutput angular = align.GetSteering();
-
-	steering.linearAcceleration = linear.linearAcceleration;
-	steering.angularAcceleration = angular.angularAcceleration;
 }
 
 //--------------------------------------------------------------
