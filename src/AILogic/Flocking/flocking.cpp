@@ -63,7 +63,7 @@ AIProject::Boid & AIProject::Flocking::GetFlockLeader(Boid i_boids[], const int 
 {
 	int i = 0;
 
-	for (i = 0; i < i_size; i++)
+	for (i = 0; i < i_size + 1; i++)
 	{
 		if (i_boids[i].m_mass > 1)
 			break;
