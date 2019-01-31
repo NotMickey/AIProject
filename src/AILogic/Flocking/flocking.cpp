@@ -29,7 +29,7 @@ void AIProject::Flocking::SimulateFlocking(Boid i_boids[], const int & i_size, c
 
 	for (int i = 0; i < i_size; i++)
 	{
-		behaviours[0].behaviour = new DynamicSeparation(i_boids[i], i_boids, i_size, 60.0f, 150.0f, 150.0f);
+		behaviours[0].behaviour = new DynamicSeparation(i_boids[i], i_boids, i_size + 1, 60.0f, 150.0f, 150.0f);
 		behaviours[1].behaviour = new DynamicVelocity(i_boids[i], leader.m_kinematic, 60.0f, 1.0f);
 		behaviours[2].behaviour = new DynamicArrive(i_boids[i], target, 200.0f, 80.0f, 5.0f, 80.0f, 1.0f);
 		behaviours[3].behaviour = new DynamicLYURG(i_boids[i]);

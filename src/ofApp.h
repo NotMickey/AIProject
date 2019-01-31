@@ -26,6 +26,8 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		AIProject::Boid flock[8];
+		int flockSize = 10;
+
+		AIProject::Boid flock[10];
 		AIProject::Flocking flockHandler;
 };

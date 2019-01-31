@@ -5,9 +5,11 @@
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-	flock[7].m_mass = 46.0f;
+	flock[flockSize - 1].m_mass = 6.0f;
 
-	for (int i = 0; i < 7; i++)
+	flock[flockSize - 1].m_kinematic.position = ofVec2f(1900, 1750);
+
+	for (int i = 0; i < flockSize - 1; i++)
 	{
 		flock[i].m_kinematic.position += i * 5;
 	}
@@ -19,15 +21,15 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 { 
-	flockHandler.SimulateFlocking(flock, 7, 2000.0f, 2.0f, 15.0f);
+	flockHandler.SimulateFlocking(flock, flockSize - 1, 2000.0f, 2.0f, 15.0f);
 
-	flock[7].currentSteering = flock[7].Wander();
+	flock[flockSize - 1].currentSteering = flock[flockSize - 1].Wander();
 
 	double frameTime = ofGetLastFrameTime();
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < flockSize; i++)
 	{
-		if (i == 7)
+		if (i == flockSize - 1)
 			flock[i].Update(frameTime, 20.0f);
 		else
 			flock[i].Update(frameTime, 35.0f);
@@ -55,14 +57,14 @@ void ofApp::draw()
 
 	ofSetColor(255);
 
-	for (int i = 0; i < 7; i++)
+	for (int i = 0; i < flockSize - 1; i++)
 	{
 		flock[i].Draw();
 	}
 
 	color.r = 255; color.g = 0; color.b = 0;
 	ofSetColor(color);  // Set the drawing color to yellow
-	flock[7].Draw();
+	flock[flockSize - 1].Draw();
 }
 
 //--------------------------------------------------------------
