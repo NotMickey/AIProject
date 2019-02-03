@@ -13,6 +13,7 @@ namespace AIProject
 	class SteeringBase
 	{
 	public:
+		virtual ~SteeringBase() {}
 
 		virtual DynamicSteeringOutput GetSteering() = 0;
 
