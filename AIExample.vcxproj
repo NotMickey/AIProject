@@ -208,7 +208,9 @@
     <ClInclude Include="src\AILogic\Flocking\flocking.h" />
     <ClInclude Include="src\AILogic\steeringBase.h" />
     <ClInclude Include="src\Character\boid.h" />
+    <ClInclude Include="src\Graph\Algorithm\AStar.h" />
     <ClInclude Include="src\Graph\DataStructures\graphDataStructures.h" />
+    <ClInclude Include="src\Graph\DataStructures\heap.h" />
     <ClInclude Include="src\ofApp.h" />
   </ItemGroup>
   <ItemGroup>

@@ -93,6 +93,9 @@
     <Filter Include="src\Graph\DataStructures">
       <UniqueIdentifier>{2c98a73d-0454-4dce-a392-fd4c1339a48d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Graph\Algorithm">
+      <UniqueIdentifier>{92e87d28-4eb3-47e4-a85d-8b2368733a47}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -135,6 +138,12 @@
       <Filter>src\AILogic\Flocking</Filter>
     </ClInclude>
     <ClInclude Include="src\Graph\DataStructures\graphDataStructures.h">
+      <Filter>src\Graph\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar.h">
+      <Filter>src\Graph\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\DataStructures\heap.h">
       <Filter>src\Graph\DataStructures</Filter>
     </ClInclude>
   </ItemGroup>
