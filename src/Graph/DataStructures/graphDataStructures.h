@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 namespace AIProject
 {
 	namespace Graph
@@ -11,23 +13,23 @@ namespace AIProject
 		{
 		public:
 
-			DirectedWeightedEdge(const int &i_sourceID = 0, const int &i_sinkID = 0, const float &i_edgeCost = 0)
+			DirectedWeightedEdge(const int &i_sourceID = 0, const int &i_sinkID = 0, const int &i_edgeCost = 0)
 				: m_sourceID(i_sourceID), m_sinkID(i_sinkID), m_edgeCost(i_edgeCost)
 			{}
 
-			/*DirectedWeightedEdge(DirectedWeightedEdge &i_directedWeightedEdge)
+			/*DirectedWeightedEdge(const DirectedWeightedEdge &i_directedWeightedEdge)
 				: m_sourceID(i_directedWeightedEdge.m_sourceID), m_sinkID(i_directedWeightedEdge.m_sinkID), m_edgeCost(i_directedWeightedEdge.m_edgeCost)
 			{};*/
 
-			inline float GetCost() { return m_edgeCost; };
-			inline int GetSource() { return m_sourceID; };
-			inline int GetSink() { return m_sinkID; };
+			inline int GetCost() const { return m_edgeCost; };
+			inline int GetSource() const { return m_sourceID; };
+			inline int GetSink() const { return m_sinkID; };
 
 		private:
 
 			int m_sourceID;
 			int m_sinkID;
-			float m_edgeCost;
+			int m_edgeCost;
 		};
 
 		// This class will need to be fleshed out more - TODO
@@ -35,12 +37,17 @@ namespace AIProject
 		{
 		public:
 
-			void GetOutGoingEdges(const int &node);
+			~DirectedWeightedGraph();
+
+			std::vector<DirectedWeightedEdge> GetOutGoingEdges(const int &node) const;
+
+			int AddNode();																// Add a new node and return its ID
+			bool AddEdge(const int &i_sourceID, const int &i_sinkID, const int &i_edgeCost);    // Adds a new edge between gives nodes if valid
 
 		private:
 
-			//DirectedWeightedEdge
-
+			std::vector<int> v_nodeList;
+			std::vector<DirectedWeightedEdge> v_edgeList;
 		};
 
 		//////
@@ -49,6 +56,9 @@ namespace AIProject
 		//////
 		struct NodeRecord
 		{
+			NodeRecord() : node(0), costSoFar(0), estimatedTotalCost(0)
+			{}
+
 			NodeRecord(const int &i_node, const int &i_costSoFar, const int &i_estimatedTotalCost, const DirectedWeightedEdge &i_incomingEdge)
 				: node(i_node), costSoFar(i_costSoFar), estimatedTotalCost(i_estimatedTotalCost), incomingEdge(i_incomingEdge)
 			{}
@@ -60,5 +70,16 @@ namespace AIProject
 
 			DirectedWeightedEdge incomingEdge;
 		};
+
+		bool operator < (const NodeRecord &lhs, const NodeRecord &rhs);
+		bool operator <= (const NodeRecord &lhs, const NodeRecord &rhs);
+
+		bool operator > (const NodeRecord &lhs, const NodeRecord &rhs);
+		bool operator >= (const NodeRecord &lhs, const NodeRecord &rhs);
+
+		// These operators are slightly different as they compare the nodeID instead of g(x)
+
+		bool operator == (const NodeRecord &lhs, const NodeRecord &rhs);
+		bool operator != (const NodeRecord &lhs, const NodeRecord &rhs);
 	}
 }

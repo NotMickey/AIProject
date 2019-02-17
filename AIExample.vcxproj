@@ -192,6 +192,9 @@
     <ClCompile Include="src\AILogic\Flocking\flocking.cpp" />
     <ClCompile Include="src\AILogic\steeringBase.cpp" />
     <ClCompile Include="src\Character\boid.cpp" />
+    <ClCompile Include="src\Graph\Algorithm\AStar.cpp" />
+    <ClCompile Include="src\Graph\DataStructures\graphDataStructures.cpp" />
+    <ClCompile Include="src\Graph\DataStructures\heap.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
   </ItemGroup>

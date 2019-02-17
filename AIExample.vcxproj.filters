@@ -43,6 +43,15 @@
     <ClCompile Include="src\AILogic\Flocking\flocking.cpp">
       <Filter>src\AILogic\Flocking</Filter>
     </ClCompile>
+    <ClCompile Include="src\Graph\DataStructures\heap.cpp">
+      <Filter>src\Graph\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\DataStructures\graphDataStructures.cpp">
+      <Filter>src\Graph\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar.cpp">
+      <Filter>src\Graph\Algorithm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">

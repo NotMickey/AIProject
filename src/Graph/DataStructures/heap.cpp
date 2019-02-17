@@ -1,8 +1,12 @@
 #include "heap.h"
+#include "graphDataStructures.h"
 
 #include <assert.h>
 
 // NOTE: For the templated class, the elements must have the operators >, =, and < defined. 
+
+// This is necessary because the template class needs to know about its instances
+template class AIProject::Graph::Heap<AIProject::Graph::NodeRecord>;
 
 template<class T>
 inline AIProject::Graph::Heap<T>::Heap(int i_maxSize) : MAX_SIZE(i_maxSize)
@@ -75,6 +79,40 @@ T AIProject::Graph::Heap<T>::Remove()
 	ShiftDown(0);
 
 	return temp;
+}
+
+template<class T>
+T AIProject::Graph::Heap<T>::Peak()
+{
+	assert(m_currentNum > 0);
+
+	T temp = m_data[0];
+
+	return temp;
+}
+
+template<class T>
+bool AIProject::Graph::Heap<T>::Contains(const T & i_item)
+{
+	for (int i = 0; i < m_currentNum; i++)
+	{
+		if (m_data[i] == i_item)
+			return true;
+	}
+
+	return false;
+}
+
+template<class T>
+T AIProject::Graph::Heap<T>::Find(const T & i_item)
+{
+	for (int i = 0; i < m_currentNum; i++)
+	{
+		if (m_data[i] == i_item)
+			return m_data[i];
+	}
+
+	return T();
 }
 
 template<class T>
