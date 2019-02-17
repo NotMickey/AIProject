@@ -45,7 +45,7 @@ namespace AIProject
 
 		//////
 		/// A struct used during the A* algorithmic search process.
-		/// It keep track of a single node in the shortest node path.
+		/// It keeps track of a single node in the shortest node path.
 		//////
 		struct NodeRecord
 		{
