@@ -66,7 +66,7 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 			int endNode = edge.GetSink();
 
 			int g = currentRecord.costSoFar + edge.GetCost();
-			int h = i_heuristic.Estimate(endNode);
+			int h;// = i_heuristic.Estimate(endNode);
 
 			NodeRecord endNodeRecord;
 			endNodeRecord.node = endNode;
@@ -79,6 +79,8 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 					continue;
 
 				closeList.Remove(endNode);
+
+				h = endNodeRecord.estimatedTotalCost - endNodeRecord.costSoFar;
 			}
 			else if (openList.Contains(endNodeRecord))
 			{
@@ -86,17 +88,20 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 
 				if (endNodeRecord.costSoFar <= g)
 					continue;
+
+				h = endNodeRecord.estimatedTotalCost - endNodeRecord.costSoFar;
 			}
 			else
 			{
-				endNodeRecord.estimatedTotalCost = g + h;
+				h = i_heuristic.Estimate(endNode);
 			}
 				
+			endNodeRecord.estimatedTotalCost = g + h;
 			endNodeRecord.costSoFar = g;
 			endNodeRecord.incomingEdge = edge;
 
-			if (!openList.Contains(endNodeRecord))
-				openList.Add(endNodeRecord);
+			//if (!openList.Contains(endNodeRecord))
+			//	openList.Add(endNodeRecord);
 		}
 
 		closeList.list.push_back(currentRecord);
