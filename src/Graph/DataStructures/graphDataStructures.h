@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include "ofMain.h"
 
 namespace AIProject
 {
@@ -32,21 +33,23 @@ namespace AIProject
 			int m_edgeCost;
 		};
 
-		// This class will need to be fleshed out more - TODO
 		class DirectedWeightedGraph
 		{
 		public:
 
 			~DirectedWeightedGraph();
 
-			std::vector<DirectedWeightedEdge> GetOutGoingEdges(const int &node) const;
+			std::vector<DirectedWeightedEdge> GetOutGoingEdges(const int &i_node) const;
 
-			int AddNode();																// Add a new node and return its ID
-			bool AddEdge(const int &i_sourceID, const int &i_sinkID, const int &i_edgeCost);    // Adds a new edge between gives nodes if valid
+			int AddNode(const ofVec2f &i_position);												// Add a new node and return its ID
+			bool AddEdge(const int &i_sourceID, const int &i_sinkID, const int &i_edgeCost);    // Adds a new edge between given nodes if valid
+
+			ofVec2f Localize(const int &i_nodeID) const;                                              // Returns world position of node
 
 		private:
 
 			std::vector<int> v_nodeList;
+			std::vector<ofVec2f> v_positionList;
 			std::vector<DirectedWeightedEdge> v_edgeList;
 		};
 

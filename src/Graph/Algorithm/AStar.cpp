@@ -1,11 +1,20 @@
 #include "AStar.h"
 
-#include "../DataStructures/graphDataStructures.h"
 #include "../DataStructures/heap.h"
+
+int AIProject::Graph::Heuristic::Estimate(const int & i_currentNode) const
+{
+	ofVec2f sourcePosition = m_graph.Localize(i_currentNode);
+	ofVec2f goalPosition = m_graph.Localize(m_goalNode);
+
+	int heuristicEstimate = (int)sourcePosition.squareDistance(goalPosition);
+
+	return heuristicEstimate;
+}
 
 bool AIProject::Graph::CloseList::Contains(const int & nodeID)
 {
-	for (int i = 0; i < list.size(); i++)
+	for (size_t i = 0; i < list.size(); i++)
 	{
 		if (list[i].node == nodeID)
 			return true;
@@ -16,7 +25,7 @@ bool AIProject::Graph::CloseList::Contains(const int & nodeID)
 
 AIProject::Graph::NodeRecord AIProject::Graph::CloseList::Find(const int & nodeID)
 {
-	for (int i = 0; i < list.size(); i++)
+	for (size_t i = 0; i < list.size(); i++)
 	{
 		if (list[i].node == nodeID)
 			return list[i];
@@ -27,7 +36,7 @@ AIProject::Graph::NodeRecord AIProject::Graph::CloseList::Find(const int & nodeI
 
 void AIProject::Graph::CloseList::Remove(const int & nodeID)
 {
-	for (int i = 0; i < list.size(); i++)
+	for (size_t i = 0; i < list.size(); i++)
 	{
 		if (list[i].node == nodeID)
 		{
@@ -66,7 +75,7 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 			int endNode = edge.GetSink();
 
 			int g = currentRecord.costSoFar + edge.GetCost();
-			int h;// = i_heuristic.Estimate(endNode);
+			int h;
 
 			NodeRecord endNodeRecord;
 			endNodeRecord.node = endNode;
@@ -100,7 +109,7 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 			endNodeRecord.costSoFar = g;
 			endNodeRecord.incomingEdge = edge;
 
-			//if (!openList.Contains(endNodeRecord))
+			//if (!openList.Contains(endNodeRecord)) ??
 			openList.Add(endNodeRecord);
 		}
 
