@@ -101,7 +101,7 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 			endNodeRecord.incomingEdge = edge;
 
 			//if (!openList.Contains(endNodeRecord))
-			//	openList.Add(endNodeRecord);
+			openList.Add(endNodeRecord);
 		}
 
 		closeList.list.push_back(currentRecord);
