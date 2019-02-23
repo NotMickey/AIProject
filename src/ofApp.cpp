@@ -8,9 +8,9 @@ void ofApp::setup()
 	ofSetWindowShape(1280, 720);
 	ofSetWindowPosition(0 ,0);
 
-	ofVec2f positions[18] = {ofVec2f(600, 300), ofVec2f(550, 300), ofVec2f(600, 350), ofVec2f(700, 300), ofVec2f(730, 370), ofVec2f(670, 500)
-	, ofVec2f(750, 300) , ofVec2f(125, 550) , ofVec2f(1200, 600) , ofVec2f(569, 111), ofVec2f(232, 346), ofVec2f(124, 455), ofVec2f(900, 650)
-	, ofVec2f(890, 540) , ofVec2f(100, 750) , ofVec2f(650, 700) , ofVec2f(120, 345) , ofVec2f(550, 900) };
+	ofVec2f positions[18] = {ofVec2f(600, 300), ofVec2f(550, 300), ofVec2f(600, 275), ofVec2f(700, 300), ofVec2f(720, 250), ofVec2f(650, 230)
+	, ofVec2f(800, 290) , ofVec2f(850, 225) , ofVec2f(1000, 275) , ofVec2f(100, 225), ofVec2f(900, 125), ofVec2f(800, 150), ofVec2f(700, 125)
+	, ofVec2f(600, 100) , ofVec2f(600, 225) , ofVec2f(500, 220) , ofVec2f(550, 250) , ofVec2f(500, 280) };
 
 	int nodes[18];
 
@@ -41,14 +41,16 @@ void ofApp::setup()
 	simpleGraph.AddEdge(16, 17, 15);
 	simpleGraph.AddEdge(15, 17, 35);
 
-	AIProject::Graph::Heuristic simpleHeuristic(17, simpleGraph);
+	AIProject::Graph::Heuristic simpleHeuristic(10, simpleGraph);
 
-	std::vector<AIProject::Graph::DirectedWeightedEdge> path = AIProject::Graph::FindPath(0, 17, simpleGraph, simpleHeuristic);
+	std::vector<AIProject::Graph::DirectedWeightedEdge> path = AIProject::Graph::FindPath(0, 10, simpleGraph, simpleHeuristic);
 
 	for (int i = 0; i < path.size(); i++)
 	{
-		std::cout << path[i].GetSource();
+		std::cout << path[i].GetSource()<<"->";
 	}
+
+	std::cout << "10";
 }
 
 //--------------------------------------------------------------
