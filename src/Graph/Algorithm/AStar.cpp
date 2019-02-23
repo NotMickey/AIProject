@@ -52,7 +52,7 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 																					const Heuristic & i_heuristic)
 {
 	DirectedWeightedEdge edge;
-	NodeRecord startRecord(i_start, 0, 12, edge);
+	NodeRecord startRecord(i_start, 0, i_heuristic.Estimate(i_start), edge);
 
 	Heap<NodeRecord> openList; // A priority queue
 	openList.Add(startRecord);

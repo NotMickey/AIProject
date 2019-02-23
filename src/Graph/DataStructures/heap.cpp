@@ -130,7 +130,7 @@ void AIProject::Graph::Heap<T>::ShiftUp(const int &i_node)
 
 	while (current > 0) // while current node is not the root node
 	{
-		if (m_data[parent] < item)
+		if (m_data[parent] > item)
 		{
 			m_data[current] = m_data[parent];
 			current = parent;
@@ -153,10 +153,10 @@ void AIProject::Graph::Heap<T>::ShiftDown(const int &i_node)
 	while (child < m_currentNum)
 	{
 		if (child < (m_currentNum - 1))
-			if (m_data[child] < m_data[child + 1])
+			if (m_data[child] > m_data[child + 1])
 				++child;
 
-		if (item < m_data[child])
+		if (item > m_data[child])
 		{
 			// Switch the Current node and the Child node
 			m_data[current] = m_data[child];
@@ -173,7 +173,8 @@ void AIProject::Graph::Heap<T>::ShiftDown(const int &i_node)
 template<class T>
 inline int AIProject::Graph::Heap<T>::ParentOf(const int &i_node)
 {
-	assert(i_node > 0);
+	if (i_node == 0)
+		return 0;
 
 	return (i_node - 1) / 2; // decimals are truncated during integer division to give corret value
 }
