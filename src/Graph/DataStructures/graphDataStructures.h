@@ -44,7 +44,7 @@ namespace AIProject
 			int AddNode(const ofVec2f &i_position);												// Add a new node and return its ID
 			bool AddEdge(const int &i_sourceID, const int &i_sinkID, const int &i_edgeCost);    // Adds a new edge between given nodes if valid
 
-			ofVec2f Localize(const int &i_nodeID) const;                                              // Returns world position of node
+			ofVec2f Localize(const int &i_nodeID) const;                                        // Returns world position of node
 
 		private:
 
