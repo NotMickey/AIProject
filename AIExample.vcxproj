@@ -192,9 +192,12 @@
     <ClCompile Include="src\AILogic\Flocking\flocking.cpp" />
     <ClCompile Include="src\AILogic\steeringBase.cpp" />
     <ClCompile Include="src\Character\boid.cpp" />
-    <ClCompile Include="src\Graph\Algorithm\AStar.cpp" />
+    <ClCompile Include="src\Graph\Algorithm\AStar\AStar.cpp" />
+    <ClCompile Include="src\Graph\Algorithm\AStar\AStarHelper.cpp" />
+    <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstra.cpp" />
+    <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.cpp" />
     <ClCompile Include="src\Graph\DataStructures\graphDataStructures.cpp" />
-    <ClCompile Include="src\Graph\DataStructures\heap.cpp" />
+    <ClCompile Include="src\Graph\DataStructures\Heap\heap.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
   </ItemGroup>
@@ -211,9 +214,12 @@
     <ClInclude Include="src\AILogic\Flocking\flocking.h" />
     <ClInclude Include="src\AILogic\steeringBase.h" />
     <ClInclude Include="src\Character\boid.h" />
-    <ClInclude Include="src\Graph\Algorithm\AStar.h" />
+    <ClInclude Include="src\Graph\Algorithm\AStar\AStar.h" />
+    <ClInclude Include="src\Graph\Algorithm\AStar\AStarHelper.h" />
+    <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstra.h" />
+    <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.h" />
     <ClInclude Include="src\Graph\DataStructures\graphDataStructures.h" />
-    <ClInclude Include="src\Graph\DataStructures\heap.h" />
+    <ClInclude Include="src\Graph\DataStructures\Heap\heap.h" />
     <ClInclude Include="src\ofApp.h" />
   </ItemGroup>
   <ItemGroup>

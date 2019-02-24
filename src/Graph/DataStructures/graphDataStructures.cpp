@@ -53,13 +53,3 @@ ofVec2f AIProject::Graph::DirectedWeightedGraph::Localize(const int & i_nodeID) 
 	return v_positionList[i_nodeID];
 }
 
-bool AIProject::Graph::operator < (const NodeRecord &lhs, const NodeRecord &rhs) { if (lhs.costSoFar < rhs.costSoFar) return true; return false; }
-bool AIProject::Graph::operator <= (const NodeRecord &lhs, const NodeRecord &rhs) { if (lhs.costSoFar <= rhs.costSoFar) return true; return false; }
-
-bool AIProject::Graph::operator > (const NodeRecord &lhs, const NodeRecord &rhs) { return !(lhs <= rhs); }
-bool AIProject::Graph::operator >= (const NodeRecord &lhs, const NodeRecord &rhs) { return !(lhs < rhs); }
-
-// These operators are slightly different as they compare the nodeID instead of g(x)
-
-bool AIProject::Graph::operator == (const NodeRecord &lhs, const NodeRecord &rhs) { if (lhs.node == rhs.node) return true; return false; }
-bool AIProject::Graph::operator != (const NodeRecord &lhs, const NodeRecord &rhs) { return !(lhs == rhs); }

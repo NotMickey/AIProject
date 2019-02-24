@@ -43,14 +43,23 @@
     <ClCompile Include="src\AILogic\Flocking\flocking.cpp">
       <Filter>src\AILogic\Flocking</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graph\DataStructures\heap.cpp">
-      <Filter>src\Graph\DataStructures</Filter>
-    </ClCompile>
     <ClCompile Include="src\Graph\DataStructures\graphDataStructures.cpp">
       <Filter>src\Graph\DataStructures</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graph\Algorithm\AStar.cpp">
-      <Filter>src\Graph\Algorithm</Filter>
+    <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstra.cpp">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\AStar.cpp">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\DataStructures\Heap\heap.cpp">
+      <Filter>src\Graph\DataStructures\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\AStarHelper.cpp">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.cpp">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +114,15 @@
     <Filter Include="src\Graph\Algorithm">
       <UniqueIdentifier>{92e87d28-4eb3-47e4-a85d-8b2368733a47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Graph\Algorithm\Dijkstra">
+      <UniqueIdentifier>{3459e82f-22a9-44c7-936d-f9d130516f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\Algorithm\AStar">
+      <UniqueIdentifier>{c60c16ab-66ac-471b-8d3f-8ed497d2c5ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\DataStructures\Heap">
+      <UniqueIdentifier>{f979422d-ab8f-476c-a7e4-6e929c92d52a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -149,11 +167,20 @@
     <ClInclude Include="src\Graph\DataStructures\graphDataStructures.h">
       <Filter>src\Graph\DataStructures</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graph\Algorithm\AStar.h">
-      <Filter>src\Graph\Algorithm</Filter>
+    <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstra.h">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graph\DataStructures\heap.h">
-      <Filter>src\Graph\DataStructures</Filter>
+    <ClInclude Include="src\Graph\Algorithm\AStar\AStar.h">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\DataStructures\Heap\heap.h">
+      <Filter>src\Graph\DataStructures\Heap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\AStarHelper.h">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.h">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

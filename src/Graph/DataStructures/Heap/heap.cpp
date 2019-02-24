@@ -1,5 +1,6 @@
 #include "heap.h"
-#include "graphDataStructures.h"
+#include "../../Algorithm/AStar/AStarHelper.h"
+#include "../../Algorithm/Dijkstra/dijkstraHelper.h"
 
 #include <assert.h>
 
@@ -7,6 +8,7 @@
 
 // This is necessary because the template class needs to know about its instances
 template class AIProject::Graph::Heap<AIProject::Graph::NodeRecord>;
+template class AIProject::Graph::Heap<AIProject::Graph::NodeRecordDijkstra>;
 
 template<class T>
 inline AIProject::Graph::Heap<T>::Heap(int i_maxSize) : MAX_SIZE(i_maxSize)
