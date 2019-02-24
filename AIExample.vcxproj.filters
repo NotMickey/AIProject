@@ -61,6 +61,9 @@
     <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.cpp">
       <Filter>src\Graph\Algorithm\Dijkstra</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\DynamicPathFollow\dynamicPathFollow.cpp">
+      <Filter>src\AILogic\Dynamic\DynamicPathFollow</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -123,6 +126,9 @@
     <Filter Include="src\Graph\DataStructures\Heap">
       <UniqueIdentifier>{f979422d-ab8f-476c-a7e4-6e929c92d52a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AILogic\Dynamic\DynamicPathFollow">
+      <UniqueIdentifier>{107653f7-0677-4650-a1af-61b893ff06c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -181,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.h">
       <Filter>src\Graph\Algorithm\Dijkstra</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\DynamicPathFollow\dynamicPathFollow.h">
+      <Filter>src\AILogic\Dynamic\DynamicPathFollow</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

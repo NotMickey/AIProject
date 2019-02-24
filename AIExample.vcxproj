@@ -185,6 +185,7 @@
     <ClCompile Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicFace\dynamicFace.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\dynamicLYURG\dynamicLYURG.cpp" />
+    <ClCompile Include="src\AILogic\Dynamic\DynamicPathFollow\dynamicPathFollow.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicSeek\dynamicSeek.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicSeparation\dynamicSeparation.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicVelocity\dynamicVelocity.cpp" />
@@ -207,6 +208,7 @@
     <ClInclude Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicFace\dynamicFace.h" />
     <ClInclude Include="src\AILogic\Dynamic\dynamicLYURG\dynamicLYURG.h" />
+    <ClInclude Include="src\AILogic\Dynamic\DynamicPathFollow\dynamicPathFollow.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicSeek\dynamicSeek.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicSeparation\dynamicSeparation.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicVelocity\dynamicVelocity.h" />
