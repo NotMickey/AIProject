@@ -181,6 +181,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\AILogic\BlendedSteering\blendedSteering.cpp" />
+    <ClCompile Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicAlign\dynamicAlign.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicFace\dynamicFace.cpp" />
@@ -201,9 +202,12 @@
     <ClCompile Include="src\Graph\DataStructures\Heap\heap.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\Physics\CollisionDetection\collisionDetection.cpp" />
+    <ClCompile Include="src\Physics\Obstacle\obstacle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AILogic\BlendedSteering\blendedSteering.h" />
+    <ClInclude Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicAlign\dynamicAlign.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicArrive\dynamicArrive.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicFace\dynamicFace.h" />
@@ -223,6 +227,9 @@
     <ClInclude Include="src\Graph\DataStructures\graphDataStructures.h" />
     <ClInclude Include="src\Graph\DataStructures\Heap\heap.h" />
     <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\Physics\CollisionDetection\collisionDataStructures.h" />
+    <ClInclude Include="src\Physics\CollisionDetection\collisionDetection.h" />
+    <ClInclude Include="src\Physics\Obstacle\obstacle.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

@@ -64,6 +64,15 @@
     <ClCompile Include="src\AILogic\Dynamic\DynamicPathFollow\dynamicPathFollow.cpp">
       <Filter>src\AILogic\Dynamic\DynamicPathFollow</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.cpp">
+      <Filter>src\AILogic\Dynamic\CollisionAvoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\Obstacle\obstacle.cpp">
+      <Filter>src\Physics\Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\CollisionDetection\collisionDetection.cpp">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -129,6 +138,18 @@
     <Filter Include="src\AILogic\Dynamic\DynamicPathFollow">
       <UniqueIdentifier>{107653f7-0677-4650-a1af-61b893ff06c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AILogic\Dynamic\CollisionAvoidance">
+      <UniqueIdentifier>{0739f37d-5663-4032-ad2b-fde818b00549}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics">
+      <UniqueIdentifier>{ece8a95f-d2c3-4735-bc2a-6a79f3effeec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics\CollisionDetection">
+      <UniqueIdentifier>{c4cf8cd8-c0d6-42fe-9c0e-837fe9e55f0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics\Obstacle">
+      <UniqueIdentifier>{5108828a-81a0-48e7-9682-013ff41ac9d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -190,6 +211,18 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\Dynamic\DynamicPathFollow\dynamicPathFollow.h">
       <Filter>src\AILogic\Dynamic\DynamicPathFollow</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.h">
+      <Filter>src\AILogic\Dynamic\CollisionAvoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physics\CollisionDetection\collisionDataStructures.h">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physics\CollisionDetection\collisionDetection.h">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physics\Obstacle\obstacle.h">
+      <Filter>src\Physics\Obstacle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
