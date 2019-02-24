@@ -35,12 +35,7 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 
 			if (closeList.Contains(endNode))
 			{
-				endNodeRecord = closeList.Find(endNode);
-
-				if (endNodeRecord.costSoFar <= g)
-					continue;
-
-				closeList.Remove(endNode);
+				continue;
 			}
 			else if (openList.Contains(endNodeRecord))
 			{
