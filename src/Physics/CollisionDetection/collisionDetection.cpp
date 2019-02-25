@@ -17,9 +17,6 @@ bool AIProject::Physics::CollisionDetection::GetCollision(const Ray & i_rayVecto
 
 bool AIProject::Physics::CollisionDetection::Intersect(const Ray & i_rayVector, const float & i_length, const Obstacle & i_obstacle, Collision &o_collision) const
 {
-	float maxS = 0.0f;
-	float minT = i_length;
-
 	float recipX = 1.0f / i_rayVector.direction.x;
 	float recipY = 1.0f / i_rayVector.direction.y;
 

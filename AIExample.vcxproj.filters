@@ -73,6 +73,15 @@
     <ClCompile Include="src\Physics\CollisionDetection\collisionDetection.cpp">
       <Filter>src\Physics\CollisionDetection</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\ObstacleAvoidance\ObstacleAvoidance.cpp">
+      <Filter>src\AILogic\Dynamic\ObstacleAvoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\TileMap\tileMap.cpp">
+      <Filter>src\Graph\TileMap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\CollisionDetection\collisionDataStructures.cpp">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -150,6 +159,12 @@
     <Filter Include="src\Physics\Obstacle">
       <UniqueIdentifier>{5108828a-81a0-48e7-9682-013ff41ac9d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AILogic\Dynamic\ObstacleAvoidance">
+      <UniqueIdentifier>{056e2684-75ea-411f-8921-49df7bf5d938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\TileMap">
+      <UniqueIdentifier>{6b67d571-fa88-4f05-b3a8-eb4f86d8e072}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -223,6 +238,12 @@
     </ClInclude>
     <ClInclude Include="src\Physics\Obstacle\obstacle.h">
       <Filter>src\Physics\Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\ObstacleAvoidance\obstacleAvoidance.h">
+      <Filter>src\AILogic\Dynamic\ObstacleAvoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\TileMap\tileMap.h">
+      <Filter>src\Graph\TileMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -11,8 +11,8 @@ namespace AIProject
 		public:
 			Obstacle(const ofVec2f &i_center, const float &i_sideLength);
 
-			inline int GetID() const;
-			inline AABB GetAABB() const;
+			int GetID() const;
+			AABB GetAABB() const;
 
 		private:
 			int m_Id;
