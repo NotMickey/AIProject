@@ -15,9 +15,13 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 	CloseList closeList; // A vector list
 	NodeRecord currentRecord;
 
+	int nodesVisited = 0;
+
 	while (openList.GetSize() != 0)
 	{
 		currentRecord = openList.Remove();
+
+		nodesVisited++;
 
 		if (currentRecord.node == i_goal) break;
 
@@ -81,6 +85,8 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 
 		currentRecord = closeList.Find(currentRecord.incomingEdge.GetSource());
 	}
+
+	std::cout << "A* nodes visited = " << nodesVisited << "\n";
 
 	using std::reverse;
 

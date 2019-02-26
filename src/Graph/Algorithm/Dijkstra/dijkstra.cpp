@@ -14,9 +14,13 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 	CloseListDijkstra closeList; // A vector list
 	NodeRecordDijkstra currentRecord;
 
+	int nodesVisited = 0;
+
 	while (openList.GetSize() != 0)
 	{
 		currentRecord = openList.Remove();
+
+		nodesVisited++;
 
 		if (currentRecord.node == i_goal) break;
 
@@ -65,6 +69,8 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 
 		currentRecord = closeList.Find(currentRecord.incomingEdge.GetSource());
 	}
+
+	std::cout << "Dijkstra nodes visited = " << nodesVisited << "\n";
 
 	using std::reverse;
 
