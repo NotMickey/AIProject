@@ -43,14 +43,44 @@
     <ClCompile Include="src\AILogic\Flocking\flocking.cpp">
       <Filter>src\AILogic\Flocking</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graph\DataStructures\heap.cpp">
-      <Filter>src\Graph\DataStructures</Filter>
-    </ClCompile>
     <ClCompile Include="src\Graph\DataStructures\graphDataStructures.cpp">
       <Filter>src\Graph\DataStructures</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graph\Algorithm\AStar.cpp">
-      <Filter>src\Graph\Algorithm</Filter>
+    <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstra.cpp">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\AStar.cpp">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\DataStructures\Heap\heap.cpp">
+      <Filter>src\Graph\DataStructures\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\AStarHelper.cpp">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.cpp">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\DynamicPathFollow\dynamicPathFollow.cpp">
+      <Filter>src\AILogic\Dynamic\DynamicPathFollow</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.cpp">
+      <Filter>src\AILogic\Dynamic\CollisionAvoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\Obstacle\obstacle.cpp">
+      <Filter>src\Physics\Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\CollisionDetection\collisionDetection.cpp">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\ObstacleAvoidance\ObstacleAvoidance.cpp">
+      <Filter>src\AILogic\Dynamic\ObstacleAvoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\TileMap\tileMap.cpp">
+      <Filter>src\Graph\TileMap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\CollisionDetection\collisionDataStructures.cpp">
+      <Filter>src\Physics\CollisionDetection</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +135,36 @@
     <Filter Include="src\Graph\Algorithm">
       <UniqueIdentifier>{92e87d28-4eb3-47e4-a85d-8b2368733a47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Graph\Algorithm\Dijkstra">
+      <UniqueIdentifier>{3459e82f-22a9-44c7-936d-f9d130516f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\Algorithm\AStar">
+      <UniqueIdentifier>{c60c16ab-66ac-471b-8d3f-8ed497d2c5ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\DataStructures\Heap">
+      <UniqueIdentifier>{f979422d-ab8f-476c-a7e4-6e929c92d52a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Dynamic\DynamicPathFollow">
+      <UniqueIdentifier>{107653f7-0677-4650-a1af-61b893ff06c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Dynamic\CollisionAvoidance">
+      <UniqueIdentifier>{0739f37d-5663-4032-ad2b-fde818b00549}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics">
+      <UniqueIdentifier>{ece8a95f-d2c3-4735-bc2a-6a79f3effeec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics\CollisionDetection">
+      <UniqueIdentifier>{c4cf8cd8-c0d6-42fe-9c0e-837fe9e55f0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics\Obstacle">
+      <UniqueIdentifier>{5108828a-81a0-48e7-9682-013ff41ac9d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Dynamic\ObstacleAvoidance">
+      <UniqueIdentifier>{056e2684-75ea-411f-8921-49df7bf5d938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\TileMap">
+      <UniqueIdentifier>{6b67d571-fa88-4f05-b3a8-eb4f86d8e072}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -149,11 +209,41 @@
     <ClInclude Include="src\Graph\DataStructures\graphDataStructures.h">
       <Filter>src\Graph\DataStructures</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graph\Algorithm\AStar.h">
-      <Filter>src\Graph\Algorithm</Filter>
+    <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstra.h">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graph\DataStructures\heap.h">
-      <Filter>src\Graph\DataStructures</Filter>
+    <ClInclude Include="src\Graph\Algorithm\AStar\AStar.h">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\DataStructures\Heap\heap.h">
+      <Filter>src\Graph\DataStructures\Heap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\AStarHelper.h">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.h">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\DynamicPathFollow\dynamicPathFollow.h">
+      <Filter>src\AILogic\Dynamic\DynamicPathFollow</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.h">
+      <Filter>src\AILogic\Dynamic\CollisionAvoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physics\CollisionDetection\collisionDataStructures.h">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physics\CollisionDetection\collisionDetection.h">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physics\Obstacle\obstacle.h">
+      <Filter>src\Physics\Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\ObstacleAvoidance\obstacleAvoidance.h">
+      <Filter>src\AILogic\Dynamic\ObstacleAvoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\TileMap\tileMap.h">
+      <Filter>src\Graph\TileMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
