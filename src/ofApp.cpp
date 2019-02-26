@@ -2,6 +2,14 @@
 
 #include <math.h>
 
+#include "Graph/Algorithm/AStar/AStar.h"
+#include "Graph/Algorithm/AStar/AStarHelper.h"
+
+#include "Graph/Algorithm/Dijkstra/dijkstra.h"
+#include "Graph/Algorithm/Dijkstra/dijkstraHelper.h"
+
+#include "Graph/TileMap/tileMap.h"
+
 //--------------------------------------------------------------
 void ofApp::setup()
 {
@@ -50,7 +58,33 @@ void ofApp::setup()
 		std::cout << path[i].GetSource()<<"->";
 	}
 
-	std::cout << "10";
+	std::cout << "10" << "\n \n";
+
+	path.clear();
+
+	path = AIProject::Graph::FindPath(0, 10, simpleGraph);
+
+	for (int i = 0; i < path.size(); i++)
+	{
+		std::cout << path[i].GetSource() << "->";
+	}
+
+	std::cout << "10" << "\n \n";
+
+	AIProject::Graph::TileMap tileMap(3, 20, 5.0f,ofVec2f(0.0f, 0.0f));
+
+	path.clear();
+
+	AIProject::Graph::DirectedWeightedGraph tileGraph = tileMap.GetGraph();
+
+	path = AIProject::Graph::FindPath(0, 8, tileMap.GetGraph());
+
+	for (int i = 0; i < path.size(); i++)
+	{
+		std::cout << path[i].GetSource() << "->";
+	}
+
+	std::cout << "10" << "\n \n";
 }
 
 //--------------------------------------------------------------

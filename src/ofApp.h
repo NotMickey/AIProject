@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-#include "Graph/Algorithm/AStar.h"
+#include "Graph/DataStructures/graphDataStructures.h"
 
 class ofApp : public ofBaseApp{
 

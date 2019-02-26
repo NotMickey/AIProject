@@ -9,7 +9,7 @@ namespace AIProject
 		class TileMap
 		{
 		public:
-			TileMap(const int &i_numOfTilesPerSide, const int &i_tileLength, const ofVec2f &i_startPosition);
+			TileMap(const int &i_numOfTilesPerSide, const int &i_tileLength, const float &i_edgeCost,const ofVec2f &i_startPosition);
 
 			DirectedWeightedGraph GetGraph();
 

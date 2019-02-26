@@ -1,7 +1,7 @@
 #include "tileMap.h"
 
-AIProject::Graph::TileMap::TileMap(const int & i_numOfTilesPerSide, const int & i_tileLength, const ofVec2f &i_startPosition) :
-						m_numOfTilesPerSide(i_numOfTilesPerSide), m_tileLength(i_tileLength), m_startPosition(i_startPosition)
+AIProject::Graph::TileMap::TileMap(const int & i_numOfTilesPerSide, const int & i_tileLength, const float & i_edgeCost, const ofVec2f &i_startPosition) :
+						m_numOfTilesPerSide(i_numOfTilesPerSide), m_tileLength(i_tileLength), m_edgeCost(i_edgeCost), m_startPosition(i_startPosition)
 {
 	BuildGraph();
 }
@@ -61,13 +61,13 @@ void AIProject::Graph::TileMap::AddNodes()
 {
 	float tileHalfLength = m_tileLength / 2;
 
-	for (int i = 0; i < m_numOfTilesPerSide - 1; i++)
+	for (int i = 0; i < m_numOfTilesPerSide; i++)
 	{
-		for (int j = 0; j < m_numOfTilesPerSide - 1; j++)
+		for (int j = 0; j < m_numOfTilesPerSide; j++)
 		{
 			ofVec2f position;
-			position.y = m_startPosition.y + m_numOfTilesPerSide * i + tileHalfLength;
-			position.x = m_startPosition.x + m_numOfTilesPerSide * j + tileHalfLength;
+			position.y = m_startPosition.y + m_tileLength * i + tileHalfLength;
+			position.x = m_startPosition.x + m_tileLength * j + tileHalfLength;
 
 			m_graph.AddNode(position);
 		}
@@ -76,9 +76,9 @@ void AIProject::Graph::TileMap::AddNodes()
 
 void AIProject::Graph::TileMap::AddEdges()
 {
-	for (int i = 0; i < m_numOfTilesPerSide - 1; i++)
+	for (int i = 0; i < m_numOfTilesPerSide; i++)
 	{
-		for (int j = 0; j < m_numOfTilesPerSide - 1; i++)
+		for (int j = 0; j < m_numOfTilesPerSide; j++)
 		{
 			if (IsEdgeTile(i, j))
 			{
@@ -86,7 +86,7 @@ void AIProject::Graph::TileMap::AddEdges()
 				{
 					if (i == 0)
 					{
-						m_graph.AddEdge(i, i + 1, m_edgeCost);
+						m_graph.AddEdge(i, m_numOfTilesPerSide * (i + 1), m_edgeCost);
 
 						if (j == 0)
 							m_graph.AddEdge(j, j + 1, m_edgeCost);
@@ -95,45 +95,45 @@ void AIProject::Graph::TileMap::AddEdges()
 					}
 					else
 					{
-						m_graph.AddEdge(i, i - 1, m_edgeCost);
+						m_graph.AddEdge(i, m_numOfTilesPerSide * (i - 1), m_edgeCost);
 
 						if (j == 0)
-							m_graph.AddEdge(j, j + 1, m_edgeCost);
+							m_graph.AddEdge(m_numOfTilesPerSide * i, m_numOfTilesPerSide * i + 1, m_edgeCost);
 						else
-							m_graph.AddEdge(j, j - 1, m_edgeCost);
+							m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * i + j - 1, m_edgeCost);
 					}
 				}
 				else
 				{
 					if (j > 0 && j < m_numOfTilesPerSide - 1)
 					{
-						m_graph.AddEdge(j, j + 1, m_edgeCost);
-						m_graph.AddEdge(j, j - 1, m_edgeCost);
+						m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * i + j + 1, m_edgeCost);
+						m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * i + j - 1, m_edgeCost);
 
 						if (i == 0)
-							m_graph.AddEdge(i, i + 1, m_edgeCost);
+							m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * (i + 1) + j, m_edgeCost);
 						else
-							m_graph.AddEdge(i, i - 1, m_edgeCost);
+							m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * (i - 1) + j, m_edgeCost);
 					}
 					else
 					{
-						m_graph.AddEdge(i, i + 1, m_edgeCost);
-						m_graph.AddEdge(i, i - 1, m_edgeCost);
+						m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * (i + 1) + j, m_edgeCost);
+						m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * (i - 1) + j, m_edgeCost);
 
 						if (j == 0)
-							m_graph.AddEdge(j, j + 1, m_edgeCost);
+							m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * i + j + 1, m_edgeCost);
 						else
-							m_graph.AddEdge(j, j - 1, m_edgeCost);
+							m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * i + j - 1, m_edgeCost);
 					}
 				}
 			}
 			else
 			{
-				m_graph.AddEdge(i, i + 1, m_edgeCost);
-				m_graph.AddEdge(i, i - 1, m_edgeCost);
+				m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * (i + 1) + j, m_edgeCost);
+				m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * (i - 1) + j, m_edgeCost);
 
-				m_graph.AddEdge(j, j + 1, m_edgeCost);
-				m_graph.AddEdge(j, j - 1, m_edgeCost);
+				m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * i + j + 1, m_edgeCost);
+				m_graph.AddEdge(m_numOfTilesPerSide * i + j, m_numOfTilesPerSide * i + j - 1, m_edgeCost);
 			}
 		}
 	}
