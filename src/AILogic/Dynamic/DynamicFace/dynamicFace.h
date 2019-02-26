@@ -11,7 +11,7 @@ namespace AIProject
 		DynamicFace(Boid &i_character, const ofVec2f &i_targetPosition);
 		//DynamicArrive(const DynamicArrive &i_dynamicArrive);
 
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 	private:
 		ofVec2f m_targetPosition;

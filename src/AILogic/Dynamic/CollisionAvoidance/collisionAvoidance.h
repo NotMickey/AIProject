@@ -10,7 +10,7 @@ namespace AIProject
 	public:
 		CollisionAvoidance(Boid &i_character, Boid i_targets[], const int &i_size, const float &i_radiusOfAvoidance, const float &i_angleOfAvoidance);
 
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 	private:
 		int m_arraySize;

@@ -13,7 +13,7 @@ namespace AIProject
 		ObstacleAvoidance(Boid &i_character, const float &i_maxAcceleration, const Physics::CollisionDetection &i_collisionDetector, const float &i_avoidDistance,
 								const float &i_lookAheadDistance);
 
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 	private:
 		float m_maxAcceleration;

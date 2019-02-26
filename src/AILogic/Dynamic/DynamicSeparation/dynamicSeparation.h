@@ -11,7 +11,7 @@ namespace AIProject
 		DynamicSeparation(Boid &i_character, Boid i_targets[], const int &i_size, const float &i_threshold, const float &i_constant,
 			const float &i_maxAcceleration);
 
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 	private:
 		int m_arraySize;

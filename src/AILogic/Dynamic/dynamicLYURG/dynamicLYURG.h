@@ -10,7 +10,7 @@ namespace AIProject
 	public:
 		DynamicLYURG(Boid &i_character);
 
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 	private:
 		Boid &m_character;

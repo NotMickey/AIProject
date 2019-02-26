@@ -13,7 +13,7 @@ namespace AIProject
 		DynamicPathFollow(Boid &i_character, const float &i_maxSpeed, const float &i_maxAcceleration, const float &i_slowRadius,
 							const float &i_targetRadius, const std::vector<ofVec2f> &i_waypoints);
 		
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 	private:
 		float m_maxSpeed;

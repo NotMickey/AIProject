@@ -10,7 +10,7 @@ namespace AIProject
 	public:
 		DynamicVelocity(Boid &i_character, const Kinematic &i_target, const float &i_maxAcceleration, const float &i_timeToTarget);
 
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 	private:
 		float m_maxAcceleration;
