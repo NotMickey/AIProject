@@ -10,6 +10,8 @@
 
 #include "Graph/TileMap/tileMap.h"
 
+#include <chrono>
+
 //--------------------------------------------------------------
 void ofApp::setup()
 {
@@ -51,7 +53,16 @@ void ofApp::setup()
 
 	AIProject::Graph::Heuristic simpleHeuristic(10, simpleGraph);
 
+	// Record start time
+	auto start = std::chrono::high_resolution_clock::now();
+
 	std::vector<AIProject::Graph::DirectedWeightedEdge> path = AIProject::Graph::FindPath(0, 10, simpleGraph, simpleHeuristic);
+
+	// Record end time
+	auto finish = std::chrono::high_resolution_clock::now();
+
+	std::chrono::duration<double> elapsed = finish - start;
+	std::cout << "Elapsed time: " << elapsed.count() << " s\n";
 
 	for (int i = 0; i < path.size(); i++)
 	{
@@ -62,7 +73,14 @@ void ofApp::setup()
 
 	path.clear();
 
+	start = std::chrono::high_resolution_clock::now();
+
 	path = AIProject::Graph::FindPath(0, 10, simpleGraph);
+
+	finish = std::chrono::high_resolution_clock::now();
+
+	elapsed = finish - start;
+	std::cout << "Elapsed time: " << elapsed.count() << " s\n";
 
 	for (int i = 0; i < path.size(); i++)
 	{
@@ -71,20 +89,47 @@ void ofApp::setup()
 
 	std::cout << "10" << "\n \n";
 
-	AIProject::Graph::TileMap tileMap(3, 20, 5.0f,ofVec2f(0.0f, 0.0f));
+	AIProject::Graph::TileMap tileMap(50, 20, 5.0f,ofVec2f(0.0f, 0.0f));
 
 	path.clear();
 
 	AIProject::Graph::DirectedWeightedGraph tileGraph = tileMap.GetGraph();
 
-	path = AIProject::Graph::FindPath(0, 8, tileMap.GetGraph());
+	start = std::chrono::high_resolution_clock::now();
+
+	path = AIProject::Graph::FindPath(0, 2123, tileGraph);
+
+	finish = std::chrono::high_resolution_clock::now();
+
+	elapsed = finish - start;
+	std::cout << "Elapsed time: " << elapsed.count() << " s\n";
 
 	for (int i = 0; i < path.size(); i++)
 	{
 		std::cout << path[i].GetSource() << "->";
 	}
 
-	std::cout << "10" << "\n \n";
+	std::cout << "2123" << "\n \n";
+
+	path.clear();
+
+	AIProject::Graph::Heuristic complexHeuristic(2123, tileGraph);
+
+	start = std::chrono::high_resolution_clock::now();
+
+	path = AIProject::Graph::FindPath(0, 2123, tileGraph, complexHeuristic);
+
+	finish = std::chrono::high_resolution_clock::now();
+
+	elapsed = finish - start;
+	std::cout << "Elapsed time: " << elapsed.count() << " s\n";
+
+	for (int i = 0; i < path.size(); i++)
+	{
+		std::cout << path[i].GetSource() << "->";
+	}
+
+	std::cout << "2123" << "\n \n";
 }
 
 //--------------------------------------------------------------
