@@ -46,8 +46,8 @@ void AIProject::Graph::CloseList::Remove(const int & nodeID)
 	}
 }
 
-bool AIProject::Graph::operator < (const NodeRecord &lhs, const NodeRecord &rhs) { if (lhs.costSoFar < rhs.costSoFar) return true; return false; }
-bool AIProject::Graph::operator <= (const NodeRecord &lhs, const NodeRecord &rhs) { if (lhs.costSoFar <= rhs.costSoFar) return true; return false; }
+bool AIProject::Graph::operator < (const NodeRecord &lhs, const NodeRecord &rhs) { if (lhs.estimatedTotalCost < rhs.estimatedTotalCost) return true; return false; }
+bool AIProject::Graph::operator <= (const NodeRecord &lhs, const NodeRecord &rhs) { if (lhs.estimatedTotalCost <= rhs.estimatedTotalCost) return true; return false; }
 
 bool AIProject::Graph::operator > (const NodeRecord &lhs, const NodeRecord &rhs) { return !(lhs <= rhs); }
 bool AIProject::Graph::operator >= (const NodeRecord &lhs, const NodeRecord &rhs) { return !(lhs < rhs); }
