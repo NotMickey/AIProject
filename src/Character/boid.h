@@ -37,12 +37,15 @@ namespace AIProject
 		ofVec2f GetForwardVec() { return m_forwardVector; }
 
 		void SetTargetPosition(const ofVec2f &i_targetPosition);
+		void SetWayPoints(const std::vector<ofVec2f> &i_waypoints);
 
 		DynamicSteeringOutput SeekAndSteer(const int &x, const int &y);
 
 		DynamicSteeringOutput SteerAndArrive(const int &x, const int &y);
 
 		DynamicSteeringOutput Wander();
+
+		DynamicSteeringOutput PathFind();
 
 	private:
 
@@ -57,5 +60,7 @@ namespace AIProject
 		ofVec2f m_targetPosition;
 
 		ofVec2f m_forwardVector;
+
+		std::vector<ofVec2f> m_waypoints;
 	};
 }

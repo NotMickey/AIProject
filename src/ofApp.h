@@ -2,6 +2,9 @@
 
 #include "ofMain.h"
 
+#include "Character/boid.h"
+#include "AILogic/steeringBase.h"
+
 #include "Graph/DataStructures/graphDataStructures.h"
 
 class ofApp : public ofBaseApp{
@@ -23,5 +26,6 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		AIProject::Graph::DirectedWeightedGraph tileGraph
+		AIProject::Graph::DirectedWeightedGraph tileGraph;
+		AIProject::Boid myBoid;
 };

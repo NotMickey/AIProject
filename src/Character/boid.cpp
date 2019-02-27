@@ -6,6 +6,7 @@
 #include "../AILogic/Dynamic/DynamicAlign/dynamicAlign.h"
 #include "../AILogic/Dynamic/DynamicArrive/dynamicArrive.h"
 #include "../AILogic/Dynamic/DynamicWander/dynamicWander.h"
+#include "../AILogic/Dynamic/DynamicPathFollow/dynamicPathFollow.h"
 
 AIProject::Boid::Boid()
 {
@@ -47,12 +48,12 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 {
 	DynamicSteeringOutput steering;
 
-	steering = Wander();
+	//steering = Wander();
 
-	/*if (b_seekTargetValid)
+	if (b_seekTargetValid)
 	{
-		steering = SteerAndArrive(m_targetPosition.x, m_targetPosition.y);
-	}*/
+		steering = PathFind();
+	}
 
 	m_kinematic.Update(currentSteering, i_timeStep, i_maxSpeed);
 	
@@ -101,6 +102,14 @@ void AIProject::Boid::Draw()
 void AIProject::Boid::SetTargetPosition(const ofVec2f & i_targetPosition)
 {
 	m_targetPosition = i_targetPosition;
+	b_seekTargetValid = true;
+}
+
+void AIProject::Boid::SetWayPoints(const std::vector<ofVec2f>& i_waypoints)
+{
+	m_waypoints.clear();
+	m_waypoints = i_waypoints;
+
 	b_seekTargetValid = true;
 }
 
@@ -160,6 +169,26 @@ AIProject::DynamicSteeringOutput AIProject::Boid::Wander()
 
 	return wander.GetSteering();
 	/*return wander.GetSteeringAlt();*/
+}
+
+AIProject::DynamicSteeringOutput AIProject::Boid::PathFind()
+{
+	if (m_waypoints.empty())
+	{
+		b_seekTargetValid = false;
+		
+		return DynamicSteeringOutput();
+	}
+
+	DynamicSteeringOutput steering;
+
+	SteeringBase* pathFollow = new DynamicPathFollow(*this, 80.0f, 300.0f, 100.0f, 5.0f, m_waypoints);
+
+	steering = pathFollow->GetSteering();
+
+	delete pathFollow;
+
+	return steering;
 }
 
 void AIProject::Kinematic::Update(const DynamicSteeringOutput & i_steering, const double & i_timeStep, const float & i_maxSpeed)

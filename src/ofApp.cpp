@@ -29,12 +29,19 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 { 
+	myBoid.Update(ofGetLastFrameTime(), 15.0f);
 }
 
 //--------------------------------------------------------------
 void ofApp::draw()
 {
 	ofBackground(0);  // Clear the screen with a black color
+
+	ofColor color;
+	color.r = 255; color.g = 255, color.b = 0;
+	ofSetColor(color);  // Set the drawing color to yellow
+
+	myBoid.Draw();
 }
 
 //--------------------------------------------------------------
@@ -59,7 +66,9 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
-{}
+{
+
+}
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
