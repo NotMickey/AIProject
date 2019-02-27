@@ -88,6 +88,9 @@
     <ClCompile Include="src\Graph\Algorithm\AStar\Heuristic\manhattanHeuristic.cpp">
       <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
     </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\Heuristic\precomputedHeuristic.cpp">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -261,6 +264,9 @@
       <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
     </ClInclude>
     <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\manhattanHeuristic.h">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\precomputedHeuristic.h">
       <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
     </ClInclude>
   </ItemGroup>

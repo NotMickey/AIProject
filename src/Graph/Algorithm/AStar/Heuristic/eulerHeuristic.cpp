@@ -1,4 +1,5 @@
 #include "eulerHeuristic.h"
+#include "precomputedHeuristic.h"
 
 AIProject::Graph::EulerHeuristic::EulerHeuristic(const int & i_goalNode, const DirectedWeightedGraph & i_graph) :
 								m_goalNode(i_goalNode), m_graph(i_graph)

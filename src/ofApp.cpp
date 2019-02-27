@@ -7,6 +7,7 @@
 
 #include "Graph/Algorithm/AStar/Heuristic/eulerHeuristic.h"
 #include "Graph/Algorithm/AStar/Heuristic/manhattanHeuristic.h"
+#include "Graph/Algorithm/AStar/Heuristic/precomputedHeuristic.h"
 
 #include "Graph/Algorithm/Dijkstra/dijkstra.h"
 #include "Graph/Algorithm/Dijkstra/dijkstraHelper.h"
@@ -54,7 +55,7 @@ void ofApp::setup()
 	simpleGraph.AddEdge(16, 17, 15);
 	simpleGraph.AddEdge(15, 17, 35);
 
-	AIProject::Graph::Heuristic * simpleHeuristic = new AIProject::Graph::ManhattanHeuristic(10, 5, simpleGraph);
+	AIProject::Graph::Heuristic * simpleHeuristic = new AIProject::Graph::PrecomputedHeuristic();
 
 	// Record start time
 	auto start = std::chrono::high_resolution_clock::now();
