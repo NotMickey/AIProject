@@ -2,12 +2,13 @@
 #include "AStarHelper.h"
 
 #include "../../DataStructures/Heap/heap.h"
+#include "Heuristic/heuristic.h"
 
 std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(const int & i_start, const int & i_goal, const DirectedWeightedGraph & i_graph,
-																					const Heuristic & i_heuristic)
+																				Heuristic * const i_heuristic)
 {
 	DirectedWeightedEdge edge;
-	NodeRecord startRecord(i_start, 0, i_heuristic.Estimate(i_start), edge);
+	NodeRecord startRecord(i_start, 0, i_heuristic->Estimate(i_start), edge);
 
 	Heap<NodeRecord> openList; // A priority queue
 	openList.Add(startRecord);
@@ -61,7 +62,7 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 			}
 			else
 			{
-				h = i_heuristic.Estimate(endNode);
+				h = i_heuristic->Estimate(endNode);
 			}
 				
 			endNodeRecord.estimatedTotalCost = g + h;

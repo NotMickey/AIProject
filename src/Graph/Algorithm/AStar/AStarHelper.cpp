@@ -1,15 +1,5 @@
 #include "AStarHelper.h"
 
-int AIProject::Graph::Heuristic::Estimate(const int & i_currentNode) const
-{
-	ofVec2f sourcePosition = m_graph.Localize(i_currentNode);
-	ofVec2f goalPosition = m_graph.Localize(m_goalNode);
-
-	int heuristicEstimate = (int)sourcePosition.squareDistance(goalPosition);
-
-	return heuristicEstimate;
-}
-
 bool AIProject::Graph::CloseList::Contains(const int & nodeID)
 {
 	for (size_t i = 0; i < list.size(); i++)

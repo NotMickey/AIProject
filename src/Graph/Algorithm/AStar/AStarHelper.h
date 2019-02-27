@@ -36,21 +36,6 @@ namespace AIProject
 		bool operator == (const NodeRecord &lhs, const NodeRecord &rhs);
 		bool operator != (const NodeRecord &lhs, const NodeRecord &rhs);
 
-		class Heuristic
-		{
-		public:
-
-			Heuristic(const int &i_goalNode, const DirectedWeightedGraph &i_graph) : m_graph(i_graph), m_goalNode(i_goalNode)
-			{}
-
-			int Estimate(const int& i_currentNode) const;
-
-		private:
-
-			int m_goalNode;
-			DirectedWeightedGraph m_graph;
-		};
-
 		class CloseList
 		{
 		public:

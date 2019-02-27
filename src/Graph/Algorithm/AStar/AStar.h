@@ -11,6 +11,6 @@ namespace AIProject
 		class DirectedWeightedEdge;
 
 		// return value will be a path
-		std::vector<DirectedWeightedEdge> FindPath(const int &i_start, const int &i_goal, const DirectedWeightedGraph& i_graph, const Heuristic &i_heuristic);
+		std::vector<DirectedWeightedEdge> FindPath(const int &i_start, const int &i_goal, const DirectedWeightedGraph &i_graph, Heuristic * const i_heuristic);
 	}
 }

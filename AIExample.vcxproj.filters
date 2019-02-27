@@ -82,6 +82,9 @@
     <ClCompile Include="src\Physics\CollisionDetection\collisionDataStructures.cpp">
       <Filter>src\Physics\CollisionDetection</Filter>
     </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\Heuristic\eulerHeuristic.cpp">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -165,6 +168,9 @@
     <Filter Include="src\Graph\TileMap">
       <UniqueIdentifier>{6b67d571-fa88-4f05-b3a8-eb4f86d8e072}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Graph\Algorithm\AStar\Heuristic">
+      <UniqueIdentifier>{9edd60cc-242d-435f-a1ce-4a1d8405e07c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -244,6 +250,12 @@
     </ClInclude>
     <ClInclude Include="src\Graph\TileMap\tileMap.h">
       <Filter>src\Graph\TileMap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\eulerHeuristic.h">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\heuristic.h">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

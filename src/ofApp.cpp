@@ -4,6 +4,7 @@
 
 #include "Graph/Algorithm/AStar/AStar.h"
 #include "Graph/Algorithm/AStar/AStarHelper.h"
+#include "Graph/Algorithm/AStar/Heuristic/eulerHeuristic.h"
 
 #include "Graph/Algorithm/Dijkstra/dijkstra.h"
 #include "Graph/Algorithm/Dijkstra/dijkstraHelper.h"
@@ -51,7 +52,7 @@ void ofApp::setup()
 	simpleGraph.AddEdge(16, 17, 15);
 	simpleGraph.AddEdge(15, 17, 35);
 
-	AIProject::Graph::Heuristic simpleHeuristic(10, simpleGraph);
+	AIProject::Graph::Heuristic * simpleHeuristic = new AIProject::Graph::EulerHeuristic(10, simpleGraph);
 
 	// Record start time
 	auto start = std::chrono::high_resolution_clock::now();
@@ -113,7 +114,7 @@ void ofApp::setup()
 
 	path.clear();
 
-	AIProject::Graph::Heuristic complexHeuristic(2123, tileGraph);
+	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::EulerHeuristic(2123, tileGraph);
 
 	start = std::chrono::high_resolution_clock::now();
 
@@ -130,6 +131,9 @@ void ofApp::setup()
 	}
 
 	std::cout << "2123" << "\n \n";
+
+	delete simpleHeuristic;
+	delete complexHeuristic;
 }
 
 //--------------------------------------------------------------
