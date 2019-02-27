@@ -7,6 +7,8 @@
 
 #include "Graph/DataStructures/graphDataStructures.h"
 
+#include "Graph/TileMap/tileMap.h"
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -26,6 +28,7 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
+		AIProject::Graph::TileMap tileMap = AIProject::Graph::TileMap(50, 20, 5.0f, ofVec2f(0.0f, 0.0f));;
 		AIProject::Graph::DirectedWeightedGraph tileGraph;
 		AIProject::Boid myBoid;
 };

@@ -42,6 +42,10 @@ AIProject::DynamicSteeringOutput AIProject::DynamicPathFollow::GetSteering()
 		output.linearAcceleration = linear.linearAcceleration;
 		output.angularAcceleration = angular.angularAcceleration;
 	}
+	else
+	{
+		output.linearAcceleration = ofVec2f();
+	}
 
 	return output;
 }

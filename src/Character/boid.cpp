@@ -53,9 +53,13 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 	if (b_seekTargetValid)
 	{
 		steering = PathFind();
+
+		if (steering.linearAcceleration == ofVec2f())
+			b_seekTargetValid = false;
 	}
 
-	m_kinematic.Update(currentSteering, i_timeStep, i_maxSpeed);
+	//m_kinematic.Update(currentSteering, i_timeStep, i_maxSpeed);
+	m_kinematic.Update(steering, i_timeStep, i_maxSpeed);
 	
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 
@@ -107,8 +111,10 @@ void AIProject::Boid::SetTargetPosition(const ofVec2f & i_targetPosition)
 
 void AIProject::Boid::SetWayPoints(const std::vector<ofVec2f>& i_waypoints)
 {
-	m_waypoints.clear();
-	m_waypoints = i_waypoints;
+	if (!m_pPathFollow)
+		delete m_pPathFollow;
+
+	m_pPathFollow = new DynamicPathFollow(*this, 80.0f, 300.0f, 100.0f, 5.0f, i_waypoints);
 
 	b_seekTargetValid = true;
 }
@@ -173,22 +179,17 @@ AIProject::DynamicSteeringOutput AIProject::Boid::Wander()
 
 AIProject::DynamicSteeringOutput AIProject::Boid::PathFind()
 {
-	if (m_waypoints.empty())
-	{
-		b_seekTargetValid = false;
-		
-		return DynamicSteeringOutput();
-	}
-
 	DynamicSteeringOutput steering;
 
-	SteeringBase* pathFollow = new DynamicPathFollow(*this, 80.0f, 300.0f, 100.0f, 5.0f, m_waypoints);
-
-	steering = pathFollow->GetSteering();
-
-	delete pathFollow;
+	steering = m_pPathFollow->GetSteering();
 
 	return steering;
+}
+
+AIProject::Boid::~Boid()
+{
+	if (!m_pPathFollow)
+		delete m_pPathFollow;
 }
 
 void AIProject::Kinematic::Update(const DynamicSteeringOutput & i_steering, const double & i_timeStep, const float & i_maxSpeed)

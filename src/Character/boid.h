@@ -47,7 +47,11 @@ namespace AIProject
 
 		DynamicSteeringOutput PathFind();
 
+		~Boid();
+
 	private:
+
+		SteeringBase* m_pPathFollow;
 
 		bool b_reachedLimit = false;
 		bool b_seekTargetValid = false;
@@ -60,7 +64,5 @@ namespace AIProject
 		ofVec2f m_targetPosition;
 
 		ofVec2f m_forwardVector;
-
-		std::vector<ofVec2f> m_waypoints;
 	};
 }

@@ -5,25 +5,21 @@
 #include "Graph/Algorithm/AStar/AStar.h"
 #include "Graph/Algorithm/AStar/AStarHelper.h"
 
+#include "Graph/Algorithm/Dijkstra/dijkstra.h"
+#include "Graph/Algorithm/Dijkstra/dijkstraHelper.h"
+
 #include "Graph/Algorithm/AStar/Heuristic/eulerHeuristic.h"
 #include "Graph/Algorithm/AStar/Heuristic/manhattanHeuristic.h"
-
-#include "Graph/TileMap/tileMap.h"
 
 #include <chrono>
 
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-	ofSetWindowShape(1280, 720);
+	ofSetWindowShape(1280, 1280);
 	ofSetWindowPosition(0 ,0);
 
-	AIProject::Graph::TileMap tileMap(50, 20, 5.0f,ofVec2f(0.0f, 0.0f));
 	tileGraph = tileMap.GetGraph();
-
-
-	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::ManhattanHeuristic(2123, 20, tileGraph);
-	delete complexHeuristic;
 }
 
 //--------------------------------------------------------------
@@ -67,7 +63,39 @@ void ofApp::mouseDragged(int x, int y, int button){
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
 {
+	int goalNode = tileMap.GetNodeFromMouseClick(ofVec2f(x, y));
 
+	if (goalNode == -1)
+		return;
+
+	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::ManhattanHeuristic(goalNode, 5, tileGraph);
+	
+	int startNode = tileMap.GetNodeFromMouseClick(myBoid.m_kinematic.position);
+
+	if (startNode == -1)
+		startNode = 0;
+
+	std::vector<AIProject::Graph::DirectedWeightedEdge> path = AIProject::Graph::FindPath(startNode, goalNode, tileGraph);
+	
+	if (path.empty())
+		return;
+
+	std::vector<ofVec2f> waypoints;
+
+	for (int i = path.size() - 1; i >= 0; --i)
+	{
+		ofVec2f point = tileGraph.Localize(path[i].GetSink());
+
+		waypoints.push_back(point);
+	}
+
+	ofVec2f point = tileGraph.Localize(startNode);
+
+	waypoints.push_back(point);
+
+	myBoid.SetWayPoints(waypoints);
+
+	delete complexHeuristic;
 }
 
 //--------------------------------------------------------------
