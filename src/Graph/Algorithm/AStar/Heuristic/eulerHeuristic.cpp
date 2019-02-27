@@ -9,7 +9,7 @@ int AIProject::Graph::EulerHeuristic::Estimate(const int & i_currentNode) const
 	ofVec2f sourcePosition = m_graph.Localize(i_currentNode);
 	ofVec2f goalPosition = m_graph.Localize(m_goalNode);
 
-	int heuristicEstimate = (int)sourcePosition.squareDistance(goalPosition);
+	int heuristicEstimate = (int)sourcePosition.distance(goalPosition);
 
 	return heuristicEstimate;
 }

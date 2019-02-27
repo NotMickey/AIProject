@@ -198,6 +198,7 @@
     <ClCompile Include="src\Graph\Algorithm\AStar\AStar.cpp" />
     <ClCompile Include="src\Graph\Algorithm\AStar\AStarHelper.cpp" />
     <ClCompile Include="src\Graph\Algorithm\AStar\Heuristic\eulerHeuristic.cpp" />
+    <ClCompile Include="src\Graph\Algorithm\AStar\Heuristic\manhattanHeuristic.cpp" />
     <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstra.cpp" />
     <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.cpp" />
     <ClCompile Include="src\Graph\DataStructures\graphDataStructures.cpp" />
@@ -229,6 +230,7 @@
     <ClInclude Include="src\Graph\Algorithm\AStar\AStarHelper.h" />
     <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\eulerHeuristic.h" />
     <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\heuristic.h" />
+    <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\manhattanHeuristic.h" />
     <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstra.h" />
     <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.h" />
     <ClInclude Include="src\Graph\DataStructures\graphDataStructures.h" />

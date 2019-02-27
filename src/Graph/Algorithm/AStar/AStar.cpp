@@ -5,7 +5,7 @@
 #include "Heuristic/heuristic.h"
 
 std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(const int & i_start, const int & i_goal, const DirectedWeightedGraph & i_graph,
-																				Heuristic * const i_heuristic)
+																				const Heuristic * const i_heuristic)
 {
 	DirectedWeightedEdge edge;
 	NodeRecord startRecord(i_start, 0, i_heuristic->Estimate(i_start), edge);
