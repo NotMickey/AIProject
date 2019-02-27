@@ -58,7 +58,7 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 	
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 
-	/*if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
+	if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
 	{
 		m_breadCrumbIndex++;
 
@@ -71,7 +71,7 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 		m_breadCrumbArray[m_breadCrumbIndex] = m_previousPosition;
 
 		m_previousPosition = m_kinematic.position;
-	}*/
+	}
 }
 
 void AIProject::Boid::Draw()
@@ -82,7 +82,7 @@ void AIProject::Boid::Draw()
 					m_forwardVector.getPerpendicular() * -10 + m_kinematic.position);
 
 	// Draw the bread crumbs
-	/*if (!b_reachedLimit)
+	if (!b_reachedLimit)
 	{
 		for (int i = 0; i < m_breadCrumbIndex + 1; i++)
 		{
@@ -95,7 +95,7 @@ void AIProject::Boid::Draw()
 		{
 			ofDrawCircle(m_breadCrumbArray[i], 3);
 		}
-	}*/
+	}
 }
 
 void AIProject::Boid::SetTargetPosition(const ofVec2f & i_targetPosition)

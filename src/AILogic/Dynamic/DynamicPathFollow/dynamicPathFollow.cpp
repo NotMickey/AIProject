@@ -21,7 +21,9 @@ AIProject::DynamicSteeringOutput AIProject::DynamicPathFollow::GetSteering()
 		if (distance < m_targetRadius)
 		{
 			m_waypoints.pop_back();
-			targetPosition = m_waypoints[m_waypoints.size() - 1];
+
+			if (!m_waypoints.empty())
+				targetPosition = m_waypoints[m_waypoints.size() - 1];
 		}
 
 		Kinematic target;

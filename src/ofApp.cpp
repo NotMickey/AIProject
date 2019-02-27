@@ -7,10 +7,6 @@
 
 #include "Graph/Algorithm/AStar/Heuristic/eulerHeuristic.h"
 #include "Graph/Algorithm/AStar/Heuristic/manhattanHeuristic.h"
-#include "Graph/Algorithm/AStar/Heuristic/precomputedHeuristic.h"
-
-#include "Graph/Algorithm/Dijkstra/dijkstra.h"
-#include "Graph/Algorithm/Dijkstra/dijkstraHelper.h"
 
 #include "Graph/TileMap/tileMap.h"
 
@@ -23,9 +19,10 @@ void ofApp::setup()
 	ofSetWindowPosition(0 ,0);
 
 	AIProject::Graph::TileMap tileMap(50, 20, 5.0f,ofVec2f(0.0f, 0.0f));
-	AIProject::Graph::DirectedWeightedGraph tileGraph = tileMap.GetGraph();
-	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::ManhattanHeuristic(2123, 20, tileGraph);
+	tileGraph = tileMap.GetGraph();
 
+
+	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::ManhattanHeuristic(2123, 20, tileGraph);
 	delete complexHeuristic;
 }
 
