@@ -20,7 +20,7 @@ namespace AIProject
 		float m_radiusOfAvoidance;
 		float m_angleOfAvoidance;
 
-		Boid m_character;
+		Boid &m_character;
 
 		bool CanCollide(const Boid &i_target);
 	};

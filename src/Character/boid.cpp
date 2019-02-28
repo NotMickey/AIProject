@@ -7,14 +7,15 @@
 #include "../AILogic/Dynamic/DynamicArrive/dynamicArrive.h"
 #include "../AILogic/Dynamic/DynamicWander/dynamicWander.h"
 #include "../AILogic/Dynamic/DynamicPathFollow/dynamicPathFollow.h"
+#include "../AILogic/Dynamic/CollisionAvoidance/collisionAvoidance.h"
 
-AIProject::Boid::Boid()
+AIProject::Boid::Boid(const ofVec2f &i_position)
 {
 	m_mass = 1;
 
 	ofSetCircleResolution(50);
 
-	m_kinematic.position = ofVec2f(512, 384);
+	m_kinematic.position = i_position;
 	m_previousPosition = m_kinematic.position;
 
 	m_kinematic.orientation = PI / 180 * 0.0f;
@@ -54,6 +55,9 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 	if (m_bSeekTargetValid && !m_bWander)
 	{
 		steering = PathFind();
+
+		steering.linearAcceleration += currentSteering.linearAcceleration;
+		steering.angularAcceleration += currentSteering.angularAcceleration;
 	}
 
 	//m_kinematic.Update(currentSteering, i_timeStep, i_maxSpeed);
@@ -190,7 +194,7 @@ AIProject::DynamicSteeringOutput AIProject::Boid::PathFind()
 
 AIProject::Boid::~Boid()
 {
-	if (!m_pPathFollow)
+	if (m_pPathFollow)
 		delete m_pPathFollow;
 }
 

@@ -16,7 +16,7 @@
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-	ofSetWindowShape(1280, 1280);
+	ofSetWindowShape(900, 900);
 	ofSetWindowPosition(0 ,0);
 
 	tileGraph = tileMap.GetGraph();
@@ -35,12 +35,14 @@ void ofApp::update()
 { 
 	double frameTime = ofGetLastFrameTime();
 
+	myBoid.currentSteering = collisionHandler.GetSteering();
+
 	myBoid.Update(frameTime, 150.0f);
 
 	// Updates wanderers
 	for (int i = 0; i < wanderSize - 1; i++)
 	{
-		wanderers[i].Update(frameTime, 15.0f);
+		wanderers[i].Update(frameTime, 20.0f);
 
 		if (wanderers[i].m_kinematic.position.x > ofGetWidth() + 10.0f)
 			wanderers[i].m_kinematic.position.x = -10.0f;

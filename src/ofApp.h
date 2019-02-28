@@ -9,6 +9,8 @@
 
 #include "Graph/TileMap/tileMap.h"
 
+#include "AILogic/Dynamic/CollisionAvoidance/collisionAvoidance.h"
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -30,9 +32,10 @@ class ofApp : public ofBaseApp{
 
 		AIProject::Graph::TileMap tileMap = AIProject::Graph::TileMap(30, 30, 5.0f, ofVec2f(0.0f, 0.0f));;
 		AIProject::Graph::DirectedWeightedGraph tileGraph;
-		AIProject::Boid myBoid;
+		AIProject::Boid myBoid = AIProject::Boid(ofVec2f(100.0f, 100.0f));
 
-		int wanderSize = 5;
+		int wanderSize = 20;
 
-		AIProject::Boid wanderers[5];
+		AIProject::Boid wanderers[20];
+		AIProject::CollisionAvoidance collisionHandler = AIProject::CollisionAvoidance(myBoid, wanderers, wanderSize, 40.0f, PI / 180 * 60.0f);
 };

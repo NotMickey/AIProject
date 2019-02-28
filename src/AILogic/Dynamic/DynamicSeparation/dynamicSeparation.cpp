@@ -21,7 +21,7 @@ AIProject::DynamicSteeringOutput AIProject::DynamicSeparation::GetSteering()
 
 		if (distanceSquared < m_threshold * m_threshold)
 		{
-			strength = min(m_constant / distanceSquared, m_maxAcceleration);
+			strength = min(m_constant * distanceSquared, m_maxAcceleration);
 			steering.linearAcceleration += strength * direction.getNormalized();
 		}	
 	}

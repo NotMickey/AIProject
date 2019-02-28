@@ -22,7 +22,7 @@ namespace AIProject
 	class Boid
 	{
 	public:
-		Boid();
+		Boid(const ofVec2f &i_position = ofVec2f());
 		Boid(const int &i_mass);
 
 		bool m_bShowPath = false;

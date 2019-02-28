@@ -6,6 +6,7 @@ AIProject::CollisionAvoidance::CollisionAvoidance(Boid & i_character, Boid i_tar
 								m_character(i_character), m_targets(i_targets), m_arraySize(i_size), m_radiusOfAvoidance(i_radiusOfAvoidance), m_angleOfAvoidance(i_angleOfAvoidance)
 {}
 
+
 AIProject::DynamicSteeringOutput AIProject::CollisionAvoidance::GetSteering()
 {
 	DynamicSteeringOutput steering;
@@ -34,7 +35,7 @@ AIProject::DynamicSteeringOutput AIProject::CollisionAvoidance::GetSteering()
 		}
 	}
 
-	DynamicSeparation seperation(m_character, targets, avoidingObjects, 60, 150, 150);
+	DynamicSeparation seperation(m_character, targets, avoidingObjects, m_radiusOfAvoidance, 5, 50);
 
 	steering = seperation.GetSteering();
 
