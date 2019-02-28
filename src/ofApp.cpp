@@ -23,11 +23,11 @@ void ofApp::setup()
 
 	myBoid.m_bShowPath = true;
 
-	for (int i = 0; i < wanderSize - 1; i++)
-	{
-		wanderers[i].m_kinematic.position += i * 5;
-		wanderers[i].m_bWander = true;
-	}
+	//for (int i = 0; i < wanderSize - 1; i++)
+	//{
+	//	wanderers[i].m_kinematic.position += i * 5;
+	//	wanderers[i].m_bWander = true;
+	//}
 
 	for (int i = 0; i < numOfObstacles - 1; i++)
 	{
@@ -46,7 +46,7 @@ void ofApp::update()
 	myBoid.Update(frameTime, 150.0f);
 
 	// Updates wanderers
-	for (int i = 0; i < wanderSize - 1; i++)
+	/*for (int i = 0; i < wanderSize - 1; i++)
 	{
 		wanderers[i].Update(frameTime, 20.0f);
 
@@ -61,7 +61,7 @@ void ofApp::update()
 
 		if (wanderers[i].m_kinematic.position.y < -10.0f)
 			wanderers[i].m_kinematic.position.y = ofGetHeight() + 10.0f;
-	}
+	}*/
 }
 
 //--------------------------------------------------------------
@@ -85,10 +85,10 @@ void ofApp::draw()
 	color.r = 0;
 	ofSetColor(color);  // Set the drawing color to black
 
-	for (int i = 0; i < wanderSize - 1; i++)
+	/*for (int i = 0; i < wanderSize - 1; i++)
 	{
 		wanderers[i].Draw();
-	}
+	}*/
 }
 
 //--------------------------------------------------------------
