@@ -31,13 +31,17 @@ void ofApp::update()
 //--------------------------------------------------------------
 void ofApp::draw()
 {
-	ofBackground(0);  // Clear the screen with a black color
+	ofBackground(255);  // Clear the screen with a white color
+
+	tileGraph.Draw();
 
 	ofColor color;
-	color.r = 255; color.g = 255, color.b = 0;
-	ofSetColor(color);  // Set the drawing color to yellow
+	color.r = 255; color.g = 0, color.b = 0;
+	ofSetColor(color);  // Set the drawing color to red
 
 	myBoid.Draw();
+
+	
 }
 
 //--------------------------------------------------------------

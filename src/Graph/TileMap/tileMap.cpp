@@ -37,7 +37,7 @@ int AIProject::Graph::TileMap::GetNodeFromMouseClick(const ofVec2f &i_position)
 
 	while (row * m_tileLength < yDist)
 	{
-		if (m_tileLength * (row + 1) > xDist)
+		if (m_tileLength * (row + 1) > yDist)
 			break;
 
 		row++;
@@ -48,6 +48,11 @@ int AIProject::Graph::TileMap::GetNodeFromMouseClick(const ofVec2f &i_position)
 	int nodeID = m_numOfTilesPerSide * row + column;
 
 	return nodeID;
+}
+
+void AIProject::Graph::TileMap::Draw()
+{
+	m_graph.Draw();
 }
 
 void AIProject::Graph::TileMap::BuildGraph()

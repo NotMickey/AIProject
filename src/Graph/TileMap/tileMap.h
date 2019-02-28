@@ -15,6 +15,8 @@ namespace AIProject
 
 			int GetNodeFromMouseClick(const ofVec2f &i_position);
 
+			void Draw();
+
 		private:
 			float m_tileLength;
 			float m_numOfTilesPerSide;

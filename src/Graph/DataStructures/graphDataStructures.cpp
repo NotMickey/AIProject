@@ -53,3 +53,15 @@ ofVec2f AIProject::Graph::DirectedWeightedGraph::Localize(const int & i_nodeID) 
 	return v_positionList[i_nodeID];
 }
 
+void AIProject::Graph::DirectedWeightedGraph::Draw()
+{
+	ofColor color;
+	color.r = 0; color.g = 0, color.b = 255, color.a = 120;
+	ofSetColor(color);  // Set the drawing color
+
+	for (int i = 0; i < v_positionList.size(); i++)
+	{
+		ofDrawCircle(v_positionList[i].x, v_positionList[i].y, 5);
+	}
+}
+

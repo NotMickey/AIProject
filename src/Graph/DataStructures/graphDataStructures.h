@@ -46,6 +46,8 @@ namespace AIProject
 
 			ofVec2f Localize(const int &i_nodeID) const;                                        // Returns world position of node
 
+			void Draw();
+
 		private:
 
 			std::vector<int> v_nodeList;

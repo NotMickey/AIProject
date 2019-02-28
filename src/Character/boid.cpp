@@ -111,7 +111,7 @@ void AIProject::Boid::SetWayPoints(const std::vector<ofVec2f>& i_waypoints)
 	if (!m_pPathFollow)
 		delete m_pPathFollow;
 
-	m_pPathFollow = new DynamicPathFollow(*this, 80.0f, 300.0f, 100.0f, 5.0f, i_waypoints);
+	m_pPathFollow = new DynamicPathFollow(*this, 80.0f, 300.0f, 80.0f, 5.0f, i_waypoints);
 
 	b_seekTargetValid = true;
 }
