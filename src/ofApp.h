@@ -31,4 +31,8 @@ class ofApp : public ofBaseApp{
 		AIProject::Graph::TileMap tileMap = AIProject::Graph::TileMap(30, 30, 5.0f, ofVec2f(0.0f, 0.0f));;
 		AIProject::Graph::DirectedWeightedGraph tileGraph;
 		AIProject::Boid myBoid;
+
+		int wanderSize = 5;
+
+		AIProject::Boid wanderers[5];
 };

@@ -25,6 +25,9 @@ namespace AIProject
 		Boid();
 		Boid(const int &i_mass);
 
+		bool m_bShowPath = false;
+		bool m_bWander = false;
+
 		int m_mass;
 
 		Kinematic m_kinematic;
@@ -53,8 +56,8 @@ namespace AIProject
 
 		SteeringBase* m_pPathFollow;
 
-		bool b_reachedLimit = false;
-		bool b_seekTargetValid = false;
+		bool m_bReachedLimit = false;
+		bool m_bSeekTargetValid = false;
 
 		int m_breadCrumbIndex = 0;
 		ofVec2f m_breadCrumbArray[200];

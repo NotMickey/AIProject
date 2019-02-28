@@ -20,12 +20,40 @@ void ofApp::setup()
 	ofSetWindowPosition(0 ,0);
 
 	tileGraph = tileMap.GetGraph();
+
+	myBoid.m_bShowPath = true;
+
+	for (int i = 0; i < wanderSize - 1; i++)
+	{
+		wanderers[i].m_kinematic.position += i * 5;
+		wanderers[i].m_bWander = true;
+	}
 }
 
 //--------------------------------------------------------------
 void ofApp::update()
 { 
-	myBoid.Update(ofGetLastFrameTime(), 150.0f);
+	double frameTime = ofGetLastFrameTime();
+
+	myBoid.Update(frameTime, 150.0f);
+
+	// Updates wanderers
+	for (int i = 0; i < wanderSize - 1; i++)
+	{
+		wanderers[i].Update(frameTime, 15.0f);
+
+		if (wanderers[i].m_kinematic.position.x > ofGetWidth() + 10.0f)
+			wanderers[i].m_kinematic.position.x = -10.0f;
+
+		if (wanderers[i].m_kinematic.position.x < -10.0f)
+			wanderers[i].m_kinematic.position.x = ofGetWidth() + 10.0f;
+
+		if (wanderers[i].m_kinematic.position.y > ofGetHeight() + 10.0f)
+			wanderers[i].m_kinematic.position.y = -10.0f;
+
+		if (wanderers[i].m_kinematic.position.y < -10.0f)
+			wanderers[i].m_kinematic.position.y = ofGetHeight() + 10.0f;
+	}
 }
 
 //--------------------------------------------------------------
@@ -41,7 +69,13 @@ void ofApp::draw()
 
 	myBoid.Draw();
 
-	
+	color.r = 0;
+	ofSetColor(color);  // Set the drawing color to black
+
+	for (int i = 0; i < wanderSize - 1; i++)
+	{
+		wanderers[i].Draw();
+	}
 }
 
 //--------------------------------------------------------------

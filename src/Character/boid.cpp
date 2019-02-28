@@ -48,9 +48,10 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 {
 	DynamicSteeringOutput steering;
 
-	//steering = Wander();
+	if (m_bWander)
+		steering = Wander();
 
-	if (b_seekTargetValid)
+	if (m_bSeekTargetValid && !m_bWander)
 	{
 		steering = PathFind();
 	}
@@ -67,7 +68,7 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 		if (m_breadCrumbIndex == 200)
 		{
 			m_breadCrumbIndex = 0;
-			b_reachedLimit = true;
+			m_bReachedLimit = true;
 		}
 
 		m_breadCrumbArray[m_breadCrumbIndex] = m_previousPosition;
@@ -83,19 +84,23 @@ void AIProject::Boid::Draw()
 	ofDrawTriangle(m_forwardVector * 20.0f + m_kinematic.position, m_forwardVector.getPerpendicular() * 10 + m_kinematic.position,
 					m_forwardVector.getPerpendicular() * -10 + m_kinematic.position);
 
-	// Draw the bread crumbs
-	if (!b_reachedLimit)
+
+	if (m_bShowPath)
 	{
-		for (int i = 0; i < m_breadCrumbIndex + 1; i++)
+		// Draw the bread crumbs
+		if (!m_bReachedLimit)
 		{
-			ofDrawCircle(m_breadCrumbArray[i], 3);
+			for (int i = 0; i < m_breadCrumbIndex + 1; i++)
+			{
+				ofDrawCircle(m_breadCrumbArray[i], 3);
+			}
 		}
-	}
-	else
-	{
-		for (int i = 0; i < 200; i++)
+		else
 		{
-			ofDrawCircle(m_breadCrumbArray[i], 3);
+			for (int i = 0; i < 200; i++)
+			{
+				ofDrawCircle(m_breadCrumbArray[i], 3);
+			}
 		}
 	}
 }
@@ -103,7 +108,7 @@ void AIProject::Boid::Draw()
 void AIProject::Boid::SetTargetPosition(const ofVec2f & i_targetPosition)
 {
 	m_targetPosition = i_targetPosition;
-	b_seekTargetValid = true;
+	m_bSeekTargetValid = true;
 }
 
 void AIProject::Boid::SetWayPoints(const std::vector<ofVec2f>& i_waypoints)
@@ -113,7 +118,7 @@ void AIProject::Boid::SetWayPoints(const std::vector<ofVec2f>& i_waypoints)
 
 	m_pPathFollow = new DynamicPathFollow(*this, 80.0f, 300.0f, 80.0f, 5.0f, i_waypoints);
 
-	b_seekTargetValid = true;
+	m_bSeekTargetValid = true;
 }
 
 AIProject::DynamicSteeringOutput AIProject::Boid::SeekAndSteer(const int &x, const int &y)
