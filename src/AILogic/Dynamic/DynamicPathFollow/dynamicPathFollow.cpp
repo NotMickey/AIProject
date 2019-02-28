@@ -27,7 +27,6 @@ AIProject::DynamicSteeringOutput AIProject::DynamicPathFollow::GetSteering()
 				targetPosition = m_waypoints[m_waypoints.size() - 1];
 		}
 
-		Kinematic kinematic;
 		kinematic.position = targetPosition;
 
 		ofVec2f direction = (targetPosition - m_character.m_kinematic.position).normalize();
@@ -44,7 +43,14 @@ AIProject::DynamicSteeringOutput AIProject::DynamicPathFollow::GetSteering()
 	}
 	else
 	{
-		output.linearAcceleration = ofVec2f();
+		DynamicArrive arrive(m_character, kinematic, m_maxAcceleration, m_maxSpeed, m_targetRadius, m_slowRadius, 0.7f);
+		DynamicAlign align(m_character, kinematic, PI / 180 * 90, PI / 180 * 200, PI / 180 * 5, PI / 180 * 25, 0.5f);
+
+		AIProject::DynamicSteeringOutput linear = arrive.GetSteering();
+		AIProject::DynamicSteeringOutput angular = align.GetSteering();
+
+		output.linearAcceleration = linear.linearAcceleration;
+		output.angularAcceleration = angular.angularAcceleration;
 	}
 
 	return output;

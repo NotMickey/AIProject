@@ -53,9 +53,6 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 	if (b_seekTargetValid)
 	{
 		steering = PathFind();
-
-		if (steering.linearAcceleration == ofVec2f())
-			b_seekTargetValid = false;
 	}
 
 	//m_kinematic.Update(currentSteering, i_timeStep, i_maxSpeed);

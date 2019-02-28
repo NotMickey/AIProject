@@ -23,6 +23,8 @@ namespace AIProject
 
 		Boid & m_character;
 
+		Kinematic kinematic;
+
 		std::vector<ofVec2f> m_waypoints;
 
 	};

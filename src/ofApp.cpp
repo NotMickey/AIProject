@@ -25,7 +25,7 @@ void ofApp::setup()
 //--------------------------------------------------------------
 void ofApp::update()
 { 
-	myBoid.Update(ofGetLastFrameTime(), 15.0f);
+	myBoid.Update(ofGetLastFrameTime(), 150.0f);
 }
 
 //--------------------------------------------------------------
@@ -68,14 +68,14 @@ void ofApp::mousePressed(int x, int y, int button)
 	if (goalNode == -1)
 		return;
 
-	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::ManhattanHeuristic(goalNode, 5, tileGraph);
+	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::EulerHeuristic(goalNode, tileGraph);
 	
 	int startNode = tileMap.GetNodeFromMouseClick(myBoid.m_kinematic.position);
 
 	if (startNode == -1)
 		startNode = 0;
 
-	std::vector<AIProject::Graph::DirectedWeightedEdge> path = AIProject::Graph::FindPath(startNode, goalNode, tileGraph);
+	std::vector<AIProject::Graph::DirectedWeightedEdge> path = AIProject::Graph::FindPath(startNode, goalNode, tileGraph, complexHeuristic);
 	
 	if (path.empty())
 		return;
