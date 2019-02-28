@@ -5,13 +5,12 @@
 #include "Character/boid.h"
 #include "AILogic/steeringBase.h"
 
-#include "Graph/DataStructures/graphDataStructures.h"
-
 #include "Graph/TileMap/tileMap.h"
 
 #include "AILogic/Dynamic/CollisionAvoidance/collisionAvoidance.h"
-
 #include "Physics/Obstacle/obstacle.h"
+#include "AILogic/Dynamic/ObstacleAvoidance/obstacleAvoidance.h"
+#include "Physics/CollisionDetection/collisionDetection.h"
 
 class ofApp : public ofBaseApp{
 
@@ -34,6 +33,7 @@ class ofApp : public ofBaseApp{
 
 		AIProject::Graph::TileMap tileMap = AIProject::Graph::TileMap(30, 30, 5.0f, ofVec2f(0.0f, 0.0f));;
 		AIProject::Graph::DirectedWeightedGraph tileGraph;
+
 		AIProject::Boid myBoid = AIProject::Boid(ofVec2f(100.0f, 100.0f));
 
 		int wanderSize = 20;
@@ -42,4 +42,7 @@ class ofApp : public ofBaseApp{
 
 		int numOfObstacles = 10;
 		AIProject::Physics::Obstacle obstacles[10];
+
+		AIProject::Physics::CollisionDetection collisionDetection = AIProject::Physics::CollisionDetection(obstacles, numOfObstacles);
+		AIProject::ObstacleAvoidance ObstacleAvoider = AIProject::ObstacleAvoidance(myBoid, 150.0f, collisionDetection, 20.0f, 25.0f);
 };

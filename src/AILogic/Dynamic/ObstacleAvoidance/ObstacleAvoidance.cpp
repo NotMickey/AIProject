@@ -2,7 +2,7 @@
 
 #include "../DynamicSeek/dynamicSeek.h"
 
-AIProject::ObstacleAvoidance::ObstacleAvoidance(Boid & i_character, const float & i_maxAcceleration, const Physics::CollisionDetection & i_collisionDetector,
+AIProject::ObstacleAvoidance::ObstacleAvoidance(Boid & i_character, const float & i_maxAcceleration, Physics::CollisionDetection & i_collisionDetector,
 														const float & i_avoidDistance, const float & i_lookAheadDistance) :
 							m_character(i_character), m_maxAcceleration(i_maxAcceleration), m_collisionDetector(i_collisionDetector), m_avoidDistance(i_avoidDistance),
 							m_lookAheadDistance(i_lookAheadDistance)

@@ -46,6 +46,12 @@ bool AIProject::Physics::CollisionDetection::Intersect(const Ray & i_rayVector, 
 		return false;
 	}
 
+	// Intersection will happen but not yet!
+	if (minT > i_length)
+	{
+		return false;
+	}
+
 	// Intersection! And minT is the vector length of ray to point of contact with AABB
 
 	// Calculate collision normal
