@@ -31,7 +31,7 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		AIProject::Graph::TileMap tileMap = AIProject::Graph::TileMap(30, 30, 5.0f, ofVec2f(0.0f, 0.0f));;
+		AIProject::Graph::TileMap tileMap = AIProject::Graph::TileMap(10, 90, 5.0f, ofVec2f(0.0f, 0.0f));;
 		AIProject::Graph::DirectedWeightedGraph tileGraph;
 
 		AIProject::Boid myBoid = AIProject::Boid(ofVec2f(100.0f, 100.0f));
@@ -44,5 +44,5 @@ class ofApp : public ofBaseApp{
 		AIProject::Physics::Obstacle obstacles[10];
 
 		AIProject::Physics::CollisionDetection collisionDetection = AIProject::Physics::CollisionDetection(obstacles, numOfObstacles);
-		AIProject::ObstacleAvoidance ObstacleAvoider = AIProject::ObstacleAvoidance(myBoid, 150.0f, collisionDetection, 20.0f, 25.0f);
+		AIProject::ObstacleAvoidance ObstacleAvoider = AIProject::ObstacleAvoidance(myBoid, 400.0f, collisionDetection, 20.0f, 25.0f);
 };

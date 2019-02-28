@@ -31,7 +31,7 @@ void ofApp::setup()
 
 	for (int i = 0; i < numOfObstacles - 1; i++)
 	{
-		obstacles[i] = AIProject::Physics::Obstacle(ofVec2f(200 + 30*i, 300), 30.0f);
+		obstacles[i] = AIProject::Physics::Obstacle(ofVec2f(200 + 30*i, 430), 30.0f);
 	}
 }
 
