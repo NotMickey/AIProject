@@ -28,6 +28,11 @@ void ofApp::setup()
 		wanderers[i].m_kinematic.position += i * 5;
 		wanderers[i].m_bWander = true;
 	}
+
+	for (int i = 0; i < numOfObstacles - 1; i++)
+	{
+		obstacles[i] = AIProject::Physics::Obstacle(ofVec2f(200 + 40*i, 300), 30.0f);
+	}
 }
 
 //--------------------------------------------------------------
@@ -64,6 +69,11 @@ void ofApp::draw()
 	ofBackground(255);  // Clear the screen with a white color
 
 	tileGraph.Draw();
+
+	for (int i = 0; i < numOfObstacles - 1; i++)
+	{
+		obstacles[i].Draw();
+	}
 
 	ofColor color;
 	color.r = 255; color.g = 0, color.b = 0;
