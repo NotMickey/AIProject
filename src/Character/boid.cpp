@@ -56,6 +56,7 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 	{
 		steering = PathFind();
 
+		// Add other dynamic behavior to the Boid
 		steering.linearAcceleration += currentSteering.linearAcceleration;
 		steering.angularAcceleration += currentSteering.angularAcceleration;
 	}
@@ -117,7 +118,7 @@ void AIProject::Boid::SetTargetPosition(const ofVec2f & i_targetPosition)
 
 void AIProject::Boid::SetWayPoints(const std::vector<ofVec2f>& i_waypoints)
 {
-	if (!m_pPathFollow)
+	if (m_pPathFollow)
 		delete m_pPathFollow;
 
 	m_pPathFollow = new DynamicPathFollow(*this, 80.0f, 300.0f, 80.0f, 5.0f, i_waypoints);

@@ -26,6 +26,8 @@ namespace AIProject
 			inline int GetSource() const { return m_sourceID; };
 			inline int GetSink() const { return m_sinkID; };
 
+			inline int SetCost(const int &i_newCost) { m_edgeCost = i_newCost; };
+
 		private:
 
 			int m_sourceID;
@@ -43,6 +45,7 @@ namespace AIProject
 
 			int AddNode(const ofVec2f &i_position);												// Add a new node and return its ID
 			bool AddEdge(const int &i_sourceID, const int &i_sinkID, const int &i_edgeCost);    // Adds a new edge between given nodes if valid
+			bool InvalidateEdge(const int &i_sourceID, const int &i_sinkID);					// Sets cost of edge between given nodes to infinity (invalidates it)
 
 			ofVec2f Localize(const int &i_nodeID) const;                                        // Returns world position of node
 

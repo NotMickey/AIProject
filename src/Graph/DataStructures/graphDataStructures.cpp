@@ -45,6 +45,22 @@ bool AIProject::Graph::DirectedWeightedGraph::AddEdge(const int & i_source, cons
 	return true;
 }
 
+bool AIProject::Graph::DirectedWeightedGraph::InvalidateEdge(const int & i_sourceID, const int & i_sinkID)
+{
+	if (i_sourceID > v_nodeList.size() || i_sinkID > v_nodeList.size() || i_sinkID == i_sourceID)
+		return false;
+
+	for (unsigned int i = 0; i < v_edgeList.size(); i++)
+	{
+		if (v_edgeList[i].GetSink() == i_sinkID && v_edgeList[i].GetSource() == i_sourceID)
+		{
+			v_edgeList[i].SetCost(INT16_MAX);
+		}
+	}
+
+	return false;
+}
+
 ofVec2f AIProject::Graph::DirectedWeightedGraph::Localize(const int & i_nodeID) const
 {
 	if (i_nodeID >= v_nodeList.size())
