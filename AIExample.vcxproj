@@ -195,6 +195,7 @@
     <ClCompile Include="src\AILogic\Flocking\flocking.cpp" />
     <ClCompile Include="src\AILogic\steeringBase.cpp" />
     <ClCompile Include="src\Character\boid.cpp" />
+    <ClCompile Include="src\DecisionMaking\DecisionTree\decisionNodeBase.cpp" />
     <ClCompile Include="src\Graph\Algorithm\AStar\AStar.cpp" />
     <ClCompile Include="src\Graph\Algorithm\AStar\AStarHelper.cpp" />
     <ClCompile Include="src\Graph\Algorithm\AStar\Heuristic\eulerHeuristic.cpp" />
@@ -227,6 +228,9 @@
     <ClInclude Include="src\AILogic\Flocking\flocking.h" />
     <ClInclude Include="src\AILogic\steeringBase.h" />
     <ClInclude Include="src\Character\boid.h" />
+    <ClInclude Include="src\DecisionMaking\DecisionTree\Action\actionNode.h" />
+    <ClInclude Include="src\DecisionMaking\DecisionTree\decisionNodeBase.h" />
+    <ClInclude Include="src\DecisionMaking\DecisionTree\Decision\decisionNode.h" />
     <ClInclude Include="src\Graph\Algorithm\AStar\AStar.h" />
     <ClInclude Include="src\Graph\Algorithm\AStar\AStarHelper.h" />
     <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\eulerHeuristic.h" />

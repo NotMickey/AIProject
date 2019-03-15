@@ -91,6 +91,9 @@
     <ClCompile Include="src\Graph\Algorithm\AStar\Heuristic\precomputedHeuristic.cpp">
       <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
     </ClCompile>
+    <ClCompile Include="src\DecisionMaking\DecisionTree\decisionNodeBase.cpp">
+      <Filter>src\DecisionMaking\DecisionTree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -176,6 +179,18 @@
     </Filter>
     <Filter Include="src\Graph\Algorithm\AStar\Heuristic">
       <UniqueIdentifier>{9edd60cc-242d-435f-a1ce-4a1d8405e07c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking">
+      <UniqueIdentifier>{8f6276a7-4fad-43ff-9b44-0f1a8e21d4be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\DecisionTree">
+      <UniqueIdentifier>{4dafb066-4bbc-41bd-8a3d-df57ac1898b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\DecisionTree\Action">
+      <UniqueIdentifier>{813adf05-e001-40c2-b830-ab0de25d7e34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\DecisionTree\Decision">
+      <UniqueIdentifier>{efe369ee-7dad-4e87-9622-71a8449a142c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -268,6 +283,15 @@
     </ClInclude>
     <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\precomputedHeuristic.h">
       <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\DecisionTree\decisionNodeBase.h">
+      <Filter>src\DecisionMaking\DecisionTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\DecisionTree\Action\actionNode.h">
+      <Filter>src\DecisionMaking\DecisionTree\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\DecisionTree\Decision\decisionNode.h">
+      <Filter>src\DecisionMaking\DecisionTree\Decision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
