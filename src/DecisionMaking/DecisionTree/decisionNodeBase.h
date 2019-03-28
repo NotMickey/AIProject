@@ -8,7 +8,7 @@ namespace AIProject
 		{
 		public:
 			
-			virtual void MakeDecision() = 0;
+			virtual DecisionNodeBase* MakeDecision() = 0;
 
 			virtual ~DecisionNodeBase() {}
 

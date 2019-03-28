@@ -9,7 +9,9 @@ namespace AIProject
 		class ActionNode : public DecisionNodeBase 
 		{
 		public:
-			virtual void MakeDecision() override;
+			inline virtual DecisionNodeBase* MakeDecision() override { return this; }
+
+
 
 		private:
 

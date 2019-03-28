@@ -12,7 +12,7 @@ namespace AIProject
 		public:
 			DecisionNode(const Boid &i_character) : m_character(i_character) {}
 
-			virtual void MakeDecision() = 0; // Propogate to child!
+			virtual DecisionNodeBase* MakeDecision() = 0; // Propogate to child!
 
 		protected:
 			DecisionNodeBase* m_pTrueNode;
