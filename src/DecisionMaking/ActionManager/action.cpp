@@ -18,3 +18,33 @@ bool AIProject::DecisionMaking::Action::IsComplete() const
 {
 	return isComplete;
 }
+
+bool AIProject::DecisionMaking::operator<(const Action & lhs, const Action & rhs)
+{
+	return (lhs.priority < rhs.priority);
+}
+
+bool AIProject::DecisionMaking::operator<=(const Action & lhs, const Action & rhs)
+{
+	return (lhs.priority <= rhs.priority);
+}
+
+bool AIProject::DecisionMaking::operator>(const Action & lhs, const Action & rhs)
+{
+	return !(lhs < rhs);
+}
+
+bool AIProject::DecisionMaking::operator>=(const Action & lhs, const Action & rhs)
+{
+	return !(lhs <= rhs);
+}
+
+bool AIProject::DecisionMaking::operator==(const Action & lhs, const Action & rhs)
+{
+	return (lhs.priority == rhs.priority);
+}
+
+bool AIProject::DecisionMaking::operator!=(const Action & lhs, const Action & rhs)
+{
+	return !(lhs == rhs);
+}

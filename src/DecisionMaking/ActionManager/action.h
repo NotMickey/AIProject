@@ -9,7 +9,7 @@ namespace AIProject
 		class Action
 		{
 		public:
-			Action(const float &i_expiryTime, const int &i_priority = 0, const bool &i_canInterrupt = false);
+			Action(const float &i_expiryTime, const int &i_priority = -1, const bool &i_canInterrupt = false);
 
 			bool CanInterrupt() const;						// Whether this action can interrupt others
 			bool CanDoBoth(const std::shared_ptr<Action*> i_Action) const;	// Whether this action can run with the given action
@@ -25,5 +25,14 @@ namespace AIProject
 			bool isComplete;
 			bool canInterrupt;
 		};
+
+		bool operator < (const Action &lhs, const Action &rhs);
+		bool operator <= (const Action &lhs, const Action &rhs);
+
+		bool operator > (const Action &lhs, const Action &rhs);
+		bool operator >= (const Action &lhs, const Action &rhs);
+
+		bool operator == (const Action &lhs, const Action &rhs);
+		bool operator != (const Action &lhs, const Action &rhs);
 	}
 }

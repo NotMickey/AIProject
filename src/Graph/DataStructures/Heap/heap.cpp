@@ -1,6 +1,7 @@
 #include "heap.h"
 #include "../../Algorithm/AStar/AStarHelper.h"
 #include "../../Algorithm/Dijkstra/dijkstraHelper.h"
+#include "../../../DecisionMaking/ActionManager/action.h"
 
 #include <assert.h>
 
@@ -9,6 +10,7 @@
 // This is necessary because the template class needs to know about its instances
 template class AIProject::Graph::Heap<AIProject::Graph::NodeRecord>;
 template class AIProject::Graph::Heap<AIProject::Graph::NodeRecordDijkstra>;
+template class AIProject::Graph::Heap<std::shared_ptr<AIProject::DecisionMaking::Action*>>;
 
 template<class T>
 inline AIProject::Graph::Heap<T>::Heap(int i_maxSize) : MAX_SIZE(i_maxSize)
@@ -38,17 +40,17 @@ inline AIProject::Graph::Heap<T>::Heap(T * i_array, const int &i_elemNum, const 
 }
 
 template<class T>
-T * AIProject::Graph::Heap<T>::Sort()
+std::vector<T> AIProject::Graph::Heap<T>::Sort()
 {
-	// The array to be returned
-	T* newArray = new T[m_currentNum];
+	// The vector list to be returned
+	std::vector<T> list;
 
 	for (int i = m_currentNum - 1; i >= 0; --i)
 	{
-		newArray[i] = Remove();
+		list.push_back(Remove());
 	}
 
-	return newArray;
+	return list;
 }
 
 template<class T>

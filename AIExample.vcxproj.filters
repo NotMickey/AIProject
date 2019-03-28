@@ -94,6 +94,12 @@
     <ClCompile Include="src\DecisionMaking\DecisionTree\decisionNodeBase.cpp">
       <Filter>src\DecisionMaking\DecisionTree</Filter>
     </ClCompile>
+    <ClCompile Include="src\DecisionMaking\ActionManager\action.cpp">
+      <Filter>src\DecisionMaking\ActionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\ActionManager\actionManager.cpp">
+      <Filter>src\DecisionMaking\ActionManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -186,11 +192,14 @@
     <Filter Include="src\DecisionMaking\DecisionTree">
       <UniqueIdentifier>{4dafb066-4bbc-41bd-8a3d-df57ac1898b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\DecisionMaking\DecisionTree\Action">
+    <Filter Include="src\DecisionMaking\DecisionTree\ActionNode">
       <UniqueIdentifier>{813adf05-e001-40c2-b830-ab0de25d7e34}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\DecisionMaking\DecisionTree\Decision">
+    <Filter Include="src\DecisionMaking\DecisionTree\DecisionNode">
       <UniqueIdentifier>{efe369ee-7dad-4e87-9622-71a8449a142c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\ActionManager">
+      <UniqueIdentifier>{283fcebe-94dc-4df0-8fac-e77a8b58b108}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -288,10 +297,16 @@
       <Filter>src\DecisionMaking\DecisionTree</Filter>
     </ClInclude>
     <ClInclude Include="src\DecisionMaking\DecisionTree\Action\actionNode.h">
-      <Filter>src\DecisionMaking\DecisionTree\Action</Filter>
+      <Filter>src\DecisionMaking\DecisionTree\ActionNode</Filter>
     </ClInclude>
     <ClInclude Include="src\DecisionMaking\DecisionTree\Decision\decisionNode.h">
-      <Filter>src\DecisionMaking\DecisionTree\Decision</Filter>
+      <Filter>src\DecisionMaking\DecisionTree\DecisionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\ActionManager\actionManager.h">
+      <Filter>src\DecisionMaking\ActionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\ActionManager\action.h">
+      <Filter>src\DecisionMaking\ActionManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

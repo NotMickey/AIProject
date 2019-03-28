@@ -26,7 +26,7 @@ namespace AIProject
 			inline int GetSource() const { return m_sourceID; };
 			inline int GetSink() const { return m_sinkID; };
 
-			inline int SetCost(const int &i_newCost) { m_edgeCost = i_newCost; };
+			inline void SetCost(const int &i_newCost) { m_edgeCost = i_newCost; };
 
 		private:
 
