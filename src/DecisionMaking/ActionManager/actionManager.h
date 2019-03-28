@@ -16,9 +16,9 @@ namespace AIProject
 			void Update(const float &deltaTime);
 
 		private:
-			AIProject::Graph::Heap<std::shared_ptr<Action*>> pendingQueue;  // A priority queue of pending actions
+			std::vector<std::shared_ptr<Action*>> pendingQueue;				// A priority queue of pending actions
 
-			std::vector<std::shared_ptr<Action*>> activeQueue;              // A list of active actions being executed simultaneously. Order does not matter.
+			std::vector<std::shared_ptr<Action*>> activeQueue;              // A priority queue of active actions being executed simultaneously.
 		};
 	}
 }

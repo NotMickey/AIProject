@@ -18,11 +18,12 @@ namespace AIProject
 			virtual void Execute() = 0;						// Called every frame
 
 			int priority;									// Indicates importance
+			int id = -1;											// Action ID
 			float queuedTime;								// How long this action has been queued for
 			float expiryTime;								// Wait time before discarding action
 
 		protected:
-			bool isComplete;
+			bool isComplete = false;
 			bool canInterrupt;
 		};
 
@@ -31,6 +32,8 @@ namespace AIProject
 
 		bool operator > (const Action &lhs, const Action &rhs);
 		bool operator >= (const Action &lhs, const Action &rhs);
+
+		// The following overloads compare Action id's instead of priority!
 
 		bool operator == (const Action &lhs, const Action &rhs);
 		bool operator != (const Action &lhs, const Action &rhs);

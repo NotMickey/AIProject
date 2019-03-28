@@ -13,7 +13,7 @@ namespace AIProject
 			Heap(int i_maxSize = 500);
 			Heap(const Heap<T> &i_otherTree);
 			Heap(T* i_array, const int &i_elemNum, const int &i_maxSize);
-			std::vector<T> Sort(); // Built-in HeapSort Algorithm
+			std::vector<T> Sort();						 // Built-in HeapSort Algorithm. Empties the Heap!
 			~Heap();
 
 			bool Add(const T &i_item);					 // Add the Item to Heap
