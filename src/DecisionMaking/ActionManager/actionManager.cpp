@@ -21,7 +21,8 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 			pendingQueue[i] = i_action;
 
 			// sort the updated list
-			std::sort(pendingQueue.begin(), pendingQueue.end());
+			std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<int>()); // Sort ascending. NOTE: sorting based on ID which is an integer
+																					  // Thus the 3rd argument works as intended.
 
 			return;
 		}
@@ -31,7 +32,7 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 	pendingQueue.push_back(i_action);
 
 	// And sort
-	std::sort(pendingQueue.begin(), pendingQueue.end());
+	std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<int>());
 }
 
 void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
@@ -52,5 +53,9 @@ void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
 			++it;
 	}
 
+	// Check for interrupts
+	it = pendingQueue.begin();
+
+	std::weak_ptr<Action*> topPriorityAction = activeQueue[0];
 
 }
