@@ -14,13 +14,17 @@ namespace AIProject
 
 			virtual DecisionNodeBase* MakeDecision() = 0; // Propogate to child!
 
+			virtual ~DecisionNode() {}
+
 		protected:
 			DecisionNodeBase* m_pTrueNode;
 			DecisionNodeBase* m_pFalseNode;
 
 			const Boid &m_character;
 
-			virtual DecisionNodeBase* GetBranch() = 0; // carries out the test
+			DecisionNodeBase* GetBranch() { return (IsTrue() ? m_pTrueNode : m_pFalseNode); } // carries out the test
+
+			inline virtual bool IsTrue() { return false; }
 		};
 	}
 }
