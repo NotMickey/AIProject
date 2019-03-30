@@ -21,7 +21,7 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 			pendingQueue[i] = i_action;
 
 			// sort the updated list
-			std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<int>()); // Sort ascending. NOTE: sorting based on ID which is an integer
+			std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action*>>()); // Sort ascending. NOTE: sorting based on priority which is an integer
 																					  // Thus the 3rd argument works as intended.
 
 			return;
@@ -32,7 +32,7 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 	pendingQueue.push_back(i_action);
 
 	// And sort
-	std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<int>());
+	std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action*>>());
 }
 
 void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
@@ -119,7 +119,7 @@ void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
 
 		// We're here! That means the current pending action can run concurrently with every active action!
 		activeQueue.push_back(*it);
-		std::sort(activeQueue.begin(), activeQueue.end(), std::greater<int>());
+		std::sort(activeQueue.begin(), activeQueue.end(), std::greater<std::shared_ptr<Action*>>());
 
 		it = pendingQueue.erase(it);
 	}
