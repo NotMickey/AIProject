@@ -201,6 +201,12 @@
     <Filter Include="src\DecisionMaking\ActionManager">
       <UniqueIdentifier>{283fcebe-94dc-4df0-8fac-e77a8b58b108}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AILogic\AIDecisionTree">
+      <UniqueIdentifier>{33fc1a86-aa94-4ad0-8e81-b9ffa29c343d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIDecisionTree\DecisionNode">
+      <UniqueIdentifier>{14665b2c-ca0b-4a24-bc6b-80eb7068a570}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
