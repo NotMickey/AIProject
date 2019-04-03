@@ -197,6 +197,7 @@
     <ClCompile Include="src\Character\boid.cpp" />
     <ClCompile Include="src\DecisionMaking\ActionManager\action.cpp" />
     <ClCompile Include="src\DecisionMaking\ActionManager\actionManager.cpp" />
+    <ClCompile Include="src\DecisionMaking\Blackboard\blackboard.cpp" />
     <ClCompile Include="src\DecisionMaking\DecisionTree\decisionNodeBase.cpp" />
     <ClCompile Include="src\Graph\Algorithm\AStar\AStar.cpp" />
     <ClCompile Include="src\Graph\Algorithm\AStar\AStarHelper.cpp" />
@@ -232,6 +233,10 @@
     <ClInclude Include="src\Character\boid.h" />
     <ClInclude Include="src\DecisionMaking\ActionManager\action.h" />
     <ClInclude Include="src\DecisionMaking\ActionManager\actionManager.h" />
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\status.h" />
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\task.h" />
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Tick\tick.h" />
+    <ClInclude Include="src\DecisionMaking\Blackboard\blackboard.h" />
     <ClInclude Include="src\DecisionMaking\DecisionTree\Action\actionNode.h" />
     <ClInclude Include="src\DecisionMaking\DecisionTree\decisionNodeBase.h" />
     <ClInclude Include="src\DecisionMaking\DecisionTree\Decision\decisionNode.h" />

@@ -100,6 +100,9 @@
     <ClCompile Include="src\DecisionMaking\ActionManager\actionManager.cpp">
       <Filter>src\DecisionMaking\ActionManager</Filter>
     </ClCompile>
+    <ClCompile Include="src\DecisionMaking\Blackboard\blackboard.cpp">
+      <Filter>src\DecisionMaking\Blackboard</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -207,6 +210,15 @@
     <Filter Include="src\AILogic\AIDecisionTree\DecisionNode">
       <UniqueIdentifier>{14665b2c-ca0b-4a24-bc6b-80eb7068a570}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\DecisionMaking\BehaviorTree">
+      <UniqueIdentifier>{6c8ee79a-102a-4d28-b61f-86d5dd6a124b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\Blackboard">
+      <UniqueIdentifier>{07598860-80a8-4cfd-a74e-de4e8797bb1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\BehaviorTree\Tick">
+      <UniqueIdentifier>{69c4e1aa-5c94-416f-8c9c-c67e41cf6549}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -313,6 +325,18 @@
     </ClInclude>
     <ClInclude Include="src\DecisionMaking\ActionManager\action.h">
       <Filter>src\DecisionMaking\ActionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\task.h">
+      <Filter>src\DecisionMaking\BehaviorTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\status.h">
+      <Filter>src\DecisionMaking\BehaviorTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\Blackboard\blackboard.h">
+      <Filter>src\DecisionMaking\Blackboard</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Tick\tick.h">
+      <Filter>src\DecisionMaking\BehaviorTree\Tick</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
