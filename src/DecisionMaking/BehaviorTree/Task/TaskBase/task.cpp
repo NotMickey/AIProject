@@ -1,10 +1,10 @@
 #include "task.h"
 
-#include "../Blackboard/blackboard.h"
-#include "Tick/tick.h"
-#include "status.h"
+#include "../../../Blackboard/blackboard.h"
+#include "../../Tick/tick.h"
+#include "../../status.h"
 
-AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Run(const Tick & i_tick)
+AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Run(Tick & i_tick)
 {
 	Enter(i_tick);
 
@@ -27,20 +27,21 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Run(const Tic
 void AIProject::DecisionMaking::Task::Enter(const Tick & i_tick)
 {
 	OnEnter(i_tick);
-	i_tick.EnterTask(*this);
+	i_tick.EnterTask(this);
 }
 
 void AIProject::DecisionMaking::Task::Open(Tick & i_tick)
 {
 	OnOpen(i_tick);
-	i_tick.OpenTask(*this);
+
+	i_tick.OpenTask(this);
 	i_tick.m_blackboard.Set(Key::IsOpen, true, i_tick.m_pTree->m_id, m_id);
 }
 
 AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Execute(const Tick & i_tick)
 {
 	Status stat = OnExecute(i_tick);
-	i_tick.ExecuteTask(*this);
+	i_tick.ExecuteTask(this);
 
 	return stat;
 }
@@ -48,14 +49,14 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Execute(const
 void AIProject::DecisionMaking::Task::Close(Tick & i_tick)
 {
 	OnClose(i_tick);
-	i_tick.CloseTask(*this);
+	i_tick.CloseTask(this);
 	i_tick.m_blackboard.Set(Key::IsOpen, false, i_tick.m_pTree->m_id, m_id);
 }
 
 void AIProject::DecisionMaking::Task::Exit(const Tick & i_tick)
 {
 	OnExit(i_tick);
-	i_tick.ExitTask(*this);
+	i_tick.ExitTask(this);
 }
 
 bool AIProject::DecisionMaking::operator==(const Task & lhs, const Task & rhs)

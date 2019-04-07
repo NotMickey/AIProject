@@ -2,7 +2,7 @@
 
 #include "TreeBase/decisionMakingBehavior.h"
 
-#include "task.h"
+#include "Task/TaskBase/task.h"
 #include "../Blackboard/blackboard.h"
 
 namespace AIProject
@@ -17,7 +17,7 @@ namespace AIProject
 			int m_id;
 
 		protected:
-			Task m_root;
+			Task m_root; // to be updated
 			Blackboard m_blackboard;
 		};
 	}

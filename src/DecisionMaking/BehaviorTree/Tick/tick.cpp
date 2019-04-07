@@ -4,12 +4,12 @@ AIProject::DecisionMaking::Tick::Tick(const BehaviorTree* i_behaviorTree, Blackb
 								: m_pTree(i_behaviorTree), m_blackboard(i_blackBoard)
 {}
 
-void AIProject::DecisionMaking::Tick::OpenTask(const Task &i_task)
+void AIProject::DecisionMaking::Tick::OpenTask(Task* const i_task)
 {
 	m_vOpenTasks.push_back(i_task);
 }
 
-void AIProject::DecisionMaking::Tick::CloseTask(const Task &i_task)
+void AIProject::DecisionMaking::Tick::CloseTask(Task* const i_task)
 {
 	auto it = m_vOpenTasks.begin();
 
@@ -22,17 +22,17 @@ void AIProject::DecisionMaking::Tick::CloseTask(const Task &i_task)
 	}
 }
 
-void AIProject::DecisionMaking::Tick::EnterTask(const Task & i_task) const
+void AIProject::DecisionMaking::Tick::EnterTask(Task* const i_task) const
 {
 	// Log something!
 }
 
-void AIProject::DecisionMaking::Tick::ExecuteTask(const Task & i_task) const
+void AIProject::DecisionMaking::Tick::ExecuteTask(Task* const i_task) const
 {
 	// Log something!
 }
 
-void AIProject::DecisionMaking::Tick::ExitTask(const Task & i_task) const
+void AIProject::DecisionMaking::Tick::ExitTask(Task* const i_task) const
 {
 	// Log something!
 }

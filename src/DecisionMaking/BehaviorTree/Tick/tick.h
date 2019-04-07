@@ -1,9 +1,7 @@
 #pragma once
 
-#include <vector>
-
 #include "../../Blackboard/blackboard.h"
-#include "../task.h"
+#include "../Task/TaskBase/task.h"
 #include "../behaviorTree.h"
 
 namespace AIProject
@@ -15,13 +13,14 @@ namespace AIProject
 		public:
 			Tick(const BehaviorTree* i_behaviorTree, Blackboard &i_blackBoard);
 
-			void OpenTask(const Task &i_task);
-			void CloseTask(const Task &i_task);
+			// Cannot pass Task as weak or shared pointers because it is a "this" pointer
+			void OpenTask(Task* const i_task);
+			void CloseTask(Task* const i_task);
 
 			// Debug functions for logging
-			void EnterTask(const Task &i_task) const;
-			void ExecuteTask(const Task &i_task) const;
-			void ExitTask(const Task &i_task) const;
+			void EnterTask(Task* const i_task) const;
+			void ExecuteTask(Task* const i_task) const;
+			void ExitTask(Task* const i_task) const;
 
 			~Tick();
 
@@ -29,7 +28,7 @@ namespace AIProject
 			Blackboard & m_blackboard;
 
 		private:
-			std::vector<Task> m_vOpenTasks;
+			std::vector<Task*> m_vOpenTasks;
 		};
 	}
 }
