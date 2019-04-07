@@ -16,10 +16,14 @@ namespace AIProject
 			Status Run(const Tick &i_tick);
 
 			void Enter(const Tick &i_tick);
-			void Open(const Tick &i_tick);
+			void Open(Tick &i_tick);                 
 			Status Execute(const Tick &i_tick);
-			void Close(const Tick &i_tick);
+			void Close(Tick &i_tick);                
 			void Exit(const Tick &i_tick);
+
+			// Task ID
+			// -------
+			int m_id;
 
 		protected:
 			virtual void OnEnter(const Tick &i_tick) {}
@@ -27,10 +31,11 @@ namespace AIProject
 			virtual Status OnExecute(const Tick &i_tick) {}
 			virtual void OnClose(const Tick &i_tick) {}
 			virtual void OnExit(const Tick &i_tick) {}
-
+			
 		private:
-			int m_id;
 			std::vector<Task> m_vChildren;
 		};
+
+		bool operator==(const Task &lhs, const Task &rhs);
 	}
 }
