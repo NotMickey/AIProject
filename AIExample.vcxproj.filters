@@ -115,6 +115,12 @@
     <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\selector.cpp">
       <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
     </ClCompile>
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\sequencer.cpp">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\inverter.cpp">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -367,6 +373,12 @@
     </ClInclude>
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\TaskBase\task.h">
       <Filter>src\DecisionMaking\BehaviorTree\TaskTypes\TaskBase</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\sequencer.h">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\inverter.h">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

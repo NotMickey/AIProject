@@ -7,16 +7,16 @@ namespace AIProject
 	namespace DecisionMaking
 	{
 		// -----------
-		// SELECTOR Task
+		// SEQUENCER Task
 		// This task loops through all its childern, running them
 		// It immediately terminates and returns the status code of the first child with a RUNNING status 
-		// Otherwise it returns a FAILURE at the end
+		// Otherwise it returns a SUCCESS at the end
 		// -----------
 
-		class Selector : public Task
+		class Sequencer : public Task
 		{
 		public:
-			Selector();
+			Sequencer();
 
 		protected:
 			virtual void OnOpen(const Tick &i_tick) override;

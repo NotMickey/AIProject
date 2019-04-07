@@ -38,7 +38,7 @@ void AIProject::DecisionMaking::Task::Open(Tick & i_tick)
 	i_tick.m_blackboard.Set(Key::IsOpen, true, i_tick.m_pTree->m_id, m_id);
 }
 
-AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Execute(const Tick & i_tick)
+AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Execute(Tick & i_tick)
 {
 	Status stat = OnExecute(i_tick);
 	i_tick.ExecuteTask(this);

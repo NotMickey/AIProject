@@ -198,7 +198,9 @@
     <ClCompile Include="src\DecisionMaking\ActionManager\action.cpp" />
     <ClCompile Include="src\DecisionMaking\ActionManager\actionManager.cpp" />
     <ClCompile Include="src\DecisionMaking\BehaviorTree\behaviorTree.cpp" />
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\inverter.cpp" />
     <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\selector.cpp" />
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\sequencer.cpp" />
     <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\TaskBase\task.cpp" />
     <ClCompile Include="src\DecisionMaking\BehaviorTree\Tick\tick.cpp" />
     <ClCompile Include="src\DecisionMaking\Blackboard\blackboard.cpp" />
@@ -239,7 +241,9 @@
     <ClInclude Include="src\DecisionMaking\ActionManager\actionManager.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\behaviorTree.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\status.h" />
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\inverter.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\selector.h" />
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\sequencer.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\TaskBase\task.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Tick\tick.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\TreeBase\decisionMakingBehavior.h" />
