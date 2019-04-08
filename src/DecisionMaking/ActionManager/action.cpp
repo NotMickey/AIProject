@@ -9,9 +9,9 @@ bool AIProject::DecisionMaking::Action::CanInterrupt() const
 	return canInterrupt;
 }
 
-bool AIProject::DecisionMaking::Action::CanDoBoth(const std::shared_ptr<Action*> i_Action) const
+bool AIProject::DecisionMaking::Action::CanDoBoth(const std::shared_ptr<Action> i_Action) const
 {
-	if (this->id == (*i_Action)->id)
+	if (this->id == i_Action->id)
 		return false;
 
 	return true;

@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_ptr<Action*> i_action)
+void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_ptr<Action> i_action)
 {
 	if (pendingQueue.empty())
 	{
@@ -21,7 +21,7 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 			pendingQueue[i] = i_action;
 
 			// sort the updated list
-			std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action*>>()); // Sort ascending. NOTE: sorting based on priority which is an integer
+			std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action>>()); // Sort ascending. NOTE: sorting based on priority which is an integer
 																					  // Thus the 3rd argument works as intended.
 
 			return;
@@ -32,7 +32,7 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 	pendingQueue.push_back(i_action);
 
 	// And sort
-	std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action*>>());
+	std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action>>());
 }
 
 void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
@@ -45,10 +45,10 @@ void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
 	// Might need to optimize this
 	while (it != pendingQueue.end())
 	{
-		(*(*it))->queuedTime += deltaTime;
+		(*it)->queuedTime += deltaTime;
 
 		// Did this pending action expire?
-		if ((*(*it))->queuedTime > (*(*it))->expiryTime)
+		if ((*it)->queuedTime > (*it)->expiryTime)
 		{
 			// Then remove it!
 			it = pendingQueue.erase(it);
@@ -64,13 +64,13 @@ void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
 
 	while (it != pendingQueue.end())
 	{
-		if (activeQueue.size() > 0 && (*activeQueue[0])->priority > (*(*it))->priority)
+		if (activeQueue.size() > 0 && activeQueue[0]->priority > (*it)->priority)
 		{
 			++it;
 			continue;
 		}
 			
-		if ((*(*it))->CanInterrupt())
+		if ((*it)->CanInterrupt())
 		{
 			// Clear active queue and push this action onto it
 			activeQueue.clear();
@@ -101,7 +101,7 @@ void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
 		while (it2 != activeQueue.end())
 		{
 			// Can the current pending queue action NOT run with the current active queue action?
-			if (!(*(*it))->CanDoBoth(*it2))
+			if (!(*it)->CanDoBoth(*it2))
 			{
 				canDoBoth = false;
 				break;
@@ -132,7 +132,7 @@ void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
 	while (it2 != activeQueue.end())
 	{
 		// Is this action complete?
-		if ((*(*it2))->IsComplete())
+		if ((*it2)->IsComplete())
 		{
 			// The remove it!
 			it2 = activeQueue.erase(it2);
@@ -140,7 +140,7 @@ void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
 		else
 		{
 			// Otherwise execute this action
-			(*(*it2))->Execute();
+			(*it2)->Execute();
 
 			++it2;
 		}

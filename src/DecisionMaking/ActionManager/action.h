@@ -12,13 +12,13 @@ namespace AIProject
 			Action(const float &i_expiryTime, const int &i_priority = -1, const bool &i_canInterrupt = false);
 
 			bool CanInterrupt() const;						// Whether this action can interrupt others
-			bool CanDoBoth(const std::shared_ptr<Action*> i_Action) const;	// Whether this action can run with the given action
+			bool CanDoBoth(const std::shared_ptr<Action> i_Action) const;	// Whether this action can run with the given action
 
 			bool IsComplete() const;
 			virtual void Execute() = 0;						// Called every frame
 
 			int priority;									// Indicates importance
-			int id = -1;											// Action ID
+			int id = -1;									// Action ID
 			float queuedTime;								// How long this action has been queued for
 			float expiryTime;								// Wait time before discarding action
 

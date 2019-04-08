@@ -12,13 +12,13 @@ namespace AIProject
 		class ActionManager
 		{
 		public:
-			void ScheduleAction(const std::shared_ptr<Action*> i_action);
+			void ScheduleAction(const std::shared_ptr<Action> i_action);
 			void Update(const float &deltaTime);
 
 		private:
-			std::vector<std::shared_ptr<Action*>> pendingQueue;				// A priority queue of pending actions
+			std::vector<std::shared_ptr<Action>> pendingQueue;				// A priority queue of pending actions
 
-			std::vector<std::shared_ptr<Action*>> activeQueue;              // A priority queue of active actions being executed simultaneously.
+			std::vector<std::shared_ptr<Action>> activeQueue;              // A priority queue of active actions being executed simultaneously.
 		};
 	}
 }
