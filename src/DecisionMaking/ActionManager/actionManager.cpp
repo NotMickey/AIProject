@@ -119,7 +119,7 @@ void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
 
 		// We're here! That means the current pending action can run concurrently with every active action!
 		activeQueue.push_back(*it);
-		std::sort(activeQueue.begin(), activeQueue.end(), std::greater<std::shared_ptr<Action*>>());
+		std::sort(activeQueue.begin(), activeQueue.end(), std::greater<std::shared_ptr<Action>>());
 
 		it = pendingQueue.erase(it);
 	}

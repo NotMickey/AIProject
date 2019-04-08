@@ -124,6 +124,7 @@
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.cpp">
       <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -390,6 +391,9 @@
       <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
     </ClInclude>
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.h">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.h">
       <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClInclude>
   </ItemGroup>
