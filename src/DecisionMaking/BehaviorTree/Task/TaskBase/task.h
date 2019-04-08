@@ -13,7 +13,10 @@ namespace AIProject
 		class Task
 		{
 		public:
-			inline std::vector<std::shared_ptr<Task>> GetChildren() { return m_vChildren; };
+			Task(const int &i_id) : m_id(i_id) {}
+
+			inline std::vector<std::shared_ptr<Task>> GetChildren() { return m_vChildren; }
+			void AddChildTask(const std::shared_ptr<Task> &i_childTask);
 
 			Status Run(Tick &i_tick);
 
@@ -34,7 +37,7 @@ namespace AIProject
 		protected:
 			virtual void OnEnter(const Tick &i_tick) {}
 			virtual void OnOpen(const Tick &i_tick) {}
-			virtual Status OnExecute(Tick &i_tick) {}
+			virtual Status OnExecute(Tick &i_tick) { return Status(); }
 			virtual void OnClose(const Tick &i_tick) {}
 			virtual void OnExit(const Tick &i_tick) {}
 			

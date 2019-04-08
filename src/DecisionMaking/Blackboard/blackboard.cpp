@@ -27,6 +27,10 @@ void AIProject::DecisionMaking::Blackboard::Set(const Key & i_key, const std::sh
 	it->second.insert(std::pair<int, std::shared_ptr<Action>>(superID, i_value));
 }
 
+void AIProject::DecisionMaking::Blackboard::Set(const Key & i_key, const bool & i_value)
+{
+}
+
 bool AIProject::DecisionMaking::Blackboard::GetBool(const Key & i_key, const int & i_treeID, const int & i_taskID)
 {
 	auto primaryKey = boolMap.find(i_key);
@@ -61,6 +65,9 @@ int AIProject::DecisionMaking::Blackboard::GetInt(const Key & i_key, const int &
 
 std::shared_ptr<AIProject::DecisionMaking::Action> AIProject::DecisionMaking::Blackboard::GetAction(const Key & i_key, const int & i_treeID)
 {
+	if (i_treeID == 0)
+		return std::shared_ptr<Action>(nullptr);
+
 	auto primaryKey = actionMap.find(i_key);
 
 	if (primaryKey != actionMap.end())

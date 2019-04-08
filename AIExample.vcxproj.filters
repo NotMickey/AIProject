@@ -121,6 +121,9 @@
     <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\inverter.cpp">
       <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -245,6 +248,12 @@
     </Filter>
     <Filter Include="src\DecisionMaking\BehaviorTree\TaskTypes\TaskBase">
       <UniqueIdentifier>{a6d5aa79-ef87-4ef8-b81d-2f1e30b49542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIBehaviorTree">
+      <UniqueIdentifier>{8c9551f0-b0af-411f-ace6-163735f15bdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIBehaviorTree\TypeA">
+      <UniqueIdentifier>{2166a9b4-2118-4dee-bd78-cf408e3babdf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -379,6 +388,9 @@
     </ClInclude>
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\inverter.h">
       <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.h">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,7 @@ namespace AIProject
 		class Sequencer : public Task
 		{
 		public:
-			Sequencer();
+			Sequencer(const int &i_id) : Task(i_id) {}
 
 		protected:
 			virtual void OnOpen(const Tick &i_tick) override;

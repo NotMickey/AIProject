@@ -4,6 +4,11 @@
 #include "../../Tick/tick.h"
 #include "../../status.h"
 
+void AIProject::DecisionMaking::Task::AddChildTask(const std::shared_ptr<Task>& i_childTask)
+{
+	m_vChildren.push_back(i_childTask);
+}
+
 AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Run(Tick & i_tick)
 {
 	Enter(i_tick);

@@ -180,6 +180,7 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.cpp" />
     <ClCompile Include="src\AILogic\BlendedSteering\blendedSteering.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicAlign\dynamicAlign.cpp" />
@@ -222,6 +223,7 @@
     <ClCompile Include="src\Physics\Obstacle\obstacle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.h" />
     <ClInclude Include="src\AILogic\BlendedSteering\blendedSteering.h" />
     <ClInclude Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.h" />
     <ClInclude Include="src\AILogic\Dynamic\DynamicAlign\dynamicAlign.h" />

@@ -17,14 +17,11 @@ namespace AIProject
 		class Selector : public Task
 		{
 		public:
-			Selector();
+			Selector(const int &i_id) : Task(i_id) {}
 
 		protected:
 			virtual void OnOpen(const Tick &i_tick) override;
 			virtual Status OnExecute(Tick &i_tick) override;
-
-		private:
-
 		};
 	}
 }

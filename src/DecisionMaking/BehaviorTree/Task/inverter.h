@@ -16,7 +16,7 @@ namespace AIProject
 		class Inverter : public Task
 		{
 		public:
-			Inverter();
+			Inverter(const int &i_id) : Task(i_id) {}
 
 			virtual Status OnExecute(Tick &i_tick) override;
 

@@ -9,7 +9,6 @@ namespace AIProject
 			SUCCESS,
 			FAILURE,
 			RUNNING,
-			ERROR
 		};
 	}
 }

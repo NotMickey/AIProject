@@ -13,7 +13,8 @@ namespace AIProject
 		{
 			IsOpen,
 			RunningChild,
-			action
+			action,
+			Alerted
 		};
 
 		class Blackboard
@@ -26,11 +27,16 @@ namespace AIProject
 			// Per tree Set functions 
 			void Set(const Key &i_key, const std::shared_ptr<Action> &i_value, const int &i_treeID);
 
-			// Per node Get functions
+			// Global Set functions
+			void Set(const Key &i_key, const bool &i_value);
+
+			// Get functions
+			// For a per tree Get keep taskID as 0
+			// For a global Get keep treeID and taskID as 0
 			bool GetBool(const Key &i_key, const int &i_treeID, const int &i_taskID);
 			int GetInt(const Key &i_key, const int &i_treeID, const int &i_taskID);
 
-			// Per tree Get functions
+			// A special per tree Get function
 			std::shared_ptr<Action> GetAction(const Key &i_key, const int &i_treeID);
 
 		private:
