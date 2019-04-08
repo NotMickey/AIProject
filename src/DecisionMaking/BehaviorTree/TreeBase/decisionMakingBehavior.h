@@ -1,15 +1,17 @@
 #pragma once
 
+#include <memory>
+
 namespace AIProject
 {
 	namespace DecisionMaking
 	{
-		enum Status;
+		class Action;
 
 		class DecisionMakingBehavior
 		{
 		public:
-			virtual Status GetAction() = 0;
+			virtual std::shared_ptr<Action> GetAction() = 0;
 
 			virtual ~DecisionMakingBehavior() {}
 

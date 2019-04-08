@@ -24,3 +24,12 @@ void * AIProject::DecisionMaking::Blackboard::Get(const Key & i_key, const int &
 
 	return nullptr;
 }
+
+void AIProject::DecisionMaking::Blackboard::SetAction(const Key & i_key, const std::shared_ptr<Action> &i_action, const int & i_treeID)
+{
+}
+
+std::shared_ptr<AIProject::DecisionMaking::Action> AIProject::DecisionMaking::Blackboard::GetAction(const Key & i_key, const int & i_treeID)
+{
+	return std::shared_ptr<Action>();
+}

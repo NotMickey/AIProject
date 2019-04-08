@@ -15,9 +15,7 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Selector::OnExecute
 
 	for (int i = runningChild; i < GetChildren().size(); i++)
 	{
-		std::shared_ptr<Task> childTask = (GetChildren()[i]);
-
-		Status childStat = childTask->Run(i_tick);
+		Status childStat = (GetChildren()[i])->Run(i_tick);
 
 		if (childStat != Status::FAILURE)
 		{
@@ -27,6 +25,9 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Selector::OnExecute
 
 				return childStat;
 			}
+
+			// Getting here means a child returned SUCCESS so don't run others
+			break;
 		}
 	}
 

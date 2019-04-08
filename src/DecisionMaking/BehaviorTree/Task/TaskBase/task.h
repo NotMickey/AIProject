@@ -38,7 +38,6 @@ namespace AIProject
 			virtual void OnClose(const Tick &i_tick) {}
 			virtual void OnExit(const Tick &i_tick) {}
 			
-		private:
 			std::vector<std::shared_ptr<Task>> m_vChildren;
 		};
 

@@ -9,16 +9,17 @@ namespace AIProject
 {
 	namespace DecisionMaking
 	{
-		class BehaviorTree : DecisionMakingBehavior
+		class BehaviorTree : public DecisionMakingBehavior
 		{
 		public:
-			virtual Status GetAction() override;
+			virtual std::shared_ptr<Action> GetAction() override;
 
 			int m_id;
 
 		protected:
-			Task m_root; // to be updated
-			Blackboard m_blackboard;
+
+			std::unique_ptr<Task> m_pRoot;
+			Blackboard &m_blackboard;
 		};
 	}
 }

@@ -9,8 +9,9 @@ namespace AIProject
 		// -----------
 		// SEQUENCER Task
 		// This task loops through all its childern, running them
-		// It immediately terminates and returns the status code of the first child with a RUNNING status 
-		// Otherwise it returns a SUCCESS at the end
+		// It immediately terminates and returns the status code of the first child with a RUNNING status
+		// It runs until either all children return SUCCESS or if a child returns FAILURE 
+		// It returns a SUCCESS at the end
 		// -----------
 
 		class Sequencer : public Task

@@ -2,14 +2,12 @@
 
 #include "Tick/tick.h"
 
-AIProject::DecisionMaking::Status AIProject::DecisionMaking::BehaviorTree::GetAction()
+std::shared_ptr<AIProject::DecisionMaking::Action> AIProject::DecisionMaking::BehaviorTree::GetAction()
 {
 	Tick tick(this, m_blackboard);
 
-	m_root.Run(tick);
+	Status stat = m_pRoot->Run(tick);
 	 
 	// currentOpenTasks = tick.opentasks;
 	// return m_blackboard.get("action");
-
-	return Status();
 }

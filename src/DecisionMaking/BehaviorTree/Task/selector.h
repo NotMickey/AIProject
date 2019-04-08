@@ -10,7 +10,8 @@ namespace AIProject
 		// SELECTOR Task
 		// This task loops through all its childern, running them
 		// It immediately terminates and returns the status code of the first child with a RUNNING status 
-		// Otherwise it returns a FAILURE at the end
+		// It runs until either all children return FAILURE or if a child returns SUCCESS
+		// It returns a SUCCESS at the end
 		// -----------
 
 		class Selector : public Task
