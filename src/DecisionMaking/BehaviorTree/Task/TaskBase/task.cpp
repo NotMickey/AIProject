@@ -8,8 +8,7 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Run(Tick & i_
 {
 	Enter(i_tick);
 
-	void* boolean = i_tick.m_blackboard.Get(Key::IsOpen, i_tick.m_pTree->m_id, m_id);
-	bool isOpen = *(static_cast<bool*>(boolean));
+	bool isOpen = i_tick.m_blackboard.GetBool(Key::IsOpen, i_tick.m_pTree->m_id, m_id);
 
 	if (!isOpen)
 		Open(i_tick);

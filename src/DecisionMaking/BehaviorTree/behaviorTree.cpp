@@ -9,5 +9,6 @@ std::shared_ptr<AIProject::DecisionMaking::Action> AIProject::DecisionMaking::Be
 	Status stat = m_pRoot->Run(tick);
 	 
 	// currentOpenTasks = tick.opentasks;
-	// return m_blackboard.get("action");
+	
+	return m_blackboard.GetAction(Key::action, m_id); // Can be null pointer!
 }
