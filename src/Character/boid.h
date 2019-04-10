@@ -6,6 +6,11 @@
 
 namespace AIProject
 {
+	// Ideally this class shouldn't exist and all Boid characters should directly inherit from BoidBase.
+	// But, because all dynamic steering behavior expect an object of type Boid (before there was a Boid base),
+	// this class exists as an extra layer.
+	// I will slowly remove all the specific Dynamic behavior functions and might get rid of this class entirely in the future
+
 	class Boid : public BoidBase
 	{
 	public:
