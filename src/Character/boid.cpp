@@ -1,7 +1,5 @@
 #include "boid.h"
 
-#include "../AILogic/steeringBase.h"
-
 #include "../AILogic/Dynamic/DynamicSeek/dynamicSeek.h"
 #include "../AILogic/Dynamic/DynamicAlign/dynamicAlign.h"
 #include "../AILogic/Dynamic/DynamicArrive/dynamicArrive.h"
@@ -88,7 +86,6 @@ void AIProject::Boid::Draw()
 	ofDrawCircle(m_kinematic.position.x, m_kinematic.position.y, 10);
 	ofDrawTriangle(m_forwardVector * 20.0f + m_kinematic.position, m_forwardVector.getPerpendicular() * 10 + m_kinematic.position,
 					m_forwardVector.getPerpendicular() * -10 + m_kinematic.position);
-
 
 	if (m_bShowPath)
 	{
@@ -199,18 +196,3 @@ AIProject::Boid::~Boid()
 		delete m_pPathFollow;
 }
 
-void AIProject::Kinematic::Update(const DynamicSteeringOutput & i_steering, const double & i_timeStep, const float & i_maxSpeed)
-{
-	position += velocity * i_timeStep + 0.5f * i_steering.linearAcceleration * i_timeStep * i_timeStep;
-
-	orientation += rotation * i_timeStep + 0.5f * i_steering.angularAcceleration * i_timeStep * i_timeStep;
-
-	velocity += i_steering.linearAcceleration * i_timeStep;
-	rotation += i_steering.angularAcceleration * i_timeStep;
-
-	if (velocity.lengthSquared() > i_maxSpeed * i_maxSpeed)
-	{
-		velocity.normalize();
-		velocity *= i_maxSpeed;
-	}
-}

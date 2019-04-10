@@ -1,24 +1,11 @@
 #pragma once
 
-#include "ofMain.h"
+#include "Base/boidBase.h"
 
 #include "../AILogic/steeringBase.h"
 
 namespace AIProject
 {
-	struct Kinematic
-	{
-		int id = 0;
-
-		ofVec2f position;
-		float orientation; // in radians!
-
-		ofVec2f velocity;
-		float rotation;
-
-		void Update(const DynamicSteeringOutput &i_steering, const double &i_timeStep, const float &i_maxSpeed);
-	};
-
 	class Boid
 	{
 	public:

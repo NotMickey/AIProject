@@ -125,6 +125,9 @@
       <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClCompile>
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.cpp" />
+    <ClCompile Include="src\Character\Base\boidBase.cpp">
+      <Filter>src\Character\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -255,6 +258,9 @@
     </Filter>
     <Filter Include="src\DecisionMaking\TreeBase">
       <UniqueIdentifier>{864610b8-3e75-4021-baf3-2dff65b4834c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Character\Base">
+      <UniqueIdentifier>{a7939d28-429b-410b-885b-e4e1bb645e60}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -395,6 +401,9 @@
     </ClInclude>
     <ClInclude Include="src\DecisionMaking\TreeBase\decisionMakingBehavior.h">
       <Filter>src\DecisionMaking\TreeBase</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Character\Base\boidBase.h">
+      <Filter>src\Character\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
