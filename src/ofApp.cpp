@@ -21,7 +21,7 @@ void ofApp::setup()
 
 	tileGraph = tileMap.GetGraph();
 
-	myBoid.m_bShowPath = true;
+	//myBoid.ShowBoidPath(true);
 
 	for (int i = 0; i < wanderSize - 1; i++)
 	{
@@ -133,7 +133,7 @@ void ofApp::mousePressed(int x, int y, int button)
 
 	std::vector<ofVec2f> waypoints;
 
-	for (unsigned int i = path.size() - 1; i >= 0; --i)
+	for (int i = path.size() - 1; i >= 0; --i)
 	{
 		ofVec2f point = tileGraph.Localize(path[i].GetSink());
 

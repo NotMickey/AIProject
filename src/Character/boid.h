@@ -6,27 +6,17 @@
 
 namespace AIProject
 {
-	class Boid
+	class Boid : public BoidBase
 	{
 	public:
-		Boid(const ofVec2f &i_position = ofVec2f());
-		Boid(const int &i_mass);
+		Boid(const ofVec2f &i_position = ofVec2f(), int i_mass = 1);
 
-		bool m_bShowPath = false;
 		bool m_bWander = false;
-
-		int m_mass;
-
-		Kinematic m_kinematic;
 
 		DynamicSteeringOutput currentSteering;
 
-		void Update(const double &i_timeStep, const float &i_maxSpeed);
-		void Draw();
+		void Update(float i_timeStep, float i_maxSpeed) override;
 
-		ofVec2f GetForwardVec() { return m_forwardVector; }
-
-		void SetTargetPosition(const ofVec2f &i_targetPosition);
 		void SetWayPoints(const std::vector<ofVec2f> &i_waypoints);
 
 		DynamicSteeringOutput SeekAndSteer(const int &x, const int &y);
@@ -37,22 +27,12 @@ namespace AIProject
 
 		DynamicSteeringOutput PathFind();
 
-		~Boid();
+		virtual ~Boid();
 
 	private:
 
 		SteeringBase* m_pPathFollow;
 
-		bool m_bReachedLimit = false;
 		bool m_bSeekTargetValid = false;
-
-		int m_breadCrumbIndex = 0;
-		ofVec2f m_breadCrumbArray[200];
-
-		ofVec2f m_previousPosition;
-
-		ofVec2f m_targetPosition;
-
-		ofVec2f m_forwardVector;
 	};
 }

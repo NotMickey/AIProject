@@ -19,7 +19,7 @@ AIProject::BoidBase::BoidBase(const ofVec2f & i_position, int i_mass) : m_mass(i
 	m_kinematic.id = rand() % 100000;
 }
 
-void AIProject::BoidBase::Update()
+void AIProject::BoidBase::Update(float i_timeStep, float i_maxSpeed)
 {
 	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
 }
@@ -30,7 +30,6 @@ void AIProject::BoidBase::Draw()
 	ofDrawCircle(m_kinematic.position.x, m_kinematic.position.y, 10);
 	ofDrawTriangle(m_forwardVector * 20.0f + m_kinematic.position, m_forwardVector.getPerpendicular() * 10 + m_kinematic.position,
 		m_forwardVector.getPerpendicular() * -10 + m_kinematic.position);
-
 
 	if (m_bShowPath)
 	{

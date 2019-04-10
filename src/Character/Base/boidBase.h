@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-
 #include "ofMain.h"
 
 namespace AIProject
@@ -26,7 +24,7 @@ namespace AIProject
 	public:
 		BoidBase(const ofVec2f &i_position = ofVec2f(), int i_mass = 1);
 
-		virtual void Update();
+		virtual void Update(float i_timeStep, float i_maxSpeed);
 
 		void Draw();
 		void ShowBoidPath(bool i_isTrue = false);

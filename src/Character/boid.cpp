@@ -7,43 +7,10 @@
 #include "../AILogic/Dynamic/DynamicPathFollow/dynamicPathFollow.h"
 #include "../AILogic/Dynamic/CollisionAvoidance/collisionAvoidance.h"
 
-AIProject::Boid::Boid(const ofVec2f &i_position)
-{
-	m_mass = 1;
+AIProject::Boid::Boid(const ofVec2f &i_position, int i_mass) : BoidBase(i_position, i_mass)
+{}
 
-	ofSetCircleResolution(50);
-
-	m_kinematic.position = i_position;
-	m_previousPosition = m_kinematic.position;
-
-	m_kinematic.orientation = PI / 180 * 0.0f;
-
-	m_kinematic.velocity = ofVec2f(0.0f, 0.0f);
-	m_kinematic.rotation = 0.0f;
-
-	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
-
-	m_kinematic.id = rand() % 100000;
-}
-
-AIProject::Boid::Boid(const int &i_mass) : m_mass(i_mass)
-{
-	ofSetCircleResolution(50);
-
-	m_kinematic.position = ofVec2f(512, 384);
-	m_previousPosition = m_kinematic.position;
-
-	m_kinematic.orientation = PI / 180 * 0.0f;
-
-	m_kinematic.velocity = ofVec2f(0.0f, 0.0f);
-	m_kinematic.rotation = 0.0f;
-
-	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
-
-	m_kinematic.id = rand() % 100000;
-}
-
-void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
+void AIProject::Boid::Update(float i_timeStep, float i_maxSpeed)
 {
 	DynamicSteeringOutput steering;
 
@@ -62,55 +29,7 @@ void AIProject::Boid::Update(const double &i_timeStep, const float &i_maxSpeed)
 	//m_kinematic.Update(currentSteering, i_timeStep, i_maxSpeed);
 	m_kinematic.Update(steering, i_timeStep, i_maxSpeed);
 	
-	m_forwardVector = ofVec2f(cosf(m_kinematic.orientation), sinf(m_kinematic.orientation));
-
-	if (m_previousPosition.distance(m_kinematic.position) >= 15.0f)
-	{
-		m_breadCrumbIndex++;
-
-		if (m_breadCrumbIndex == 200)
-		{
-			m_breadCrumbIndex = 0;
-			m_bReachedLimit = true;
-		}
-
-		m_breadCrumbArray[m_breadCrumbIndex] = m_previousPosition;
-
-		m_previousPosition = m_kinematic.position;
-	}
-}
-
-void AIProject::Boid::Draw()
-{
-	// Draw the boid using its position and forward vector
-	ofDrawCircle(m_kinematic.position.x, m_kinematic.position.y, 10);
-	ofDrawTriangle(m_forwardVector * 20.0f + m_kinematic.position, m_forwardVector.getPerpendicular() * 10 + m_kinematic.position,
-					m_forwardVector.getPerpendicular() * -10 + m_kinematic.position);
-
-	if (m_bShowPath)
-	{
-		// Draw the bread crumbs
-		if (!m_bReachedLimit)
-		{
-			for (int i = 0; i < m_breadCrumbIndex + 1; i++)
-			{
-				ofDrawCircle(m_breadCrumbArray[i], 3);
-			}
-		}
-		else
-		{
-			for (int i = 0; i < 200; i++)
-			{
-				ofDrawCircle(m_breadCrumbArray[i], 3);
-			}
-		}
-	}
-}
-
-void AIProject::Boid::SetTargetPosition(const ofVec2f & i_targetPosition)
-{
-	m_targetPosition = i_targetPosition;
-	m_bSeekTargetValid = true;
+	BoidBase::Update(i_timeStep, i_maxSpeed);
 }
 
 void AIProject::Boid::SetWayPoints(const std::vector<ofVec2f>& i_waypoints)
