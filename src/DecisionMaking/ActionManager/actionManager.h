@@ -13,7 +13,7 @@ namespace AIProject
 		{
 		public:
 			void ScheduleAction(const std::shared_ptr<Action> i_action);
-			void Update(const float &deltaTime);
+			void Update(float i_deltaTime);
 
 		private:
 			std::vector<std::shared_ptr<Action>> pendingQueue;				// A priority queue of pending actions

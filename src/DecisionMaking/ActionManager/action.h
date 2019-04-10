@@ -9,7 +9,7 @@ namespace AIProject
 		class Action
 		{
 		public:
-			Action(const float &i_expiryTime, const int &i_priority = -1, const bool &i_canInterrupt = false);
+			Action(float i_expiryTime, int i_priority = -1, bool i_canInterrupt = false);
 
 			bool CanInterrupt() const;						// Whether this action can interrupt others
 			bool CanDoBoth(const std::shared_ptr<Action> i_Action) const;	// Whether this action can run with the given action

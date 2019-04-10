@@ -1,6 +1,6 @@
 #include "action.h"
 
-AIProject::DecisionMaking::Action::Action(const float &i_expiryTime, const int &i_priority, const bool &i_canInterrupt)
+AIProject::DecisionMaking::Action::Action(float i_expiryTime, int i_priority, bool i_canInterrupt)
 	: priority(i_priority), expiryTime(i_expiryTime), canInterrupt(i_canInterrupt)
 {}
 

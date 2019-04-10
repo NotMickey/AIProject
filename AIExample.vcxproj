@@ -250,11 +250,11 @@
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\sequencer.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\TaskBase\task.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Tick\tick.h" />
-    <ClInclude Include="src\DecisionMaking\BehaviorTree\TreeBase\decisionMakingBehavior.h" />
     <ClInclude Include="src\DecisionMaking\Blackboard\blackboard.h" />
     <ClInclude Include="src\DecisionMaking\DecisionTree\Action\actionNode.h" />
     <ClInclude Include="src\DecisionMaking\DecisionTree\decisionNodeBase.h" />
     <ClInclude Include="src\DecisionMaking\DecisionTree\Decision\decisionNode.h" />
+    <ClInclude Include="src\DecisionMaking\TreeBase\decisionMakingBehavior.h" />
     <ClInclude Include="src\Graph\Algorithm\AStar\AStar.h" />
     <ClInclude Include="src\Graph\Algorithm\AStar\AStarHelper.h" />
     <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\eulerHeuristic.h" />

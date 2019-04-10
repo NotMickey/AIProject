@@ -1,6 +1,6 @@
 #pragma once
 
-#include "TreeBase/decisionMakingBehavior.h"
+#include "../TreeBase/decisionMakingBehavior.h"
 
 #include "Task/TaskBase/task.h"
 #include "../Blackboard/blackboard.h"

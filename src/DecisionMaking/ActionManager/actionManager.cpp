@@ -10,19 +10,16 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 		return;
 	}
 
-	int i = 0;
-
-	for (i = 0; i < pendingQueue.size(); i++)
+	for (int i = 0; i < pendingQueue.size(); i++)
 	{
-		// If an action with the given id already exists in the queue
-		if (i_action == pendingQueue[i])
+		// If an action with the given id already exists in the queue AND has higher priority
+		if (i_action == pendingQueue[i] && i_action->priority >= pendingQueue[i]->priority)
 		{
 			// replace it
 			pendingQueue[i] = i_action;
 
 			// sort the updated list
-			std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action>>()); // Sort ascending. NOTE: sorting based on priority which is an integer
-																					  // Thus the 3rd argument works as intended.
+			std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action>>()); // Sort descending
 
 			return;
 		}
@@ -35,7 +32,7 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 	std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action>>());
 }
 
-void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
+void AIProject::DecisionMaking::ActionManager::Update(float i_deltaTime)
 {
 	//////
 	// Update queued time for each action in pending
@@ -45,7 +42,7 @@ void AIProject::DecisionMaking::ActionManager::Update(const float & deltaTime)
 	// Might need to optimize this
 	while (it != pendingQueue.end())
 	{
-		(*it)->queuedTime += deltaTime;
+		(*it)->queuedTime += i_deltaTime;
 
 		// Did this pending action expire?
 		if ((*it)->queuedTime > (*it)->expiryTime)
