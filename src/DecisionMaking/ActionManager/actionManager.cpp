@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_ptr<Action> i_action)
+void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_ptr<Action> &i_action)
 {
 	if (pendingQueue.empty())
 	{

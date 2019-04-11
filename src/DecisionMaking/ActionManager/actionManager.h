@@ -12,7 +12,7 @@ namespace AIProject
 		class ActionManager
 		{
 		public:
-			void ScheduleAction(const std::shared_ptr<Action> i_action);
+			void ScheduleAction(const std::shared_ptr<Action> &i_action);
 			void Update(float i_deltaTime);
 
 		private:

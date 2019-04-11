@@ -130,6 +130,9 @@
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.cpp">
       <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp">
+      <Filter>src\AILogic\AIBrain</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">

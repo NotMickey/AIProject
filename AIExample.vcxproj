@@ -182,6 +182,7 @@
   <ItemGroup>
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.cpp" />
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.cpp" />
+    <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp" />
     <ClCompile Include="src\AILogic\BlendedSteering\blendedSteering.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.cpp" />
     <ClCompile Include="src\AILogic\Dynamic\DynamicAlign\dynamicAlign.cpp" />
