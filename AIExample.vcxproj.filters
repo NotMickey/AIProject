@@ -136,6 +136,12 @@
     <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\checkIfStationary.cpp">
       <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\edgeCollisionCheck.cpp">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\avoidEnemyCheck.cpp">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -426,6 +432,12 @@
       <Filter>src\AILogic\AIDecisionTree</Filter>
     </ClInclude>
     <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\checkIfStationary.h">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\edgeCollisionCheck.h">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\avoidEnemyCheck.h">
       <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
     </ClInclude>
   </ItemGroup>
