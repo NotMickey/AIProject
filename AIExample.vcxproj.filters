@@ -124,9 +124,11 @@
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.cpp">
       <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClCompile>
-    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.cpp" />
     <ClCompile Include="src\Character\Base\boidBase.cpp">
       <Filter>src\Character\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +263,9 @@
     </Filter>
     <Filter Include="src\Character\Base">
       <UniqueIdentifier>{a7939d28-429b-410b-885b-e4e1bb645e60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIBrain">
+      <UniqueIdentifier>{5c0d74fe-ec96-48d4-8041-748dda626a16}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -404,6 +409,9 @@
     </ClInclude>
     <ClInclude Include="src\Character\Base\boidBase.h">
       <Filter>src\Character\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBrain\aiBrain.h">
+      <Filter>src\AILogic\AIBrain</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
