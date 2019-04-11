@@ -18,6 +18,8 @@ namespace AIProject
 		private:
 			std::shared_ptr<Boid> m_pCharacter;
 			float m_timer;
+
+			ofVec2f m_savedPosition;
 		};
 	}
 }

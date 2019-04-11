@@ -142,6 +142,9 @@
     <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\avoidEnemyCheck.cpp">
       <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\ActionNodes\moveRandom.cpp">
+      <Filter>src\AILogic\AIDecisionTree\ActionNode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -439,6 +442,9 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\avoidEnemyCheck.h">
       <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\ActionNodes\moveRandom.h">
+      <Filter>src\AILogic\AIDecisionTree\ActionNode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
