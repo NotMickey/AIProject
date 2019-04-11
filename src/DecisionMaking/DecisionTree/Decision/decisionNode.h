@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../decisionNodeBase.h"
-#include "../../../Character/boid.h"
 
 namespace AIProject
 {
@@ -10,9 +9,19 @@ namespace AIProject
 		class DecisionNode : public DecisionNodeBase
 		{
 		public:
-			virtual DecisionNodeBase* MakeDecision() override { GetBranch()->MakeDecision(); }
+			DecisionNode(DecisionNodeBase* i_trueNode = nullptr, DecisionNodeBase* i_falseNode = nullptr)
+				: m_pTrueNode(i_trueNode), m_pFalseNode(i_falseNode) {}
 
-			virtual ~DecisionNode() {}
+			virtual DecisionNodeBase* MakeDecision() override { return GetBranch()->MakeDecision(); }
+
+			virtual ~DecisionNode() 
+			{
+				if (m_pTrueNode)
+					delete m_pTrueNode;
+
+				if (m_pFalseNode)
+					delete m_pFalseNode;
+			}
 
 		protected:
 			DecisionNodeBase* m_pTrueNode;

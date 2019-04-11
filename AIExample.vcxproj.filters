@@ -133,6 +133,9 @@
     <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp">
       <Filter>src\AILogic\AIBrain</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\checkIfStationary.cpp">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -269,6 +272,9 @@
     </Filter>
     <Filter Include="src\AILogic\AIBrain">
       <UniqueIdentifier>{5c0d74fe-ec96-48d4-8041-748dda626a16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIDecisionTree\ActionNode">
+      <UniqueIdentifier>{707d0c85-9377-4dfe-98fa-e42f5bc59ce5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -415,6 +421,12 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\AIBrain\aiBrain.h">
       <Filter>src\AILogic\AIBrain</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\boidBehaviorDocile.h">
+      <Filter>src\AILogic\AIDecisionTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\checkIfStationary.h">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
