@@ -1,6 +1,6 @@
 #include "tileMap.h"
 
-AIProject::Graph::TileMap::TileMap(const int & i_numOfTilesPerSide, const int & i_tileLength, const float & i_edgeCost, const ofVec2f &i_startPosition) :
+AIProject::Graph::TileMap::TileMap(int i_numOfTilesPerSide, int i_tileLength, float i_edgeCost, const ofVec2f &i_startPosition) :
 						m_numOfTilesPerSide(i_numOfTilesPerSide), m_tileLength(i_tileLength), m_edgeCost(i_edgeCost), m_startPosition(i_startPosition)
 {
 	BuildGraph();
@@ -11,7 +11,7 @@ AIProject::Graph::DirectedWeightedGraph AIProject::Graph::TileMap::GetGraph()
 	return m_graph;
 }
 
-int AIProject::Graph::TileMap::GetNodeFromMouseClick(const ofVec2f &i_position)
+int AIProject::Graph::TileMap::GetNodeAtPosition(const ofVec2f &i_position) const
 {
 	if (i_position.x < m_startPosition.x || i_position.x > m_startPosition.x + m_numOfTilesPerSide * m_tileLength)
 		return -1;

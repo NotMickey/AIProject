@@ -9,17 +9,18 @@ namespace AIProject
 		class TileMap
 		{
 		public:
-			TileMap(const int &i_numOfTilesPerSide, const int &i_tileLength, const float &i_edgeCost,const ofVec2f &i_startPosition);
+			TileMap(int i_numOfTilesPerSide, int i_tileLength, float i_edgeCost, const ofVec2f &i_startPosition);
 
 			DirectedWeightedGraph GetGraph();
 
-			int GetNodeFromMouseClick(const ofVec2f &i_position);
+			int GetNodeAtPosition(const ofVec2f &i_position) const;
+			inline int GetNumberOfTilesPerSide() const { return m_numOfTilesPerSide; }
 
 			void Draw();
 
 		private:
+			int m_numOfTilesPerSide;
 			float m_tileLength;
-			float m_numOfTilesPerSide;
 
 			float m_edgeCost;
 

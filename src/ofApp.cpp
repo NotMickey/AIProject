@@ -114,14 +114,14 @@ void ofApp::mouseDragged(int x, int y, int button){
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
 {
-	int goalNode = tileMap.GetNodeFromMouseClick(ofVec2f(x, y));
+	int goalNode = tileMap.GetNodeAtPosition(ofVec2f(x, y));
 
 	if (goalNode == -1)
 		return;
 
 	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::EulerHeuristic(goalNode, tileGraph);
 	
-	int startNode = tileMap.GetNodeFromMouseClick(myBoid.m_kinematic.position);
+	int startNode = tileMap.GetNodeAtPosition(myBoid.m_kinematic.position);
 
 	if (startNode == -1)
 		startNode = 0;
