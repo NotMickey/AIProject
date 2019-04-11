@@ -2,7 +2,7 @@
 
 #include "../DynamicSeparation/dynamicSeparation.h"
 
-AIProject::CollisionAvoidance::CollisionAvoidance(Boid & i_character, Boid i_targets[], const int &i_size, const float & i_radiusOfAvoidance, const float & i_angleOfAvoidance) :
+AIProject::CollisionAvoidance::CollisionAvoidance(Boid & i_character, Boid i_targets[], int i_size, float i_radiusOfAvoidance, float i_angleOfAvoidance) :
 								m_character(i_character), m_targets(i_targets), m_arraySize(i_size), m_radiusOfAvoidance(i_radiusOfAvoidance), m_angleOfAvoidance(i_angleOfAvoidance)
 {}
 
@@ -11,35 +11,17 @@ AIProject::DynamicSteeringOutput AIProject::CollisionAvoidance::GetSteering()
 {
 	DynamicSteeringOutput steering;
 
-	int avoidingObjects = 0;
+	m_vTargets.clear();
 
 	for (int i = 0; i < m_arraySize; i++)
 	{
 		if (CanCollide(m_targets[i]))
-			avoidingObjects++;
+			m_vTargets.push_back(m_targets[i]);
 	}
 
-	if (avoidingObjects == 0)
-		return steering;
-
-	Boid * targets = new Boid[avoidingObjects];
-
-	avoidingObjects = 0;
-
-	for (int i = 0; i < m_arraySize; i++)
-	{
-		if (CanCollide(m_targets[i]))
-		{
-			targets[avoidingObjects] = m_targets[i];
-			avoidingObjects++;
-		}
-	}
-
-	DynamicSeparation seperation(m_character, targets, avoidingObjects, m_radiusOfAvoidance, 5, 50);
+	DynamicSeparation seperation(m_character, m_vTargets, m_radiusOfAvoidance, 5, 50);
 
 	steering = seperation.GetSteering();
-
-	delete[avoidingObjects] targets;
 	
 	return steering;
 }
