@@ -1,5 +1,7 @@
 #include "moveRandom.h"
 
+#include <random>
+
 #include "../../../Graph/Algorithm/AStar/AStar.h"
 #include "../../../Graph/Algorithm/AStar/AStarHelper.h"
 
@@ -12,5 +14,32 @@ AIProject::DecisionMaking::MoveRandom::MoveRandom(const std::shared_ptr<Boid>& i
 
 void AIProject::DecisionMaking::MoveRandom::Execute()
 {
-	// generate waypoints and feed into character : TODO
+	int startNode = m_tileMap.GetNodeAtPosition(m_pCharacter->m_kinematic.position);
+
+	float x = (rand() % (int)(m_pCharacter->m_kinematic.position.x + 120 - (m_pCharacter->m_kinematic.position.x - 120))) + (m_pCharacter->m_kinematic.position.x - 120); // Random X pos
+	float y = (rand() % (int)(m_pCharacter->m_kinematic.position.y + 120 - (m_pCharacter->m_kinematic.position.y - 120))) + (m_pCharacter->m_kinematic.position.y - 120); // Random Y pos
+
+	int goalNode = m_tileMap.GetNodeAtPosition(ofVec2f(x, y));
+
+	if (goalNode == -1)
+		goalNode = 1;
+
+	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::EulerHeuristic(goalNode, m_tileMap.GetGraph());
+
+	std::vector<AIProject::Graph::DirectedWeightedEdge> path = AIProject::Graph::FindPath(startNode, goalNode, m_tileMap.GetGraph(), complexHeuristic);
+
+	std::vector<ofVec2f> waypoints;
+
+	for (int i = path.size() - 1; i >= 0; --i)
+	{
+		ofVec2f point = m_tileMap.GetGraph().Localize(path[i].GetSink());
+		waypoints.push_back(point);
+	}
+
+	ofVec2f point = m_tileMap.GetGraph().Localize(startNode);
+	waypoints.push_back(point);
+
+	m_pCharacter->SetWayPoints(waypoints);
+
+	delete complexHeuristic;
 }
