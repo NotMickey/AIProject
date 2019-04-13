@@ -8,7 +8,7 @@ AIProject::DecisionMaking::CheckIfStationary::CheckIfStationary(const std::share
 
 inline bool AIProject::DecisionMaking::CheckIfStationary::IsTrue()
 {	
-	if (m_savedPosition.squareDistance(m_pCharacter->m_kinematic.position) < 8.0f)
+	if (m_savedPosition.squareDistance(m_pCharacter->m_kinematic.position) < 25.0f)
 		m_timer += (float)ofGetLastFrameTime();
 	else
 	{

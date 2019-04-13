@@ -4,8 +4,6 @@
 
 void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_ptr<Action> &i_action)
 {
-	//i_action->IsComplete = false;
-
 	if (pendingQueue.empty())
 	{
 		pendingQueue.push_back(i_action);
@@ -63,7 +61,7 @@ void AIProject::DecisionMaking::ActionManager::Update(float i_deltaTime)
 
 	while (it != pendingQueue.end())
 	{
-		if (activeQueue.size() > 0 && activeQueue[0]->priority > (*it)->priority)
+		if (activeQueue.size() > 0 && activeQueue[0]->priority >= (*it)->priority)
 		{
 			++it;
 			continue;
@@ -133,7 +131,10 @@ void AIProject::DecisionMaking::ActionManager::Update(float i_deltaTime)
 		// Is this action complete?
 		if ((*it2)->IsComplete())
 		{
-			// The remove it!
+			// Reset this action
+			(*it2)->ResetAction();
+
+			// Then remove it!
 			it2 = activeQueue.erase(it2);
 		}
 		else

@@ -22,6 +22,11 @@ bool AIProject::DecisionMaking::Action::IsComplete() const
 	return isComplete;
 }
 
+void AIProject::DecisionMaking::Action::ResetAction()
+{
+	isComplete = false;
+}
+
 bool AIProject::DecisionMaking::operator<(const Action & lhs, const Action & rhs)
 {
 	return (lhs.priority < rhs.priority);
