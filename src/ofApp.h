@@ -3,6 +3,8 @@
 #include "ofMain.h"
 
 #include "Character/boid.h"
+#include "Character/Docile/docileBoid.h"
+
 #include "AILogic/steeringBase.h"
 
 #include "Graph/TileMap/tileMap.h"
@@ -26,8 +28,10 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		AIProject::Graph::TileMap tileMap = AIProject::Graph::TileMap(30, 30, 5.0f, ofVec2f(0.0f, 0.0f));;
+		AIProject::Graph::TileMap tileMap = AIProject::Graph::TileMap(30, 30, 5.0f, ofVec2f(0.0f, 0.0f));
 		AIProject::Graph::DirectedWeightedGraph tileGraph;
 
-		AIProject::Boid myBoid = AIProject::Boid(ofVec2f(100.0f, 100.0f));
+		//AIProject::Boid myBoid = AIProject::Boid(ofVec2f(100.0f, 100.0f));
+
+		std::shared_ptr<AIProject::Boid> boid;
 };

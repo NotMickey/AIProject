@@ -15,7 +15,7 @@ namespace AIProject
 		~AIBrain();
 
 	private:
-		DecisionMaking::DecisionMakingBehavior* m_tree;
+		std::shared_ptr<DecisionMaking::DecisionMakingBehavior> m_tree;
 
 		DecisionMaking::ActionManager m_actionManager;
 	};

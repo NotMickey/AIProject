@@ -4,6 +4,8 @@
 
 void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_ptr<Action> &i_action)
 {
+	//i_action->IsComplete = false;
+
 	if (pendingQueue.empty())
 	{
 		pendingQueue.push_back(i_action);

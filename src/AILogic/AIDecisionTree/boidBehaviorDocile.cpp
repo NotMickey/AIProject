@@ -9,7 +9,7 @@
 
 AIProject::DecisionMaking::BoidBehaviorDocile::BoidBehaviorDocile(const std::shared_ptr<Boid>& i_character, const Graph::TileMap &i_tileMap)
 {
-	m_pRoot = new CheckIfStationary(i_character, new ActionNode(MoveRandom(i_character, i_tileMap, 10.0f, 1)));
+	m_pRoot = new CheckIfStationary(i_character, new ActionNode(std::make_shared<MoveRandom>(MoveRandom(i_character, i_tileMap, 10.0f, 1))));
 }
 
 std::shared_ptr<AIProject::DecisionMaking::Action> AIProject::DecisionMaking::BoidBehaviorDocile::GetAction()

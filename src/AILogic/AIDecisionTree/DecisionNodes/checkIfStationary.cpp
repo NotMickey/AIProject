@@ -16,7 +16,7 @@ inline bool AIProject::DecisionMaking::CheckIfStationary::IsTrue()
 		m_savedPosition = m_pCharacter->m_kinematic.position;
 	}
 
-	if (m_timer >= 5.0f)
+	if (m_timer >= 10.0f)
 	{
 		m_timer = 0.0f;
 		return true;

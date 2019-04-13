@@ -12,6 +12,7 @@ AIProject::DecisionMaking::MoveRandom::MoveRandom(const std::shared_ptr<Boid>& i
 	: Action(i_expiryTime, i_priority, i_canInterrupt), m_pCharacter(i_character), m_tileMap(i_tileMap)
 {
 	id = 1;
+	queuedTime = 0.0f;
 }
 
 void AIProject::DecisionMaking::MoveRandom::Execute()

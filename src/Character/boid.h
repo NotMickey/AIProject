@@ -35,6 +35,6 @@ namespace AIProject
 		//DynamicSteeringOutput Wander();
 
 		SteeringBase* m_pPathFollow;
-		bool m_bSeekTargetValid = false;
+		bool m_bSeekTargetValid;
 	};
 }

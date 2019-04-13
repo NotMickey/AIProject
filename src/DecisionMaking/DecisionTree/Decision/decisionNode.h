@@ -12,7 +12,15 @@ namespace AIProject
 			DecisionNode(DecisionNodeBase* i_trueNode = nullptr, DecisionNodeBase* i_falseNode = nullptr)
 				: m_pTrueNode(i_trueNode), m_pFalseNode(i_falseNode) {}
 
-			virtual DecisionNodeBase* MakeDecision() override { return GetBranch()->MakeDecision(); }
+			virtual DecisionNodeBase* MakeDecision() override
+			{
+				DecisionNodeBase* node = GetBranch();
+
+				if (node == nullptr)
+					return nullptr;
+
+				return node->MakeDecision();
+			}
 
 			virtual ~DecisionNode() 
 			{

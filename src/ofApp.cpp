@@ -8,6 +8,8 @@ void ofApp::setup()
 
 	tileGraph = tileMap.GetGraph();
 
+	boid = std::make_shared<AIProject::DocileBoid>(AIProject::DocileBoid(tileMap, ofVec2f(300.0f, 300.0f)));
+
 	//myBoid.ShowBoidPath(true);
 }
 
@@ -16,7 +18,8 @@ void ofApp::update()
 { 
 	double frameTime = ofGetLastFrameTime();
 
-	myBoid.Update(frameTime, 150.0f);
+	//myBoid.Update(frameTime, 150.0f);
+	boid->Update(frameTime, 150.0f);
 }
 
 //--------------------------------------------------------------
@@ -30,7 +33,8 @@ void ofApp::draw()
 	color.r = 255; color.g = 0, color.b = 0;
 	ofSetColor(color);  // Set the drawing color to red
 
-	myBoid.Draw();
+	//myBoid.Draw();
+	boid->Draw();
 }
 
 //--------------------------------------------------------------

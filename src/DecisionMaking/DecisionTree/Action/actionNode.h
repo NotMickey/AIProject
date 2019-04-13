@@ -12,7 +12,7 @@ namespace AIProject
 		class ActionNode : public DecisionNodeBase 
 		{
 		public:
-			ActionNode(const Action &i_Action) : m_pAction(std::make_shared<Action>(i_Action)) {}
+			ActionNode(const std::shared_ptr<Action> &i_action) : m_pAction(i_action) {}
 
 			inline virtual DecisionNodeBase* MakeDecision() override { return this; }
 

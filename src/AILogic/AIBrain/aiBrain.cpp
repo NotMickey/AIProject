@@ -4,7 +4,10 @@ AIProject::AIBrain::AIBrain(DecisionMaking::DecisionMakingBehavior * i_tree) : m
 
 void AIProject::AIBrain::Update(float i_deltaTime)
 {
-	std::shared_ptr<DecisionMaking::Action> action = m_tree->GetAction();
+	std::shared_ptr<DecisionMaking::Action> action;
+
+	if (m_tree != nullptr)
+		action = m_tree->GetAction();
 
 	if (action != nullptr)
 	{
@@ -16,6 +19,5 @@ void AIProject::AIBrain::Update(float i_deltaTime)
 
 AIProject::AIBrain::~AIBrain()
 {
-	if (m_tree)
-		delete m_tree;
+	
 }
