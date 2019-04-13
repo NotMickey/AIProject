@@ -1,8 +1,7 @@
 #include "tick.h"
 
-AIProject::DecisionMaking::Tick::Tick(const BehaviorTree* i_behaviorTree, Blackboard &i_blackBoard)
-								: m_pTree(i_behaviorTree), m_blackboard(i_blackBoard)
-{}
+AIProject::DecisionMaking::Tick::Tick(const BehaviorTree* i_behaviorTree, const std::shared_ptr<Blackboard> &i_blackBoard)
+								: m_pTree(i_behaviorTree), m_pBlackboard(i_blackBoard) {}
 
 void AIProject::DecisionMaking::Tick::OpenTask(Task* const i_task)
 {

@@ -2,24 +2,24 @@
 
 #include "../../../Character/boid.h"
 #include "../../../DecisionMaking/BehaviorTree/Task/TaskBase/task.h"
+//
 
 namespace AIProject
 {
+	enum Status;
+
 	namespace DecisionMaking
 	{
-		enum Status;
-
-		class PlayerInRange : public Task
+		class ChasePlayer : public Task
 		{
 		public:
-			PlayerInRange(int i_id, float i_minDist, const std::shared_ptr<Boid> &i_thisBoid);
+			ChasePlayer(int i_id);
 
 		protected:
 			virtual Status OnExecute(Tick &i_tick) override;
 
 		private:
-			float m_minDistance;
-			std::shared_ptr<Boid> m_pThisBoid;
+			int targetNode;
 		};
 	}
 }

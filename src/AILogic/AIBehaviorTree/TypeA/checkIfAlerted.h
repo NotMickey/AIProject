@@ -11,7 +11,7 @@ namespace AIProject
 		class CheckIfAlerted : public Task
 		{
 		public:
-			CheckIfAlerted(const int &i_id);
+			CheckIfAlerted(int i_id);
 
 		protected:
 			virtual Status OnExecute(Tick &i_tick) override;

@@ -11,7 +11,7 @@ namespace AIProject
 		class Tick
 		{
 		public:
-			Tick(const BehaviorTree* i_behaviorTree, Blackboard &i_blackBoard);
+			Tick(const BehaviorTree* i_behaviorTree, const std::shared_ptr<Blackboard> &i_blackBoard);
 
 			// Cannot pass Task as weak or shared pointers because it is a "this" pointer
 			void OpenTask(Task* const i_task);
@@ -25,7 +25,7 @@ namespace AIProject
 			~Tick();
 
 			const BehaviorTree* m_pTree;
-			Blackboard & m_blackboard;
+			std::shared_ptr<Blackboard> m_pBlackboard;
 
 		private:
 			std::vector<Task*> m_vOpenTasks;

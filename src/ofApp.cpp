@@ -10,8 +10,6 @@ void ofApp::setup()
 
 	boid = std::make_shared<AIProject::DocileBoid>(AIProject::DocileBoid(ofVec2f(300.0f, 300.0f)));
 	(dynamic_cast<AIProject::DocileBoid*>(&(*boid)))->InitBrain(boid, tileMap);
-
-	//myBoid.ShowBoidPath(true);
 }
 
 //--------------------------------------------------------------

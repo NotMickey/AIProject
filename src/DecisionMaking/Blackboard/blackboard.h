@@ -4,6 +4,8 @@
 #include <memory>
 
 #include "../ActionManager/action.h"
+#include "../../Character/boid.h"
+#include "../../Graph/TileMap/tileMap.h"
 
 namespace AIProject
 {
@@ -14,32 +16,43 @@ namespace AIProject
 			IsOpen,
 			RunningChild,
 			action,
-			Alerted
+			Alerted,
+
 		};
 
 		class Blackboard
 		{
 		public:
+
+			Blackboard(const std::shared_ptr<Boid> & i_playerBoid, const Graph::TileMap & i_tileMap) : playerBoid(i_playerBoid), tileMap(i_tileMap) {}
+
 			// Per node Set functions
-			void Set(const Key &i_key, const bool &i_value, const int &i_treeID, const int &i_taskID);
-			void Set(const Key &i_key, const int &i_value, const int &i_treeID, const int &i_taskID);
+			void Set(Key i_key, bool i_value, int i_treeID, int i_taskID);
+			void Set(Key i_key, int i_value, int i_treeID, int i_taskID);
 
 			// Per tree Set functions 
-			void Set(const Key &i_key, const std::shared_ptr<Action> &i_value, const int &i_treeID);
+			void Set(Key i_key, const std::shared_ptr<Action> &i_value, int i_treeID);
 
 			// Global Set functions
-			void Set(const Key &i_key, const bool &i_value);
+			void Set(Key i_key, bool i_value);
 
 			// Get functions
 			// For a per tree Get keep taskID as 0
 			// For a global Get keep treeID and taskID as 0
-			bool GetBool(const Key &i_key, const int &i_treeID, const int &i_taskID);
-			int GetInt(const Key &i_key, const int &i_treeID, const int &i_taskID);
+			bool GetBool(Key i_key, int i_treeID, int i_taskID) const;
+			int GetInt(Key i_key, int i_treeID, int i_taskID) const ;
 
 			// A special per tree Get function
-			std::shared_ptr<Action> GetAction(const Key &i_key, const int &i_treeID);
+			std::shared_ptr<Action> GetAction(Key i_key, int i_treeID) const;
+			void ClearAction(int i_treeId);
+
+			inline std::shared_ptr<Boid> GetPlayer() const;
 
 		private:
+
+			std::shared_ptr<Boid> playerBoid;
+
+			Graph::TileMap tileMap;
 
 			std::map<Key, std::map<int, bool>> boolMap;
 			std::map<Key, std::map<int, int>> intMap;
