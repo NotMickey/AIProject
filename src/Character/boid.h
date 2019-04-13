@@ -16,29 +16,25 @@ namespace AIProject
 	public:
 		Boid(const ofVec2f &i_position = ofVec2f(), int i_mass = 1);
 
-		bool m_bWander = false;
-
-		DynamicSteeringOutput currentSteering;
-
 		void Update(float i_timeStep, float i_maxSpeed) override;
 
 		void SetWayPoints(const std::vector<ofVec2f> &i_waypoints);
 
-		DynamicSteeringOutput SeekAndSteer(const int &x, const int &y);
-
-		DynamicSteeringOutput SteerAndArrive(const int &x, const int &y);
-
-		DynamicSteeringOutput Wander();
-
 		virtual ~Boid();
+
+		DynamicSteeringOutput currentSteering;
 
 	protected:
 		DynamicSteeringOutput PathFind();
 
 	private:
 
-		SteeringBase* m_pPathFollow;
+		//bool m_bWander = false;
+		//DynamicSteeringOutput SeekAndSteer(const int &x, const int &y);
+		//DynamicSteeringOutput SteerAndArrive(const int &x, const int &y);
+		//DynamicSteeringOutput Wander();
 
+		SteeringBase* m_pPathFollow;
 		bool m_bSeekTargetValid = false;
 	};
 }

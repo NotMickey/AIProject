@@ -1,7 +1,6 @@
 #include "aiBrain.h"
 
-AIProject::AIBrain::AIBrain(DecisionMaking::DecisionMakingBehavior * i_tree) : m_tree(i_tree)
-{}
+AIProject::AIBrain::AIBrain(DecisionMaking::DecisionMakingBehavior * i_tree) : m_tree(i_tree) {}
 
 void AIProject::AIBrain::Update(float i_deltaTime)
 {
@@ -17,5 +16,6 @@ void AIProject::AIBrain::Update(float i_deltaTime)
 
 AIProject::AIBrain::~AIBrain()
 {
-	delete m_tree;
+	if (m_tree)
+		delete m_tree;
 }

@@ -14,19 +14,18 @@ void AIProject::Boid::Update(float i_timeStep, float i_maxSpeed)
 {
 	DynamicSteeringOutput steering;
 
-	if (m_bWander)
-		steering = Wander();
+	//if (m_bWander)
+	//	steering = Wander();
 
-	if (m_bSeekTargetValid && !m_bWander)
+	if (m_bSeekTargetValid /*&& !m_bWander*/)
 	{
 		steering = PathFind();
 
 		// Add other dynamic behavior to the Boid
-		steering.linearAcceleration += currentSteering.linearAcceleration;
-		steering.angularAcceleration += currentSteering.angularAcceleration;
+		/*steering.linearAcceleration += currentSteering.linearAcceleration;
+		steering.angularAcceleration += currentSteering.angularAcceleration;*/
 	}
 
-	//m_kinematic.Update(currentSteering, i_timeStep, i_maxSpeed);
 	m_kinematic.Update(steering, i_timeStep, i_maxSpeed);
 	
 	BoidBase::Update(i_timeStep, i_maxSpeed);
@@ -40,64 +39,6 @@ void AIProject::Boid::SetWayPoints(const std::vector<ofVec2f>& i_waypoints)
 	m_pPathFollow = new DynamicPathFollow(*this, 80.0f, 300.0f, 80.0f, 5.0f, i_waypoints);
 
 	m_bSeekTargetValid = true;
-}
-
-AIProject::DynamicSteeringOutput AIProject::Boid::SeekAndSteer(const int &x, const int &y)
-{
-	DynamicSteeringOutput steering;
-
-	AIProject::Kinematic kinematic;
-	kinematic.position = ofVec2f(x, y);
-
-	ofVec2f direction = (ofVec2f(x, y) - m_kinematic.position).normalize();
-	kinematic.orientation = atan2f(direction.y, direction.x);
-
-	AIProject::SteeringBase* seek = new AIProject::DynamicSeek(*this, kinematic, 50.0f);
-	AIProject::SteeringBase* align = new AIProject::DynamicAlign(*this, kinematic, PI / 180 * 75, PI / 180 * 90, PI / 180 * 2, PI / 180 * 5, 2.0f);
-
-	AIProject::DynamicSteeringOutput linear = seek->GetSteering();
-	AIProject::DynamicSteeringOutput angular = align->GetSteering();
-
-	steering.linearAcceleration = linear.linearAcceleration;
-	steering.angularAcceleration = angular.angularAcceleration;
-
-	delete align;
-	delete seek;
-
-	return steering;
-}
-
-AIProject::DynamicSteeringOutput AIProject::Boid::SteerAndArrive(const int & x, const int & y)
-{
-	DynamicSteeringOutput steering;
-
-	AIProject::Kinematic kinematic;
-	kinematic.position = ofVec2f(x, y);
-
-	ofVec2f direction = (ofVec2f(x, y) - m_kinematic.position).normalize();
-	kinematic.orientation = atan2f(direction.y, direction.x);
-
-	AIProject::SteeringBase* arrive = new AIProject::DynamicArrive(*this, kinematic, 300.0f, 80.0f, 5.0f, 100.0f, 0.1f);
-	AIProject::SteeringBase* align = new AIProject::DynamicAlign(*this, kinematic, PI / 180 * 90, PI / 180 * 200, PI / 180 * 5, PI / 180 * 25, 0.5f);
-
-	AIProject::DynamicSteeringOutput linear = arrive->GetSteering();
-	AIProject::DynamicSteeringOutput angular = align->GetSteering();
-
-	steering.linearAcceleration = linear.linearAcceleration;
-	steering.angularAcceleration = angular.angularAcceleration;
-
-	delete align;
-	delete arrive;
-
-	return steering;
-}
-
-AIProject::DynamicSteeringOutput AIProject::Boid::Wander()
-{
-	DynamicWander wander(*this, 3.0f, 10.0f, 120.0f, 5.0f);
-
-	return wander.GetSteering();
-	/*return wander.GetSteeringAlt();*/
 }
 
 AIProject::DynamicSteeringOutput AIProject::Boid::PathFind()
@@ -115,3 +56,62 @@ AIProject::Boid::~Boid()
 		delete m_pPathFollow;
 }
 
+// Steer, Seek and Wander functions (THESE ARE DISABLED FOR NOW)
+
+//AIProject::DynamicSteeringOutput AIProject::Boid::SeekAndSteer(const int &x, const int &y)
+//{
+//	DynamicSteeringOutput steering;
+//
+//	AIProject::Kinematic kinematic;
+//	kinematic.position = ofVec2f(x, y);
+//
+//	ofVec2f direction = (ofVec2f(x, y) - m_kinematic.position).normalize();
+//	kinematic.orientation = atan2f(direction.y, direction.x);
+//
+//	AIProject::SteeringBase* seek = new AIProject::DynamicSeek(*this, kinematic, 50.0f);
+//	AIProject::SteeringBase* align = new AIProject::DynamicAlign(*this, kinematic, PI / 180 * 75, PI / 180 * 90, PI / 180 * 2, PI / 180 * 5, 2.0f);
+//
+//	AIProject::DynamicSteeringOutput linear = seek->GetSteering();
+//	AIProject::DynamicSteeringOutput angular = align->GetSteering();
+//
+//	steering.linearAcceleration = linear.linearAcceleration;
+//	steering.angularAcceleration = angular.angularAcceleration;
+//
+//	delete align;
+//	delete seek;
+//
+//	return steering;
+//}
+//
+//AIProject::DynamicSteeringOutput AIProject::Boid::SteerAndArrive(const int & x, const int & y)
+//{
+//	DynamicSteeringOutput steering;
+//
+//	AIProject::Kinematic kinematic;
+//	kinematic.position = ofVec2f(x, y);
+//
+//	ofVec2f direction = (ofVec2f(x, y) - m_kinematic.position).normalize();
+//	kinematic.orientation = atan2f(direction.y, direction.x);
+//
+//	AIProject::SteeringBase* arrive = new AIProject::DynamicArrive(*this, kinematic, 300.0f, 80.0f, 5.0f, 100.0f, 0.1f);
+//	AIProject::SteeringBase* align = new AIProject::DynamicAlign(*this, kinematic, PI / 180 * 90, PI / 180 * 200, PI / 180 * 5, PI / 180 * 25, 0.5f);
+//
+//	AIProject::DynamicSteeringOutput linear = arrive->GetSteering();
+//	AIProject::DynamicSteeringOutput angular = align->GetSteering();
+//
+//	steering.linearAcceleration = linear.linearAcceleration;
+//	steering.angularAcceleration = angular.angularAcceleration;
+//
+//	delete align;
+//	delete arrive;
+//
+//	return steering;
+//}
+//
+//AIProject::DynamicSteeringOutput AIProject::Boid::Wander()
+//{
+//	DynamicWander wander(*this, 3.0f, 10.0f, 120.0f, 5.0f);
+//
+//	return wander.GetSteering();
+//	/*return wander.GetSteeringAlt();*/
+//}

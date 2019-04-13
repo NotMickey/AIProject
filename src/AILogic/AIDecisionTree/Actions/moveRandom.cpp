@@ -10,7 +10,9 @@
 AIProject::DecisionMaking::MoveRandom::MoveRandom(const std::shared_ptr<Boid>& i_character, const Graph::TileMap & i_tileMap,
 											float i_expiryTime, int i_priority, bool i_canInterrupt)
 	: Action(i_expiryTime, i_priority, i_canInterrupt), m_pCharacter(i_character), m_tileMap(i_tileMap)
-{}
+{
+	id = 1;
+}
 
 void AIProject::DecisionMaking::MoveRandom::Execute()
 {
@@ -40,6 +42,8 @@ void AIProject::DecisionMaking::MoveRandom::Execute()
 	waypoints.push_back(point);
 
 	m_pCharacter->SetWayPoints(waypoints);
+
+	isComplete = true;
 
 	delete complexHeuristic;
 }

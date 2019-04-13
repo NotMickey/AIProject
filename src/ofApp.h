@@ -7,11 +7,6 @@
 
 #include "Graph/TileMap/tileMap.h"
 
-#include "AILogic/Dynamic/CollisionAvoidance/collisionAvoidance.h"
-#include "Physics/Obstacle/obstacle.h"
-#include "AILogic/Dynamic/ObstacleAvoidance/obstacleAvoidance.h"
-#include "Physics/CollisionDetection/collisionDetection.h"
-
 class ofApp : public ofBaseApp{
 
 	public:
@@ -35,14 +30,4 @@ class ofApp : public ofBaseApp{
 		AIProject::Graph::DirectedWeightedGraph tileGraph;
 
 		AIProject::Boid myBoid = AIProject::Boid(ofVec2f(100.0f, 100.0f));
-
-		int wanderSize = 20;
-		AIProject::Boid wanderers[20];
-		AIProject::CollisionAvoidance collisionHandler = AIProject::CollisionAvoidance(myBoid, wanderers, wanderSize, 40.0f, PI / 180 * 60.0f);
-
-		int numOfObstacles = 10;
-		AIProject::Physics::Obstacle obstacles[10];
-
-		AIProject::Physics::CollisionDetection collisionDetection = AIProject::Physics::CollisionDetection(obstacles, numOfObstacles);
-		AIProject::ObstacleAvoidance ObstacleAvoider = AIProject::ObstacleAvoidance(myBoid, 400.0f, collisionDetection, 20.0f, 25.0f);
 };

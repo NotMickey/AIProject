@@ -148,6 +148,9 @@
     <ClCompile Include="src\AILogic\AIDecisionTree\Actions\moveRandom.cpp">
       <Filter>src\AILogic\AIDecisionTree\Action</Filter>
     </ClCompile>
+    <ClCompile Include="src\Character\Docile\docileBoid.cpp">
+      <Filter>src\Character\Docile</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -287,6 +290,9 @@
     </Filter>
     <Filter Include="src\AILogic\AIDecisionTree\Action">
       <UniqueIdentifier>{707d0c85-9377-4dfe-98fa-e42f5bc59ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Character\Docile">
+      <UniqueIdentifier>{5bfdffce-1336-4dfa-9b7a-af9a2711d1e5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -448,6 +454,9 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\AIDecisionTree\Actions\moveRandom.h">
       <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Character\Docile\docileBoid.h">
+      <Filter>src\Character\Docile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

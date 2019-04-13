@@ -204,6 +204,7 @@
     <ClCompile Include="src\AILogic\steeringBase.cpp" />
     <ClCompile Include="src\Character\Base\boidBase.cpp" />
     <ClCompile Include="src\Character\boid.cpp" />
+    <ClCompile Include="src\Character\Docile\docileBoid.cpp" />
     <ClCompile Include="src\DecisionMaking\ActionManager\action.cpp" />
     <ClCompile Include="src\DecisionMaking\ActionManager\actionManager.cpp" />
     <ClCompile Include="src\DecisionMaking\BehaviorTree\behaviorTree.cpp" />
@@ -255,6 +256,7 @@
     <ClInclude Include="src\AILogic\steeringBase.h" />
     <ClInclude Include="src\Character\Base\boidBase.h" />
     <ClInclude Include="src\Character\boid.h" />
+    <ClInclude Include="src\Character\Docile\docileBoid.h" />
     <ClInclude Include="src\DecisionMaking\ActionManager\action.h" />
     <ClInclude Include="src\DecisionMaking\ActionManager\actionManager.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\behaviorTree.h" />
