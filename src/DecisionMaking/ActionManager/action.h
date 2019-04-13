@@ -15,7 +15,7 @@ namespace AIProject
 			bool CanDoBoth(const std::shared_ptr<Action> i_Action) const;	// Whether this action can run with the given action
 
 			bool IsComplete() const;
-			virtual void Execute() = 0;						// Called every frame
+			virtual void Execute() {}						// Called every frame
 
 			int priority;									// Indicates importance
 			int id = -1;									// Action ID

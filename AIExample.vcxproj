@@ -183,7 +183,8 @@
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.cpp" />
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.cpp" />
     <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp" />
-    <ClCompile Include="src\AILogic\AIDecisionTree\ActionNodes\moveRandom.cpp" />
+    <ClCompile Include="src\AILogic\AIDecisionTree\Actions\moveRandom.cpp" />
+    <ClCompile Include="src\AILogic\AIDecisionTree\boidBehaviorDocile.cpp" />
     <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\avoidEnemyCheck.cpp" />
     <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\checkIfStationary.cpp" />
     <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\edgeCollisionCheck.cpp" />
@@ -233,9 +234,9 @@
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.h" />
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.h" />
     <ClInclude Include="src\AILogic\AIBrain\aiBrain.h" />
-    <ClInclude Include="src\AILogic\AIDecisionTree\ActionNodes\moveRandom.h" />
+    <ClInclude Include="src\AILogic\AIDecisionTree\Actions\moveRandom.h" />
+    <ClInclude Include="src\AILogic\AIDecisionTree\boidBehaviorDocile.h" />
     <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\avoidEnemyCheck.h" />
-    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\boidBehaviorDocile.h" />
     <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\checkIfStationary.h" />
     <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\edgeCollisionCheck.h" />
     <ClInclude Include="src\AILogic\BlendedSteering\blendedSteering.h" />

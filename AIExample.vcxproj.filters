@@ -142,8 +142,11 @@
     <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\avoidEnemyCheck.cpp">
       <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
     </ClCompile>
-    <ClCompile Include="src\AILogic\AIDecisionTree\ActionNodes\moveRandom.cpp">
-      <Filter>src\AILogic\AIDecisionTree\ActionNode</Filter>
+    <ClCompile Include="src\AILogic\AIDecisionTree\boidBehaviorDocile.cpp">
+      <Filter>src\AILogic\AIDecisionTree</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\Actions\moveRandom.cpp">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -282,7 +285,7 @@
     <Filter Include="src\AILogic\AIBrain">
       <UniqueIdentifier>{5c0d74fe-ec96-48d4-8041-748dda626a16}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\AILogic\AIDecisionTree\ActionNode">
+    <Filter Include="src\AILogic\AIDecisionTree\Action">
       <UniqueIdentifier>{707d0c85-9377-4dfe-98fa-e42f5bc59ce5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -431,9 +434,6 @@
     <ClInclude Include="src\AILogic\AIBrain\aiBrain.h">
       <Filter>src\AILogic\AIBrain</Filter>
     </ClInclude>
-    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\boidBehaviorDocile.h">
-      <Filter>src\AILogic\AIDecisionTree</Filter>
-    </ClInclude>
     <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\checkIfStationary.h">
       <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
     </ClInclude>
@@ -443,8 +443,11 @@
     <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\avoidEnemyCheck.h">
       <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
     </ClInclude>
-    <ClInclude Include="src\AILogic\AIDecisionTree\ActionNodes\moveRandom.h">
-      <Filter>src\AILogic\AIDecisionTree\ActionNode</Filter>
+    <ClInclude Include="src\AILogic\AIDecisionTree\boidBehaviorDocile.h">
+      <Filter>src\AILogic\AIDecisionTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\Actions\moveRandom.h">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
