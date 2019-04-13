@@ -15,6 +15,7 @@ namespace AIProject
 		{
 			IsOpen,
 			RunningChild,
+			RunningTask,
 			action,
 			Alerted,
 
@@ -42,7 +43,7 @@ namespace AIProject
 			bool GetBool(Key i_key, int i_treeID, int i_taskID) const;
 			int GetInt(Key i_key, int i_treeID, int i_taskID) const ;
 
-			// A special per tree Get function
+			// Special per tree Get & Clear functions
 			std::shared_ptr<Action> GetAction(Key i_key, int i_treeID) const;
 			void ClearAction(int i_treeId);
 

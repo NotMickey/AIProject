@@ -6,12 +6,15 @@
 
 void AIProject::DecisionMaking::Selector::OnOpen(const Tick & i_tick)
 {
-	i_tick.m_blackboard.Set(Key::RunningChild, 0, i_tick.m_pTree->m_id, m_id);
+	i_tick.m_pBlackboard->Set(Key::RunningChild, 0, i_tick.m_pTree->m_id, m_id);
 }
 
 AIProject::DecisionMaking::Status AIProject::DecisionMaking::Selector::OnExecute(Tick & i_tick)
 {
-	int runningChild = i_tick.m_blackboard.GetInt(Key::RunningChild, i_tick.m_pTree->m_id, m_id);
+	int runningChild = i_tick.m_pBlackboard->GetInt(Key::RunningChild, i_tick.m_pTree->m_id, m_id);
+
+	if (runningChild < 0)
+		return Status::SUCCESS;
 
 	for (int i = runningChild; i < GetChildren().size(); i++)
 	{
@@ -21,7 +24,7 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Selector::OnExecute
 		{
 			if (childStat == Status::RUNNING)
 			{
-				i_tick.m_blackboard.Set(Key::RunningChild, i, i_tick.m_pTree->m_id, m_id);
+				i_tick.m_pBlackboard->Set(Key::RunningChild, i, i_tick.m_pTree->m_id, m_id);
 
 				return childStat;
 			}
@@ -30,6 +33,9 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Selector::OnExecute
 			break;
 		}
 	}
+
+	// Reset selector
+	i_tick.m_pBlackboard->Set(Key::RunningChild, 0, i_tick.m_pTree->m_id, m_id);
 
 	return Status::FAILURE;
 }
