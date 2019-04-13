@@ -3,8 +3,19 @@
 #include "../../AILogic/AIDecisionTree/boidBehaviorDocile.h"
 #include "../../Graph/TileMap/tileMap.h"
 
-AIProject::DocileBoid::DocileBoid(const Graph::TileMap &i_tileMap, const ofVec2f & i_position, int i_mass)
-	: Boid(i_position, i_mass), m_pBrain(std::make_shared<AIBrain>(AIBrain(new DecisionMaking::BoidBehaviorDocile(std::make_shared<Boid>(*this), i_tileMap)))) {}
+AIProject::DocileBoid::DocileBoid(const ofVec2f & i_position, int i_mass)
+	: Boid(i_position, i_mass), m_pBrain(nullptr) {}
+
+void AIProject::DocileBoid::InitBrain(const std::shared_ptr<Boid> & i_thisBoid, const Graph::TileMap & i_tileMap)
+{
+	if (m_pBrain != nullptr)
+	{
+		delete m_pBrain;
+		m_pBrain = nullptr;
+	}
+
+	m_pBrain = new AIBrain(new DecisionMaking::BoidBehaviorDocile(i_thisBoid, i_tileMap));
+}
 
 void AIProject::DocileBoid::Update(float i_timeStep, float i_maxSpeed)
 {
@@ -15,5 +26,9 @@ void AIProject::DocileBoid::Update(float i_timeStep, float i_maxSpeed)
 
 AIProject::DocileBoid::~DocileBoid()
 {
-	
+	if (m_pBrain != nullptr)
+	{
+		delete m_pBrain;
+		m_pBrain = nullptr;
+	}
 }

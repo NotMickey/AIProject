@@ -13,13 +13,15 @@ namespace AIProject
 	class DocileBoid : public Boid
 	{
 	public:
-		DocileBoid(const Graph::TileMap &i_tileMap, const ofVec2f &i_position = ofVec2f(), int i_mass = 1);
+		DocileBoid(const ofVec2f &i_position = ofVec2f(), int i_mass = 1);
+
+		void InitBrain(const std::shared_ptr<Boid> &i_thisBoid, const Graph::TileMap &i_tileMap);
 
 		void virtual Update(float i_timeStep, float i_maxSpeed) override;
 
 		~DocileBoid();
 
 	private:
-		std::shared_ptr<AIBrain> m_pBrain;
+		AIBrain* m_pBrain;
 	};
 }
