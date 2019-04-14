@@ -14,7 +14,10 @@ void AIProject::DecisionMaking::Action_Move::Execute()
 	int sourceNode = m_tileMap.GetNodeAtPosition(m_pCharacter->m_kinematic.position);
 
 	if (sourceNode == m_targetNode || m_targetNode == -1)
+	{
+		isComplete = true;
 		return;
+	}
 
 	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::EulerHeuristic(m_targetNode, m_tileMap.GetGraph());
 

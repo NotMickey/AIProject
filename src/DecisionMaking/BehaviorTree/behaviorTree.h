@@ -12,13 +12,13 @@ namespace AIProject
 		class BehaviorTree : public DecisionMakingBehavior
 		{
 		public:
-			BehaviorTree(int i_id, const std::shared_ptr<Blackboard> &i_blackboard);
+			BehaviorTree(int i_treeId, const std::shared_ptr<Blackboard> &i_blackboard);
 
 			virtual std::shared_ptr<Action> GetAction() override;
 
 			virtual ~BehaviorTree();
 
-			int m_id;
+			int m_treeId;
 
 		protected:
 			Task * m_pRoot;

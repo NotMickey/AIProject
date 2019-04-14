@@ -11,7 +11,7 @@ AIProject::DecisionMaking::Task_ChasePlayer::Task_ChasePlayer(int i_id, const st
 AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task_ChasePlayer::OnExecute(Tick & i_tick)
 {
 	// Check if this task was already running
-	if (i_tick.m_pBlackboard->GetBool(Key::RunningTask, i_tick.m_pTree->m_id, m_id))
+	if (i_tick.m_pBlackboard->GetBool(Key::RunningTask, i_tick.m_pTree->m_treeId, m_id))
 	{
 		ofVec2f currPosition = m_pBoid->m_kinematic.position;
 
@@ -20,10 +20,17 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task_ChasePlayer::O
 		// check if task was successful
 		if (currNode == targetNode)
 		{
-			i_tick.m_pBlackboard->Set(Key::RunningTask, false, i_tick.m_pTree->m_id, m_id);
+			i_tick.m_pBlackboard->Set(Key::RunningTask, false, i_tick.m_pTree->m_treeId, m_id);
 			return Status::SUCCESS;
 		}
 		
+		// Check for edge cases
+		if (currNode == -1)
+		{
+			i_tick.m_pBlackboard->Set(Key::RunningTask, false, i_tick.m_pTree->m_treeId, m_id);
+			return Status::FAILURE;
+		}
+
 		// else keep running
 		return Status::RUNNING;
 	}
@@ -35,8 +42,8 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task_ChasePlayer::O
 
 	std::shared_ptr<Action> action = std::make_shared<Action_Move>(Action_Move(m_pBoid, targetNode, m_tileMap, 10.0f, 10, true));
 
-	i_tick.m_pBlackboard->Set(Key::RunningTask, true, i_tick.m_pTree->m_id, m_id);
-	i_tick.m_pBlackboard->Set(Key::action, action, i_tick.m_pTree->m_id);
+	i_tick.m_pBlackboard->Set(Key::RunningTask, true, i_tick.m_pTree->m_treeId, m_id);
+	i_tick.m_pBlackboard->Set(Key::action, action, i_tick.m_pTree->m_treeId);
 
 	return Status::RUNNING;
 }

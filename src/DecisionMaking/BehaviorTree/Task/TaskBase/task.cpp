@@ -13,7 +13,7 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Run(Tick & i_
 {
 	Enter(i_tick);
 
-	bool isOpen = i_tick.m_pBlackboard->GetBool(Key::IsOpen, i_tick.m_pTree->m_id, m_id);
+	bool isOpen = i_tick.m_pBlackboard->GetBool(Key::IsOpen, i_tick.m_pTree->m_treeId, m_id);
 
 	if (!isOpen)
 		Open(i_tick);
@@ -39,7 +39,7 @@ void AIProject::DecisionMaking::Task::Open(Tick & i_tick)
 	OnOpen(i_tick);
 
 	i_tick.OpenTask(this);
-	i_tick.m_pBlackboard->Set(Key::IsOpen, true, i_tick.m_pTree->m_id, m_id);
+	i_tick.m_pBlackboard->Set(Key::IsOpen, true, i_tick.m_pTree->m_treeId, m_id);
 }
 
 AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task::Execute(Tick & i_tick)
@@ -54,7 +54,7 @@ void AIProject::DecisionMaking::Task::Close(Tick & i_tick)
 {
 	OnClose(i_tick);
 	i_tick.CloseTask(this);
-	i_tick.m_pBlackboard->Set(Key::IsOpen, false, i_tick.m_pTree->m_id, m_id);
+	i_tick.m_pBlackboard->Set(Key::IsOpen, false, i_tick.m_pTree->m_treeId, m_id);
 }
 
 void AIProject::DecisionMaking::Task::Exit(const Tick & i_tick)
