@@ -121,14 +121,8 @@
     <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\inverter.cpp">
       <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
     </ClCompile>
-    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.cpp">
-      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
-    </ClCompile>
     <ClCompile Include="src\Character\Base\boidBase.cpp">
       <Filter>src\Character\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.cpp">
-      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClCompile>
     <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp">
       <Filter>src\AILogic\AIBrain</Filter>
@@ -150,6 +144,18 @@
     </ClCompile>
     <ClCompile Include="src\Character\Docile\docileBoid.cpp">
       <Filter>src\Character\Docile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\Actions\action_Move.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.cpp">
+      <Filter>src\AILogic\AIBehaviorTree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +300,9 @@
     <Filter Include="src\Character\Docile">
       <UniqueIdentifier>{5bfdffce-1336-4dfa-9b7a-af9a2711d1e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AILogic\AIBehaviorTree\Actions">
+      <UniqueIdentifier>{173c8eaa-3274-4270-bc66-48c21f49f1ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -425,12 +434,6 @@
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\inverter.h">
       <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
     </ClInclude>
-    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.h">
-      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.h">
-      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
-    </ClInclude>
     <ClInclude Include="src\DecisionMaking\TreeBase\decisionMakingBehavior.h">
       <Filter>src\DecisionMaking\TreeBase</Filter>
     </ClInclude>
@@ -457,6 +460,18 @@
     </ClInclude>
     <ClInclude Include="src\Character\Docile\docileBoid.h">
       <Filter>src\Character\Docile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\Actions\action_Move.h">
+      <Filter>src\AILogic\AIBehaviorTree\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.h">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.h">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.h">
+      <Filter>src\AILogic\AIBehaviorTree</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

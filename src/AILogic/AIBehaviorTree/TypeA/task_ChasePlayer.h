@@ -10,10 +10,10 @@ namespace AIProject
 
 	namespace DecisionMaking
 	{
-		class ChasePlayer : public Task
+		class Task_ChasePlayer : public Task
 		{
 		public:
-			ChasePlayer(int i_id, const std::shared_ptr<Boid> & i_thisBoid, const Graph::TileMap &i_tileMap);
+			Task_ChasePlayer(int i_id, const std::shared_ptr<Boid> & i_thisBoid, const Graph::TileMap &i_tileMap);
 
 		protected:
 			virtual Status OnExecute(Tick &i_tick) override;

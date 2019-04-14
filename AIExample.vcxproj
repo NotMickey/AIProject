@@ -180,8 +180,10 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.cpp" />
-    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.cpp" />
+    <ClCompile Include="src\AILogic\AIBehaviorTree\Actions\action_Move.cpp" />
+    <ClCompile Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.cpp" />
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.cpp" />
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.cpp" />
     <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp" />
     <ClCompile Include="src\AILogic\AIDecisionTree\Actions\moveRandom.cpp" />
     <ClCompile Include="src\AILogic\AIDecisionTree\boidBehaviorDocile.cpp" />
@@ -232,8 +234,10 @@
     <ClCompile Include="src\Physics\Obstacle\obstacle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\checkIfAlerted.h" />
-    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\playerInRange.h" />
+    <ClInclude Include="src\AILogic\AIBehaviorTree\Actions\action_Move.h" />
+    <ClInclude Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.h" />
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.h" />
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.h" />
     <ClInclude Include="src\AILogic\AIBrain\aiBrain.h" />
     <ClInclude Include="src\AILogic\AIDecisionTree\Actions\moveRandom.h" />
     <ClInclude Include="src\AILogic\AIDecisionTree\boidBehaviorDocile.h" />

@@ -9,10 +9,10 @@ namespace AIProject
 	{
 		enum Status;
 
-		class PlayerInRange : public Task
+		class Task_PlayerCheck : public Task
 		{
 		public:
-			PlayerInRange(int i_id, float i_minDist, const std::shared_ptr<Boid> &i_thisBoid);
+			Task_PlayerCheck(int i_id, float i_minDist, const std::shared_ptr<Boid> &i_thisBoid);
 
 		protected:
 			virtual Status OnExecute(Tick &i_tick) override;
