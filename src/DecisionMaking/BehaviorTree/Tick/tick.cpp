@@ -15,7 +15,7 @@ void AIProject::DecisionMaking::Tick::CloseTask(Task* const i_task)
 	while (it != m_vOpenTasks.end())
 	{
 		if (*it == i_task)
-			m_vOpenTasks.erase(it);
+			it = m_vOpenTasks.erase(it);
 		else
 			++it;
 	}
