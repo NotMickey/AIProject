@@ -13,7 +13,7 @@ std::shared_ptr<AIProject::DecisionMaking::Action> AIProject::DecisionMaking::Be
 
 		m_pRoot->Run(tick);
 
-		return m_pBlackboard->GetAction(Key::action, m_pRoot->m_id);
+		return m_pBlackboard->GetAction(Key::action, m_id);
 	}
 
 	return std::shared_ptr<Action>();
