@@ -3,8 +3,8 @@
 #include "../../AILogic/AIBehaviorTree/behaviorTree_Patrol.h"
 #include "../../Graph/TileMap/tileMap.h"
 
-AIProject::PatrolBoid::PatrolBoid(const ofVec2f & i_position, int i_mass)
-	: Boid(i_position, i_mass), m_pBrain(nullptr) {}
+AIProject::PatrolBoid::PatrolBoid(const ofVec2f & i_position, const ofColor &i_color, int i_mass)
+	: Boid(i_position, i_color, i_mass), m_pBrain(nullptr) {}
 
 void AIProject::PatrolBoid::InitBrain(int i_treeId, const std::shared_ptr<Boid>& i_thisBoid,
 								const Graph::TileMap & i_tileMap, const std::shared_ptr<DecisionMaking::Blackboard> &i_blackboard)

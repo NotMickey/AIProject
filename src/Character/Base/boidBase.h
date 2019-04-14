@@ -22,7 +22,7 @@ namespace AIProject
 	class BoidBase
 	{
 	public:
-		BoidBase(const ofVec2f &i_position = ofVec2f(), int i_mass = 1);
+		BoidBase(const ofVec2f &i_position = ofVec2f(), const ofColor &i_color = ofColor(255, 0, 0, 255), int i_mass = 1);
 
 		virtual void Update(float i_timeStep, float i_maxSpeed);
 
@@ -54,5 +54,6 @@ namespace AIProject
 		int m_breadCrumbIndex = 0;
 		ofVec2f m_breadCrumbArray[200];
 		ofVec2f m_previousPosition;
+		ofColor m_boidColor;
 	};
 }

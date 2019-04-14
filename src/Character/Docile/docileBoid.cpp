@@ -3,8 +3,8 @@
 #include "../../AILogic/AIDecisionTree/boidBehaviorDocile.h"
 #include "../../Graph/TileMap/tileMap.h"
 
-AIProject::DocileBoid::DocileBoid(const ofVec2f & i_position, int i_mass)
-	: Boid(i_position, i_mass), m_pBrain(nullptr) {}
+AIProject::DocileBoid::DocileBoid(const ofVec2f & i_position, const ofColor &i_color, int i_mass)
+	: Boid(i_position, i_color, i_mass), m_pBrain(nullptr) {}
 
 void AIProject::DocileBoid::InitBrain(const std::shared_ptr<Boid> & i_thisBoid, const Graph::TileMap & i_tileMap)
 {

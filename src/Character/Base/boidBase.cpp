@@ -2,7 +2,7 @@
 
 #include "../../AILogic/steeringBase.h"
 
-AIProject::BoidBase::BoidBase(const ofVec2f & i_position, int i_mass) : m_mass(i_mass)
+AIProject::BoidBase::BoidBase(const ofVec2f & i_position, const ofColor &i_color, int i_mass) : m_boidColor(i_color), m_mass(i_mass)
 {
 	ofSetCircleResolution(50);
 
@@ -26,6 +26,9 @@ void AIProject::BoidBase::Update(float i_timeStep, float i_maxSpeed)
 
 void AIProject::BoidBase::Draw()
 {
+	// Set color
+	ofSetColor(m_boidColor);
+
 	// Draw the boid using its position and forward vector
 	ofDrawCircle(m_kinematic.position.x, m_kinematic.position.y, 10);
 	ofDrawTriangle(m_forwardVector * 20.0f + m_kinematic.position, m_forwardVector.getPerpendicular() * 10 + m_kinematic.position,

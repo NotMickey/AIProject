@@ -7,7 +7,8 @@
 #include "../AILogic/Dynamic/DynamicPathFollow/dynamicPathFollow.h"
 #include "../AILogic/Dynamic/CollisionAvoidance/collisionAvoidance.h"
 
-AIProject::Boid::Boid(const ofVec2f &i_position, int i_mass) : BoidBase(i_position, i_mass), m_pPathFollow(nullptr), m_bSeekTargetValid(false) {}
+AIProject::Boid::Boid(const ofVec2f &i_position, const ofColor &i_color, int i_mass)
+	: BoidBase(i_position, i_color, i_mass), m_pPathFollow(nullptr), m_bSeekTargetValid(false) {}
 
 void AIProject::Boid::Update(float i_timeStep, float i_maxSpeed)
 {

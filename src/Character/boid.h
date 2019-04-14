@@ -14,7 +14,7 @@ namespace AIProject
 	class Boid : public BoidBase
 	{
 	public:
-		Boid(const ofVec2f &i_position = ofVec2f(), int i_mass = 1);
+		Boid(const ofVec2f &i_position = ofVec2f(), const ofColor &i_color = ofColor(255, 0, 0, 255), int i_mass = 1);
 
 		void Update(float i_timeStep, float i_maxSpeed) override;
 
