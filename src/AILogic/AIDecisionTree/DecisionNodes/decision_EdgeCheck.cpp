@@ -12,10 +12,10 @@ inline bool AIProject::DecisionMaking::Decision_EdgeCheck::IsTrue()
 	int x = ofGetWidth();
 	int y = ofGetHeight();
 
-	if (position.x < 50.0f || position.y < 50.0f)
+	if (position.x < 90.0f || position.y < 90.0f)
 		return true;
 
-	if (position.x > x - 50.0f || position.y > y - 50.0f)
+	if (position.x > x - 90.0f || position.y > y - 90.0f)
 		return true;
 
 	return false;

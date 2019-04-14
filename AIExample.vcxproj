@@ -185,6 +185,7 @@
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.cpp" />
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.cpp" />
     <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp" />
+    <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_MoveCenter.cpp" />
     <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_MoveRandom.cpp" />
     <ClCompile Include="src\AILogic\AIDecisionTree\decisionTree_Docile.cpp" />
     <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_AvoidEnemy.cpp" />
@@ -240,6 +241,7 @@
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.h" />
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.h" />
     <ClInclude Include="src\AILogic\AIBrain\aiBrain.h" />
+    <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_MoveCenter.h" />
     <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_MoveRandom.h" />
     <ClInclude Include="src\AILogic\AIDecisionTree\decisionTree_Docile.h" />
     <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_AvoidEnemy.h" />

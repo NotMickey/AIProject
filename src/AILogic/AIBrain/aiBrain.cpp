@@ -19,5 +19,5 @@ void AIProject::AIBrain::Update(float i_deltaTime)
 
 AIProject::AIBrain::~AIBrain()
 {
-	
+	// NEEDS TO BE UPDATED
 }
