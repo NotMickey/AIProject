@@ -47,7 +47,7 @@ namespace AIProject
 			std::shared_ptr<Action> GetAction(Key i_key, int i_treeID) const;
 			void ClearAction(int i_treeId);
 
-			inline std::shared_ptr<Boid> GetPlayer() const;
+			std::shared_ptr<Boid> GetPlayer() const;
 
 		private:
 

@@ -2,10 +2,10 @@
 
 #include "ofMain.h"
 
-#include "Character/boid.h"
 #include "Character/Docile/docileBoid.h"
+#include "Character/Patrol/patrolBoid.h"
 
-#include "AILogic/steeringBase.h"
+#include "DecisionMaking/Blackboard/blackboard.h"
 
 #include "Graph/TileMap/tileMap.h"
 
@@ -34,4 +34,8 @@ class ofApp : public ofBaseApp{
 		//AIProject::Boid myBoid = AIProject::Boid(ofVec2f(100.0f, 100.0f));
 
 		std::shared_ptr<AIProject::Boid> boid;
+
+		std::shared_ptr<AIProject::DecisionMaking::Blackboard> blackboard;
+		std::shared_ptr<AIProject::Boid> patrolBoid;
+		
 };

@@ -157,6 +157,9 @@
     <ClCompile Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.cpp">
       <Filter>src\AILogic\AIBehaviorTree</Filter>
     </ClCompile>
+    <ClCompile Include="src\Character\Patrol\patrolBoid.cpp">
+      <Filter>src\Character\Patrol</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -302,6 +305,9 @@
     </Filter>
     <Filter Include="src\AILogic\AIBehaviorTree\Actions">
       <UniqueIdentifier>{173c8eaa-3274-4270-bc66-48c21f49f1ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Character\Patrol">
+      <UniqueIdentifier>{c04673a7-44b8-4b35-93c3-bde4c5b9f5b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -472,6 +478,9 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.h">
       <Filter>src\AILogic\AIBehaviorTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Character\Patrol\patrolBoid.h">
+      <Filter>src\Character\Patrol</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
