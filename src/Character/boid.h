@@ -20,6 +20,8 @@ namespace AIProject
 
 		void SetWayPoints(const std::vector<ofVec2f> &i_waypoints);
 
+		void SetSteering(const DynamicSteeringOutput i_steering);
+
 		virtual ~Boid();
 
 		DynamicSteeringOutput currentSteering;

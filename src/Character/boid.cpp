@@ -20,11 +20,14 @@ void AIProject::Boid::Update(float i_timeStep, float i_maxSpeed)
 	if (m_bSeekTargetValid /*&& !m_bWander*/)
 	{
 		steering = PathFind();
-
-		// Add other dynamic behavior to the Boid
-		/*steering.linearAcceleration += currentSteering.linearAcceleration;
-		steering.angularAcceleration += currentSteering.angularAcceleration;*/
 	}
+
+	// Add other dynamic behavior to the Boid
+	steering.linearAcceleration += currentSteering.linearAcceleration;
+	steering.angularAcceleration += currentSteering.angularAcceleration;
+
+	currentSteering.linearAcceleration = ofVec2f(0.0f, 0.0f);
+	currentSteering.angularAcceleration = 0.0f;
 
 	m_kinematic.Update(steering, i_timeStep, i_maxSpeed);
 	
@@ -43,6 +46,12 @@ void AIProject::Boid::SetWayPoints(const std::vector<ofVec2f>& i_waypoints)
 	m_pPathFollow = new DynamicPathFollow(*this, 80.0f, 300.0f, 80.0f, 5.0f, i_waypoints);
 
 	m_bSeekTargetValid = true;
+}
+
+void AIProject::Boid::SetSteering(const DynamicSteeringOutput i_steering)
+{
+	currentSteering.linearAcceleration = i_steering.linearAcceleration;
+	currentSteering.angularAcceleration = i_steering.angularAcceleration;
 }
 
 AIProject::DynamicSteeringOutput AIProject::Boid::PathFind()

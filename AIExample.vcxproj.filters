@@ -163,6 +163,9 @@
     <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_MoveCenter.cpp">
       <Filter>src\AILogic\AIDecisionTree\Action</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_LookRandom.cpp">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -486,6 +489,9 @@
       <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
     </ClInclude>
     <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_MoveCenter.h">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_LookRandom.h">
       <Filter>src\AILogic\AIDecisionTree\Action</Filter>
     </ClInclude>
   </ItemGroup>

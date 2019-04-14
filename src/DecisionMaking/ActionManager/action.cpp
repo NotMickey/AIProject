@@ -2,7 +2,9 @@
 
 AIProject::DecisionMaking::Action::Action(float i_expiryTime, int i_priority, bool i_canInterrupt)
 	: priority(i_priority), expiryTime(i_expiryTime), canInterrupt(i_canInterrupt)
-{}
+{
+	queuedTime = 0.0f;
+}
 
 bool AIProject::DecisionMaking::Action::CanInterrupt() const
 {

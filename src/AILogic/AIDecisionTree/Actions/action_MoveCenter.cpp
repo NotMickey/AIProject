@@ -8,7 +8,6 @@ AIProject::DecisionMaking::Action_MoveCenter::Action_MoveCenter(const std::share
 	: Action(i_expiryTime, i_priority, i_canInterrupt), m_pCharacter(i_character), m_tileMap(i_tileMap)
 {
 	id = 2;
-	queuedTime = 0.0f;
 
 	float x = ofGetWidth() / 2;
 	float y = ofGetHeight() / 2;
