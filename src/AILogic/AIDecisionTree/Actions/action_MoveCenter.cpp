@@ -48,7 +48,7 @@ void AIProject::DecisionMaking::Action_MoveCenter::Execute()
 
 	m_pCharacter->SetWayPoints(waypoints);
 
-	isComplete = true;
+	//isComplete = true;
 }
 
 AIProject::DecisionMaking::Action_MoveCenter::~Action_MoveCenter()

@@ -25,10 +25,16 @@ namespace AIProject
 			virtual ~DecisionNode() 
 			{
 				if (m_pTrueNode)
+				{
 					delete m_pTrueNode;
-
+					m_pTrueNode = nullptr;
+				}
+					
 				if (m_pFalseNode)
+				{
 					delete m_pFalseNode;
+					m_pFalseNode = nullptr;
+				}
 			}
 
 		protected:

@@ -13,10 +13,12 @@ bool AIProject::DecisionMaking::Action::CanInterrupt() const
 
 bool AIProject::DecisionMaking::Action::CanDoBoth(const std::shared_ptr<Action> i_Action) const
 {
-	if (this->id == i_Action->id)
+	/*if (this->id == i_Action->id)
 		return false;
 
-	return true;
+	return true;*/
+
+	return false;
 }
 
 bool AIProject::DecisionMaking::Action::IsComplete() const
@@ -27,6 +29,7 @@ bool AIProject::DecisionMaking::Action::IsComplete() const
 void AIProject::DecisionMaking::Action::ResetAction()
 {
 	isComplete = false;
+	queuedTime = 0.0f;
 }
 
 bool AIProject::DecisionMaking::operator<(const Action & lhs, const Action & rhs)

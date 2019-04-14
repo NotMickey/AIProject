@@ -7,6 +7,8 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 	if (pendingQueue.empty())
 	{
 		pendingQueue.push_back(i_action);
+		i_action->ResetAction();
+
 		return;
 	}
 
@@ -17,6 +19,7 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 		{
 			// replace it
 			pendingQueue[i] = i_action;
+			pendingQueue[i]->ResetAction();
 
 			// sort the updated list
 			std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action>>()); // Sort descending
@@ -27,6 +30,7 @@ void AIProject::DecisionMaking::ActionManager::ScheduleAction(const std::shared_
 
 	// New action! Add to list
 	pendingQueue.push_back(i_action);
+	i_action->ResetAction();
 
 	// And sort
 	std::sort(pendingQueue.begin(), pendingQueue.end(), std::greater<std::shared_ptr<Action>>());
@@ -61,10 +65,11 @@ void AIProject::DecisionMaking::ActionManager::Update(float i_deltaTime)
 
 	while (it != pendingQueue.end())
 	{
-		if (activeQueue.size() > 0 && activeQueue[0]->priority >= (*it)->priority)
+		if (activeQueue.size() > 0 && activeQueue[0]->priority > (*it)->priority)
 		{
-			++it;
-			continue;
+			// Break because highest priority action on the active queue has a higher priority
+			// than the current action on the pending queue. As such interrupts won't matter.
+			break;
 		}
 			
 		if ((*it)->CanInterrupt())
@@ -131,9 +136,6 @@ void AIProject::DecisionMaking::ActionManager::Update(float i_deltaTime)
 		// Is this action complete?
 		if ((*it2)->IsComplete())
 		{
-			// Reset this action
-			(*it2)->ResetAction();
-
 			// Then remove it!
 			it2 = activeQueue.erase(it2);
 		}
