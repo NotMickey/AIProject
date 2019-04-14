@@ -14,7 +14,7 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Selector::OnExecute
 	int runningChild = i_tick.m_pBlackboard->GetInt(Key::RunningChild, i_tick.m_pTree->m_id, m_id);
 
 	if (runningChild < 0)
-		return Status::SUCCESS;
+		return Status::FAILURE;
 
 	for (int i = runningChild; i < GetChildren().size(); i++)
 	{
