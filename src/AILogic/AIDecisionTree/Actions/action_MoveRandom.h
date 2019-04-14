@@ -8,10 +8,10 @@ namespace AIProject
 {
 	namespace DecisionMaking
 	{
-		class MoveRandom : public Action
+		class Action_MoveRandom : public Action
 		{
 		public:
-			MoveRandom(const std::shared_ptr<Boid> &i_character, const Graph::TileMap &i_tileMap, float i_expiryTime, int i_priority = 1, bool i_canInterrupt = false);
+			Action_MoveRandom(const std::shared_ptr<Boid> &i_character, const Graph::TileMap &i_tileMap, float i_expiryTime, int i_priority = 1, bool i_canInterrupt = false);
 
 			virtual void Execute() override;
 

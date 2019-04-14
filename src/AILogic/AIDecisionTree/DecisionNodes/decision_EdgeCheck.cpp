@@ -1,11 +1,11 @@
-#include "edgeCollisionCheck.h"
+#include "decision_EdgeCheck.h"
 
-AIProject::DecisionMaking::EdgeCollisionCheck::EdgeCollisionCheck(const std::shared_ptr<Boid>& i_character,
+AIProject::DecisionMaking::Decision_EdgeCheck::Decision_EdgeCheck(const std::shared_ptr<Boid>& i_character,
 																DecisionNodeBase * i_trueNode, DecisionNodeBase * i_falseNode)
 	: DecisionNode(i_trueNode, i_falseNode), m_pCharacter(i_character)
 {}
 
-inline bool AIProject::DecisionMaking::EdgeCollisionCheck::IsTrue()
+inline bool AIProject::DecisionMaking::Decision_EdgeCheck::IsTrue()
 {
 	ofVec2f position = m_pCharacter->m_kinematic.position;
 

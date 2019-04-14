@@ -1,11 +1,11 @@
-#include "avoidEnemyCheck.h"
+#include "decision_AvoidEnemy.h"
 
-AIProject::DecisionMaking::AvoidEnemyCheck::AvoidEnemyCheck(const std::shared_ptr<Boid>& i_character, const std::vector<std::shared_ptr<Boid>> & i_boids,
+AIProject::DecisionMaking::Decision_AvoidEnemy::Decision_AvoidEnemy(const std::shared_ptr<Boid>& i_character, const std::vector<std::shared_ptr<Boid>> & i_boids,
 														DecisionNodeBase * i_trueNode, DecisionNodeBase * i_falseNode)
 	: DecisionNode(i_trueNode, i_falseNode), m_pCharacter(i_character), m_vBoids(i_boids)
 {}
 
-inline bool AIProject::DecisionMaking::AvoidEnemyCheck::IsTrue()
+inline bool AIProject::DecisionMaking::Decision_AvoidEnemy::IsTrue()
 {
 	if (m_vBoids.empty())
 		return false;

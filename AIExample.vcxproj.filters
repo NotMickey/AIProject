@@ -127,21 +127,6 @@
     <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp">
       <Filter>src\AILogic\AIBrain</Filter>
     </ClCompile>
-    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\checkIfStationary.cpp">
-      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\edgeCollisionCheck.cpp">
-      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\avoidEnemyCheck.cpp">
-      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AILogic\AIDecisionTree\boidBehaviorDocile.cpp">
-      <Filter>src\AILogic\AIDecisionTree</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AILogic\AIDecisionTree\Actions\moveRandom.cpp">
-      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
-    </ClCompile>
     <ClCompile Include="src\Character\Docile\docileBoid.cpp">
       <Filter>src\Character\Docile</Filter>
     </ClCompile>
@@ -159,6 +144,21 @@
     </ClCompile>
     <ClCompile Include="src\Character\Patrol\patrolBoid.cpp">
       <Filter>src\Character\Patrol</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\decisionTree_Docile.cpp">
+      <Filter>src\AILogic\AIDecisionTree</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_MoveRandom.cpp">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_StationaryCheck.cpp">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_AvoidEnemy.cpp">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_EdgeCheck.cpp">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -449,21 +449,6 @@
     <ClInclude Include="src\AILogic\AIBrain\aiBrain.h">
       <Filter>src\AILogic\AIBrain</Filter>
     </ClInclude>
-    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\checkIfStationary.h">
-      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\edgeCollisionCheck.h">
-      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\avoidEnemyCheck.h">
-      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AILogic\AIDecisionTree\boidBehaviorDocile.h">
-      <Filter>src\AILogic\AIDecisionTree</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AILogic\AIDecisionTree\Actions\moveRandom.h">
-      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
-    </ClInclude>
     <ClInclude Include="src\Character\Docile\docileBoid.h">
       <Filter>src\Character\Docile</Filter>
     </ClInclude>
@@ -481,6 +466,21 @@
     </ClInclude>
     <ClInclude Include="src\Character\Patrol\patrolBoid.h">
       <Filter>src\Character\Patrol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\decisionTree_Docile.h">
+      <Filter>src\AILogic\AIDecisionTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_MoveRandom.h">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_StationaryCheck.h">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_AvoidEnemy.h">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_EdgeCheck.h">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

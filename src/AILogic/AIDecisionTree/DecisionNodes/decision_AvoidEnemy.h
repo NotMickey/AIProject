@@ -7,10 +7,10 @@ namespace AIProject
 {
 	namespace DecisionMaking
 	{
-		class AvoidEnemyCheck : public DecisionNode
+		class Decision_AvoidEnemy : public DecisionNode
 		{
 		public:
-			AvoidEnemyCheck(const std::shared_ptr<Boid> &i_character, const std::vector<std::shared_ptr<Boid>> & i_boids,
+			Decision_AvoidEnemy(const std::shared_ptr<Boid> &i_character, const std::vector<std::shared_ptr<Boid>> & i_boids,
 						DecisionNodeBase* i_trueNode = nullptr, DecisionNodeBase* i_falseNode = nullptr);
 
 		protected:

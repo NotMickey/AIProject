@@ -1,6 +1,6 @@
 #include "docileBoid.h"
 
-#include "../../AILogic/AIDecisionTree/boidBehaviorDocile.h"
+#include "../../AILogic/AIDecisionTree/decisionTree_Docile.h"
 #include "../../Graph/TileMap/tileMap.h"
 
 AIProject::DocileBoid::DocileBoid(const ofVec2f & i_position, const ofColor &i_color, int i_mass)
@@ -14,7 +14,7 @@ void AIProject::DocileBoid::InitBrain(const std::shared_ptr<Boid> & i_thisBoid, 
 		m_pBrain = nullptr;
 	}
 
-	m_pBrain = new AIBrain(new DecisionMaking::BoidBehaviorDocile(i_thisBoid, i_tileMap));
+	m_pBrain = new AIBrain(new DecisionMaking::DecisionTree_Docile(i_thisBoid, i_tileMap));
 }
 
 void AIProject::DocileBoid::Update(float i_timeStep, float i_maxSpeed)

@@ -14,14 +14,14 @@ namespace AIProject
 
 	namespace DecisionMaking
 	{
-		class BoidBehaviorDocile : public DecisionMakingBehavior
+		class DecisionTree_Docile : public DecisionMakingBehavior
 		{
 		public:
-			BoidBehaviorDocile(const std::shared_ptr<Boid> &i_character, const Graph::TileMap &i_tileMap);
+			DecisionTree_Docile(const std::shared_ptr<Boid> &i_character, const Graph::TileMap &i_tileMap);
 
 			virtual std::shared_ptr<Action> GetAction() override;
 
-			~BoidBehaviorDocile();
+			~DecisionTree_Docile();
 
 		private:
 			DecisionNodeBase * m_pRoot;

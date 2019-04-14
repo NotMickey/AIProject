@@ -7,16 +7,19 @@ namespace AIProject
 {
 	namespace DecisionMaking
 	{
-		class EdgeCollisionCheck : public DecisionNode
+		class Decision_StationaryCheck : public DecisionNode
 		{
 		public:
-			EdgeCollisionCheck(const std::shared_ptr<Boid> &i_character, DecisionNodeBase* i_trueNode = nullptr, DecisionNodeBase* i_falseNode = nullptr);
+			Decision_StationaryCheck(const std::shared_ptr<Boid> &i_character, DecisionNodeBase* i_trueNode = nullptr, DecisionNodeBase* i_falseNode = nullptr);
 
 		protected:
 			inline virtual bool IsTrue() override;
 
 		private:
 			std::shared_ptr<Boid> m_pCharacter;
+			float m_timer;
+
+			ofVec2f m_savedPosition;
 		};
 	}
 }

@@ -1,4 +1,4 @@
-#include "moveRandom.h"
+#include "action_MoveRandom.h"
 
 #include <random>
 
@@ -7,7 +7,7 @@
 
 #include "../../../Graph/Algorithm/AStar/Heuristic/eulerHeuristic.h"
 
-AIProject::DecisionMaking::MoveRandom::MoveRandom(const std::shared_ptr<Boid>& i_character, const Graph::TileMap & i_tileMap,
+AIProject::DecisionMaking::Action_MoveRandom::Action_MoveRandom(const std::shared_ptr<Boid>& i_character, const Graph::TileMap & i_tileMap,
 											float i_expiryTime, int i_priority, bool i_canInterrupt)
 	: Action(i_expiryTime, i_priority, i_canInterrupt), m_pCharacter(i_character), m_tileMap(i_tileMap)
 {
@@ -15,7 +15,7 @@ AIProject::DecisionMaking::MoveRandom::MoveRandom(const std::shared_ptr<Boid>& i
 	queuedTime = 0.0f;
 }
 
-void AIProject::DecisionMaking::MoveRandom::Execute()
+void AIProject::DecisionMaking::Action_MoveRandom::Execute()
 {
 	int startNode = m_tileMap.GetNodeAtPosition(m_pCharacter->m_kinematic.position);
 
