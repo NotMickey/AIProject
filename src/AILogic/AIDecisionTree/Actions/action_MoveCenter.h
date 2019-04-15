@@ -17,12 +17,8 @@ namespace AIProject
 
 			virtual void Execute() override;
 
-			~Action_MoveCenter();
-
 		private:
 			std::shared_ptr<Boid> m_pCharacter;
-
-			AIProject::Graph::Heuristic* m_heuristic;
 
 			int m_centerNode;
 

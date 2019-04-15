@@ -30,7 +30,11 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Selector::OnExecute
 			}
 
 			// Getting here means a child returned SUCCESS so don't run others
-			break;
+
+			// Reset selector
+			i_tick.m_pBlackboard->Set(Key::RunningChild, 0, i_tick.m_pTree->m_treeId, m_id);
+
+			return childStat;
 		}
 	}
 

@@ -30,7 +30,11 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Sequencer::OnExecut
 			}
 
 			// Getting here means the child either FAILED or retured ERROR so don't run others
-			break;
+
+			// Reset sequencer
+			i_tick.m_pBlackboard->Set(Key::RunningChild, 0, i_tick.m_pTree->m_treeId, m_id);
+
+			return childStat;
 		}
 	}
 

@@ -16,8 +16,6 @@ AIProject::DecisionMaking::Action_MoveCenter::Action_MoveCenter(const std::share
 
 	if (m_centerNode == -1)
 		m_centerNode = 1;
-
-	m_heuristic = new AIProject::Graph::EulerHeuristic(m_centerNode, m_tileMap.GetGraph());
 }
 
 void AIProject::DecisionMaking::Action_MoveCenter::Execute()
@@ -33,7 +31,9 @@ void AIProject::DecisionMaking::Action_MoveCenter::Execute()
 		return;
 	}
 
-	std::vector<AIProject::Graph::DirectedWeightedEdge> path = AIProject::Graph::FindPath(startNode, m_centerNode, m_tileMap.GetGraph(), m_heuristic);
+	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::EulerHeuristic(m_centerNode, m_tileMap.GetGraph());
+
+	std::vector<AIProject::Graph::DirectedWeightedEdge> path = AIProject::Graph::FindPath(startNode, m_centerNode, m_tileMap.GetGraph(), complexHeuristic);
 
 	std::vector<ofVec2f> waypoints;
 
@@ -49,13 +49,6 @@ void AIProject::DecisionMaking::Action_MoveCenter::Execute()
 	m_pCharacter->SetWayPoints(waypoints);
 
 	//isComplete = true;
-}
 
-AIProject::DecisionMaking::Action_MoveCenter::~Action_MoveCenter()
-{
-	if (m_heuristic != nullptr)
-	{
-		delete m_heuristic;
-		m_heuristic = nullptr;
-	}
+	delete complexHeuristic;
 }
