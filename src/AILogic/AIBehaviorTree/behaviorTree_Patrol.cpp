@@ -31,7 +31,17 @@ AIProject::DecisionMaking::BehaviorTree_Patrol::BehaviorTree_Patrol(int i_id, co
 	sequencer->AddChildTask(std::make_shared<Task_SetColor>(Task_SetColor(25, m_pPatrolBoid)));
 	sequencer->AddChildTask(std::make_shared<Task_ChasePlayer>(Task_ChasePlayer(30, m_pPatrolBoid, m_tileMap)));
 
+	std::shared_ptr<Task> randomDecorator = std::make_shared<RandomDecorator>(RandomDecorator(40));
+
+	randomDecorator->AddChildTask(std::make_shared<Task_PatrolArea>(Task_PatrolArea(45, m_pPatrolBoid, m_tileMap, patrolNodes)));
+
+	patrolNodes.clear();
+	patrolNodes.push_back(451);
+	patrolNodes.push_back(479);
+
+	randomDecorator->AddChildTask(std::make_shared<Task_PatrolArea>(Task_PatrolArea(50, m_pPatrolBoid, m_tileMap, patrolNodes)));
+
 	m_pRoot->AddChildTask(sequencer);
 	m_pRoot->AddChildTask(std::make_shared<Task_SetColor>(Task_SetColor(35, m_pPatrolBoid)));
-	m_pRoot->AddChildTask(std::make_shared<Task_PatrolArea>(Task_PatrolArea(40, m_pPatrolBoid, m_tileMap, patrolNodes)));
+	m_pRoot->AddChildTask(randomDecorator);
 }

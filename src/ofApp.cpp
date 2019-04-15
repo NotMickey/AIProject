@@ -8,7 +8,7 @@ void ofApp::setup()
 
 	tileGraph = tileMap.GetGraph();
 
-	boid = std::make_shared<AIProject::DocileBoid>(AIProject::DocileBoid(ofVec2f(300.0f, 300.0f), ofColor(0, 0, 255, 255)));
+	boid = std::make_shared<AIProject::DocileBoid>(AIProject::DocileBoid(ofVec2f(30.0f, 30.0f), ofColor(0, 0, 255, 255)));
 	(dynamic_cast<AIProject::DocileBoid*>(&(*boid)))->InitBrain(boid, tileMap);
 
 	blackboard = std::make_shared<AIProject::DecisionMaking::Blackboard>(AIProject::DecisionMaking::Blackboard(boid, tileMap));

@@ -15,7 +15,7 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task_SetColor::OnEx
 	}
 	else
 	{
-		m_pBoid->ChangeBoidColor(ofColor(255, 255, 0, 255));
+		m_pBoid->ChangeBoidColor(ofColor(0, 0, 0, 255));
 
 		return Status::FAILURE;
 	}
