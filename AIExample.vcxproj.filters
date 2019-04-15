@@ -172,6 +172,9 @@
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_SetColor.cpp">
       <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_PatrolArea.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -504,6 +507,9 @@
       <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
     </ClInclude>
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_SetColor.h">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_PatrolArea.h">
       <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClInclude>
   </ItemGroup>

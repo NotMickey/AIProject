@@ -183,6 +183,7 @@
     <ClCompile Include="src\AILogic\AIBehaviorTree\Actions\action_Move.cpp" />
     <ClCompile Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.cpp" />
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.cpp" />
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_PatrolArea.cpp" />
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.cpp" />
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_SetColor.cpp" />
     <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp" />
@@ -242,6 +243,7 @@
     <ClInclude Include="src\AILogic\AIBehaviorTree\Actions\action_Move.h" />
     <ClInclude Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.h" />
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.h" />
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_PatrolArea.h" />
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.h" />
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_SetColor.h" />
     <ClInclude Include="src\AILogic\AIBrain\aiBrain.h" />

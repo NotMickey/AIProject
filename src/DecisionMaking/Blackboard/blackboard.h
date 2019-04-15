@@ -18,7 +18,8 @@ namespace AIProject
 			RunningTask,
 			action,
 			Alerted,
-
+			CurrentPatrolNode,
+			AggroDistance
 		};
 
 		class Blackboard

@@ -9,14 +9,18 @@
 
 #include "../../DecisionMaking/BehaviorTree/Tick/tick.h"
 #include "../../DecisionMaking/BehaviorTree/Task/sequencer.h"
+#include "../../DecisionMaking/BehaviorTree/Task/selector.h"
+#include "../../DecisionMaking/BehaviorTree/Task/randomDecorator.h"
 
 AIProject::DecisionMaking::BehaviorTree_Patrol::BehaviorTree_Patrol(int i_id, const std::shared_ptr<Blackboard>& i_blackboard,
 															const std::shared_ptr<Boid>& i_character, const Graph::TileMap & i_tileMap)
 	: BehaviorTree(i_id, i_blackboard), m_pPatrolBoid(i_character), m_tileMap(i_tileMap)
 {
+	m_pBlackboard->Set(Key::AggroDistance, 250, m_treeId, 0);
+
 	m_pRoot = new Sequencer(10);
 
-	m_pRoot->AddChildTask(std::make_shared<Task_PlayerCheck>(Task_PlayerCheck(25, 120.0f, m_pPatrolBoid)));
+	m_pRoot->AddChildTask(std::make_shared<Task_PlayerCheck>(Task_PlayerCheck(25, m_pPatrolBoid)));
 	m_pRoot->AddChildTask(std::make_shared<Task_SetColor>(Task_SetColor(30, m_pPatrolBoid)));
 	m_pRoot->AddChildTask(std::make_shared<Task_ChasePlayer>(Task_ChasePlayer(35, m_pPatrolBoid, m_tileMap)));
 }
