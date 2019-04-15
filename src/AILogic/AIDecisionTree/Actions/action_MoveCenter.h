@@ -20,6 +20,8 @@ namespace AIProject
 		private:
 			std::shared_ptr<Boid> m_pCharacter;
 
+			bool m_bIsMoving;
+
 			int m_centerNode;
 
 			Graph::TileMap m_tileMap;

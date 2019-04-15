@@ -5,7 +5,7 @@
 
 AIProject::DecisionMaking::Action_MoveCenter::Action_MoveCenter(const std::shared_ptr<Boid>& i_character, const Graph::TileMap &i_tileMap,
 														float i_expiryTime, int i_priority, bool i_canInterrupt)
-	: Action(i_expiryTime, i_priority, i_canInterrupt), m_pCharacter(i_character), m_tileMap(i_tileMap)
+	: Action(i_expiryTime, i_priority, i_canInterrupt), m_pCharacter(i_character), m_tileMap(i_tileMap), m_bIsMoving(false)
 {
 	id = 2;
 
@@ -27,9 +27,13 @@ void AIProject::DecisionMaking::Action_MoveCenter::Execute()
 
 	if (m_centerNode == startNode)
 	{
+		m_bIsMoving = false;
 		isComplete = true;
 		return;
 	}
+
+	if (m_bIsMoving)
+		return;
 
 	AIProject::Graph::Heuristic* complexHeuristic = new AIProject::Graph::EulerHeuristic(m_centerNode, m_tileMap.GetGraph());
 
@@ -48,6 +52,7 @@ void AIProject::DecisionMaking::Action_MoveCenter::Execute()
 
 	m_pCharacter->SetWayPoints(waypoints);
 
+	m_bIsMoving = true;
 	//isComplete = true;
 
 	delete complexHeuristic;

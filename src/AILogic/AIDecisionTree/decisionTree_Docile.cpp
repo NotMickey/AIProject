@@ -15,7 +15,7 @@
 AIProject::DecisionMaking::DecisionTree_Docile::DecisionTree_Docile(const std::shared_ptr<Boid>& i_character, const Graph::TileMap &i_tileMap)
 {
 	m_pRoot = new Decision_EdgeCheck(i_character, 
-									  new ActionNode(std::make_shared<Action_MoveCenter>(Action_MoveCenter(i_character, i_tileMap, 2.0f, 9, true))),
+									  new ActionNode(std::make_shared<Action_MoveCenter>(Action_MoveCenter(i_character, i_tileMap, 15.0f, 9, true))),
 									  new Decision_StationaryCheck(i_character,
 																	new ActionNode(std::make_shared<Action_MoveRandom>(Action_MoveRandom(i_character, i_tileMap, 4.0f, 5, true))),
 																	new ActionNode(std::make_shared<Action_LookRandom>(Action_LookRandom(i_character, i_tileMap, 10.0f, 3, false)))
