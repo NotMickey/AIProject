@@ -21,7 +21,7 @@ namespace AIProject
 		private:
 			std::shared_ptr<Boid> m_pBoid;
 
-			int targetNode;
+			int m_iterator;
 
 			Graph::TileMap m_tileMap;
 
