@@ -53,7 +53,6 @@ void AIProject::DecisionMaking::Action_MoveCenter::Execute()
 	m_pCharacter->SetWayPoints(waypoints);
 
 	m_bIsMoving = true;
-	//isComplete = true;
 
 	delete complexHeuristic;
 }
