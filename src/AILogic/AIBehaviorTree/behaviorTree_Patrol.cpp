@@ -5,6 +5,7 @@
 
 #include "TypeA/task_ChasePlayer.h"
 #include "TypeA/task_PlayerCheck.h"
+#include "TypeA/task_SetColor.h"
 
 #include "../../DecisionMaking/BehaviorTree/Tick/tick.h"
 #include "../../DecisionMaking/BehaviorTree/Task/sequencer.h"
@@ -15,6 +16,7 @@ AIProject::DecisionMaking::BehaviorTree_Patrol::BehaviorTree_Patrol(int i_id, co
 {
 	m_pRoot = new Sequencer(10);
 
-	m_pRoot->AddChildTask(std::make_shared<Task_PlayerCheck>(Task_PlayerCheck(25, 250.0f, m_pPatrolBoid)));
-	m_pRoot->AddChildTask(std::make_shared<Task_ChasePlayer>(Task_ChasePlayer(30, m_pPatrolBoid, m_tileMap)));
+	m_pRoot->AddChildTask(std::make_shared<Task_PlayerCheck>(Task_PlayerCheck(25, 120.0f, m_pPatrolBoid)));
+	m_pRoot->AddChildTask(std::make_shared<Task_SetColor>(Task_SetColor(30, m_pPatrolBoid)));
+	m_pRoot->AddChildTask(std::make_shared<Task_ChasePlayer>(Task_ChasePlayer(35, m_pPatrolBoid, m_tileMap)));
 }

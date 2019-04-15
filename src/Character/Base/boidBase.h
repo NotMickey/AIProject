@@ -27,6 +27,7 @@ namespace AIProject
 		virtual void Update(float i_timeStep, float i_maxSpeed);
 
 		void Draw();
+		void ChangeBoidColor(const ofColor &i_color);
 		void ShowBoidPath(bool i_isTrue = false);
 
 		ofVec2f GetForwardVec() { return m_forwardVector; }

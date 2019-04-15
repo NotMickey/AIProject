@@ -166,6 +166,12 @@
     <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_LookRandom.cpp">
       <Filter>src\AILogic\AIDecisionTree\Action</Filter>
     </ClCompile>
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\randomDecorator.cpp">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_SetColor.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -493,6 +499,12 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_LookRandom.h">
       <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\randomDecorator.h">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_SetColor.h">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

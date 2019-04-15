@@ -70,6 +70,11 @@ void AIProject::BoidBase::Draw()
 	}
 }
 
+void AIProject::BoidBase::ChangeBoidColor(const ofColor & i_color)
+{
+	m_boidColor = i_color;
+}
+
 void AIProject::BoidBase::ShowBoidPath(bool i_isTrue)
 {
 	m_bShowPath = i_isTrue;

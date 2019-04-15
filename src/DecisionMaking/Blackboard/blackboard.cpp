@@ -57,9 +57,6 @@ void AIProject::DecisionMaking::Blackboard::Set(Key i_key, bool i_value)
 
 bool AIProject::DecisionMaking::Blackboard::GetBool(Key i_key, int i_treeID, int i_taskID) const
 {
-	if (i_treeID == 0)
-		return false;
-
 	auto primaryKey = boolMap.find(i_key);
 
 	if (primaryKey != boolMap.end())
@@ -76,9 +73,6 @@ bool AIProject::DecisionMaking::Blackboard::GetBool(Key i_key, int i_treeID, int
 
 int AIProject::DecisionMaking::Blackboard::GetInt(Key i_key, int i_treeID, int i_taskID) const 
 {
-	if (i_treeID == 0)
-		return -1;
-
 	auto primaryKey = intMap.find(i_key);
 
 	if (primaryKey != intMap.end())

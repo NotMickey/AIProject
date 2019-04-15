@@ -184,6 +184,7 @@
     <ClCompile Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.cpp" />
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.cpp" />
     <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.cpp" />
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_SetColor.cpp" />
     <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp" />
     <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_LookRandom.cpp" />
     <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_MoveCenter.cpp" />
@@ -214,6 +215,7 @@
     <ClCompile Include="src\DecisionMaking\ActionManager\actionManager.cpp" />
     <ClCompile Include="src\DecisionMaking\BehaviorTree\behaviorTree.cpp" />
     <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\inverter.cpp" />
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\randomDecorator.cpp" />
     <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\selector.cpp" />
     <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\sequencer.cpp" />
     <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\TaskBase\task.cpp" />
@@ -241,6 +243,7 @@
     <ClInclude Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.h" />
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.h" />
     <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.h" />
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_SetColor.h" />
     <ClInclude Include="src\AILogic\AIBrain\aiBrain.h" />
     <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_LookRandom.h" />
     <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_MoveCenter.h" />
@@ -272,6 +275,7 @@
     <ClInclude Include="src\DecisionMaking\BehaviorTree\behaviorTree.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\status.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\inverter.h" />
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\randomDecorator.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\selector.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\sequencer.h" />
     <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\TaskBase\task.h" />

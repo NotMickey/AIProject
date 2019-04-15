@@ -10,11 +10,11 @@ AIProject::DecisionMaking::Status AIProject::DecisionMaking::Task_PlayerCheck::O
 {
 	// Check if player is in chase range
 	if (m_pThisBoid->m_kinematic.position.squareDistance(i_tick.m_pBlackboard->GetPlayer()->m_kinematic.position) < (m_minDistance * m_minDistance))
-		return Status::SUCCESS;
+	{
+		i_tick.m_pBlackboard->Set(Key::Alerted, true, 0, 0); 
 
-	// Check for global Alert status
-	if (i_tick.m_pBlackboard->GetBool(Key::Alerted, 0, 0))
 		return Status::SUCCESS;
+	}
 
 	return Status::FAILURE;
 }

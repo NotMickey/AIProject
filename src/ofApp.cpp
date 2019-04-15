@@ -24,7 +24,7 @@ void ofApp::update()
 
 	//myBoid.Update(frameTime, 150.0f);
 	boid->Update(frameTime, 150.0f);
-	//patrolBoid->Update(frameTime, 150.0f);
+	patrolBoid->Update(frameTime, 150.0f);
 }
 
 //--------------------------------------------------------------
@@ -37,7 +37,7 @@ void ofApp::draw()
 	//myBoid.Draw();
 	boid->Draw();
 
-	//patrolBoid->Draw();
+	patrolBoid->Draw();
 }
 
 //--------------------------------------------------------------
