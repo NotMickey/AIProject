@@ -11,7 +11,7 @@ namespace AIProject
 		BlendedSteering(BehaviourAndWeight i_behaviourAndWeight[], const int &i_arraySize, const float &i_maxAcceleration,
 						const float &i_maxRotation);
 
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 
 		BehaviourAndWeight* m_BehaviourAndWeight;

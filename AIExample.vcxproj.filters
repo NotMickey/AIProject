@@ -43,6 +43,138 @@
     <ClCompile Include="src\AILogic\Flocking\flocking.cpp">
       <Filter>src\AILogic\Flocking</Filter>
     </ClCompile>
+    <ClCompile Include="src\Graph\DataStructures\graphDataStructures.cpp">
+      <Filter>src\Graph\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstra.cpp">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\AStar.cpp">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\DataStructures\Heap\heap.cpp">
+      <Filter>src\Graph\DataStructures\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\AStarHelper.cpp">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.cpp">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\DynamicPathFollow\dynamicPathFollow.cpp">
+      <Filter>src\AILogic\Dynamic\DynamicPathFollow</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.cpp">
+      <Filter>src\AILogic\Dynamic\CollisionAvoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\Obstacle\obstacle.cpp">
+      <Filter>src\Physics\Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\CollisionDetection\collisionDetection.cpp">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\Dynamic\ObstacleAvoidance\ObstacleAvoidance.cpp">
+      <Filter>src\AILogic\Dynamic\ObstacleAvoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\TileMap\tileMap.cpp">
+      <Filter>src\Graph\TileMap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\CollisionDetection\collisionDataStructures.cpp">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\Heuristic\eulerHeuristic.cpp">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\Heuristic\manhattanHeuristic.cpp">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graph\Algorithm\AStar\Heuristic\precomputedHeuristic.cpp">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\DecisionTree\decisionNodeBase.cpp">
+      <Filter>src\DecisionMaking\DecisionTree</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\ActionManager\action.cpp">
+      <Filter>src\DecisionMaking\ActionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\ActionManager\actionManager.cpp">
+      <Filter>src\DecisionMaking\ActionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\Blackboard\blackboard.cpp">
+      <Filter>src\DecisionMaking\Blackboard</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Tick\tick.cpp">
+      <Filter>src\DecisionMaking\BehaviorTree\Tick</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\behaviorTree.cpp">
+      <Filter>src\DecisionMaking\BehaviorTree</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\TaskBase\task.cpp">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes\TaskBase</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\selector.cpp">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\sequencer.cpp">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\inverter.cpp">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Character\Base\boidBase.cpp">
+      <Filter>src\Character\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBrain\aiBrain.cpp">
+      <Filter>src\AILogic\AIBrain</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Character\Docile\docileBoid.cpp">
+      <Filter>src\Character\Docile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\Actions\action_Move.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.cpp">
+      <Filter>src\AILogic\AIBehaviorTree</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Character\Patrol\patrolBoid.cpp">
+      <Filter>src\Character\Patrol</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\decisionTree_Docile.cpp">
+      <Filter>src\AILogic\AIDecisionTree</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_MoveRandom.cpp">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_StationaryCheck.cpp">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_AvoidEnemy.cpp">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_EdgeCheck.cpp">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_MoveCenter.cpp">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIDecisionTree\Actions\action_LookRandom.cpp">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DecisionMaking\BehaviorTree\Task\randomDecorator.cpp">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_SetColor.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AILogic\AIBehaviorTree\TypeA\task_PatrolArea.cpp">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -87,6 +219,111 @@
     <Filter Include="src\AILogic\Flocking">
       <UniqueIdentifier>{9a3a7c02-859d-4f09-9d9a-dee6d1cf30df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Graph">
+      <UniqueIdentifier>{c1b4b87f-d527-4763-b2d8-f2dee25a67f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\DataStructures">
+      <UniqueIdentifier>{2c98a73d-0454-4dce-a392-fd4c1339a48d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\Algorithm">
+      <UniqueIdentifier>{92e87d28-4eb3-47e4-a85d-8b2368733a47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\Algorithm\Dijkstra">
+      <UniqueIdentifier>{3459e82f-22a9-44c7-936d-f9d130516f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\Algorithm\AStar">
+      <UniqueIdentifier>{c60c16ab-66ac-471b-8d3f-8ed497d2c5ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\DataStructures\Heap">
+      <UniqueIdentifier>{f979422d-ab8f-476c-a7e4-6e929c92d52a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Dynamic\DynamicPathFollow">
+      <UniqueIdentifier>{107653f7-0677-4650-a1af-61b893ff06c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Dynamic\CollisionAvoidance">
+      <UniqueIdentifier>{0739f37d-5663-4032-ad2b-fde818b00549}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics">
+      <UniqueIdentifier>{ece8a95f-d2c3-4735-bc2a-6a79f3effeec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics\CollisionDetection">
+      <UniqueIdentifier>{c4cf8cd8-c0d6-42fe-9c0e-837fe9e55f0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics\Obstacle">
+      <UniqueIdentifier>{5108828a-81a0-48e7-9682-013ff41ac9d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\Dynamic\ObstacleAvoidance">
+      <UniqueIdentifier>{056e2684-75ea-411f-8921-49df7bf5d938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\TileMap">
+      <UniqueIdentifier>{6b67d571-fa88-4f05-b3a8-eb4f86d8e072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graph\Algorithm\AStar\Heuristic">
+      <UniqueIdentifier>{9edd60cc-242d-435f-a1ce-4a1d8405e07c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking">
+      <UniqueIdentifier>{8f6276a7-4fad-43ff-9b44-0f1a8e21d4be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\DecisionTree">
+      <UniqueIdentifier>{4dafb066-4bbc-41bd-8a3d-df57ac1898b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\DecisionTree\ActionNode">
+      <UniqueIdentifier>{813adf05-e001-40c2-b830-ab0de25d7e34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\DecisionTree\DecisionNode">
+      <UniqueIdentifier>{efe369ee-7dad-4e87-9622-71a8449a142c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\ActionManager">
+      <UniqueIdentifier>{283fcebe-94dc-4df0-8fac-e77a8b58b108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIDecisionTree">
+      <UniqueIdentifier>{33fc1a86-aa94-4ad0-8e81-b9ffa29c343d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIDecisionTree\DecisionNode">
+      <UniqueIdentifier>{14665b2c-ca0b-4a24-bc6b-80eb7068a570}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\BehaviorTree">
+      <UniqueIdentifier>{6c8ee79a-102a-4d28-b61f-86d5dd6a124b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\Blackboard">
+      <UniqueIdentifier>{07598860-80a8-4cfd-a74e-de4e8797bb1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\BehaviorTree\Tick">
+      <UniqueIdentifier>{69c4e1aa-5c94-416f-8c9c-c67e41cf6549}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\BehaviorTree\TaskTypes">
+      <UniqueIdentifier>{befd64df-45d6-4922-89e1-a0a04f17c087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\BehaviorTree\TaskTypes\TaskBase">
+      <UniqueIdentifier>{a6d5aa79-ef87-4ef8-b81d-2f1e30b49542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIBehaviorTree">
+      <UniqueIdentifier>{8c9551f0-b0af-411f-ace6-163735f15bdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIBehaviorTree\TypeA">
+      <UniqueIdentifier>{2166a9b4-2118-4dee-bd78-cf408e3babdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DecisionMaking\TreeBase">
+      <UniqueIdentifier>{864610b8-3e75-4021-baf3-2dff65b4834c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Character\Base">
+      <UniqueIdentifier>{a7939d28-429b-410b-885b-e4e1bb645e60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIBrain">
+      <UniqueIdentifier>{5c0d74fe-ec96-48d4-8041-748dda626a16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIDecisionTree\Action">
+      <UniqueIdentifier>{707d0c85-9377-4dfe-98fa-e42f5bc59ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Character\Docile">
+      <UniqueIdentifier>{5bfdffce-1336-4dfa-9b7a-af9a2711d1e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AILogic\AIBehaviorTree\Actions">
+      <UniqueIdentifier>{173c8eaa-3274-4270-bc66-48c21f49f1ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Character\Patrol">
+      <UniqueIdentifier>{c04673a7-44b8-4b35-93c3-bde4c5b9f5b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -127,6 +364,153 @@
     </ClInclude>
     <ClInclude Include="src\AILogic\Flocking\flocking.h">
       <Filter>src\AILogic\Flocking</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\DataStructures\graphDataStructures.h">
+      <Filter>src\Graph\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstra.h">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\AStar.h">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\DataStructures\Heap\heap.h">
+      <Filter>src\Graph\DataStructures\Heap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\AStarHelper.h">
+      <Filter>src\Graph\Algorithm\AStar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\Dijkstra\dijkstraHelper.h">
+      <Filter>src\Graph\Algorithm\Dijkstra</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\DynamicPathFollow\dynamicPathFollow.h">
+      <Filter>src\AILogic\Dynamic\DynamicPathFollow</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\CollisionAvoidance\collisionAvoidance.h">
+      <Filter>src\AILogic\Dynamic\CollisionAvoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physics\CollisionDetection\collisionDataStructures.h">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physics\CollisionDetection\collisionDetection.h">
+      <Filter>src\Physics\CollisionDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physics\Obstacle\obstacle.h">
+      <Filter>src\Physics\Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\Dynamic\ObstacleAvoidance\obstacleAvoidance.h">
+      <Filter>src\AILogic\Dynamic\ObstacleAvoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\TileMap\tileMap.h">
+      <Filter>src\Graph\TileMap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\eulerHeuristic.h">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\heuristic.h">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\manhattanHeuristic.h">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graph\Algorithm\AStar\Heuristic\precomputedHeuristic.h">
+      <Filter>src\Graph\Algorithm\AStar\Heuristic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\DecisionTree\decisionNodeBase.h">
+      <Filter>src\DecisionMaking\DecisionTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\DecisionTree\Action\actionNode.h">
+      <Filter>src\DecisionMaking\DecisionTree\ActionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\DecisionTree\Decision\decisionNode.h">
+      <Filter>src\DecisionMaking\DecisionTree\DecisionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\ActionManager\actionManager.h">
+      <Filter>src\DecisionMaking\ActionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\ActionManager\action.h">
+      <Filter>src\DecisionMaking\ActionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\status.h">
+      <Filter>src\DecisionMaking\BehaviorTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\Blackboard\blackboard.h">
+      <Filter>src\DecisionMaking\Blackboard</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Tick\tick.h">
+      <Filter>src\DecisionMaking\BehaviorTree\Tick</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\behaviorTree.h">
+      <Filter>src\DecisionMaking\BehaviorTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\selector.h">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\TaskBase\task.h">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes\TaskBase</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\sequencer.h">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\inverter.h">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\TreeBase\decisionMakingBehavior.h">
+      <Filter>src\DecisionMaking\TreeBase</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Character\Base\boidBase.h">
+      <Filter>src\Character\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBrain\aiBrain.h">
+      <Filter>src\AILogic\AIBrain</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Character\Docile\docileBoid.h">
+      <Filter>src\Character\Docile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\Actions\action_Move.h">
+      <Filter>src\AILogic\AIBehaviorTree\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_ChasePlayer.h">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_PlayerCheck.h">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\behaviorTree_Patrol.h">
+      <Filter>src\AILogic\AIBehaviorTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Character\Patrol\patrolBoid.h">
+      <Filter>src\Character\Patrol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\decisionTree_Docile.h">
+      <Filter>src\AILogic\AIDecisionTree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_MoveRandom.h">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_StationaryCheck.h">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_AvoidEnemy.h">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\DecisionNodes\decision_EdgeCheck.h">
+      <Filter>src\AILogic\AIDecisionTree\DecisionNode</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_MoveCenter.h">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIDecisionTree\Actions\action_LookRandom.h">
+      <Filter>src\AILogic\AIDecisionTree\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DecisionMaking\BehaviorTree\Task\randomDecorator.h">
+      <Filter>src\DecisionMaking\BehaviorTree\TaskTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_SetColor.h">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AILogic\AIBehaviorTree\TypeA\task_PatrolArea.h">
+      <Filter>src\AILogic\AIBehaviorTree\TypeA</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -12,7 +12,7 @@ namespace AIProject
 			const float &i_targetAngle, const float &i_slowAngle, const float &i_timeToTarget);
 		//DynamicArrive(const DynamicArrive &i_dynamicArrive);
 
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 	private:
 		float m_maxRotation;

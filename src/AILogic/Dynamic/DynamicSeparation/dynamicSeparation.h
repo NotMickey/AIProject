@@ -8,20 +8,19 @@ namespace AIProject
 	class DynamicSeparation : public SteeringBase
 	{
 	public:
-		DynamicSeparation(Boid &i_character, Boid i_targets[], const int &i_size, const float &i_threshold, const float &i_constant,
-			const float &i_maxAcceleration);
+		DynamicSeparation(Boid &i_character, const std::vector<Boid> &i_targets, float i_threshold, float i_constant,
+			float i_maxAcceleration);
 
-		DynamicSteeringOutput GetSteering();
-
+		DynamicSteeringOutput GetSteering() override;
+	
 	private:
-		int m_arraySize;
 
 		float m_threshold;
 		float m_constant;
 
 		float m_maxAcceleration;
 
-		Boid * m_targets;
+		std::vector<Boid> m_vTargets;
 
 		Boid &m_character;
 	};

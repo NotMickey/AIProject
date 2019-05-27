@@ -1,70 +1,43 @@
 #include "ofApp.h"
 
-#include <math.h>
-
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-	flock[flockSize - 1].m_mass = 6.0f;
-
-	flock[flockSize - 1].m_kinematic.position = ofVec2f(1900, 1750);
-
-	for (int i = 0; i < flockSize - 1; i++)
-	{
-		flock[i].m_kinematic.position += i * 5;
-	}
-
-	ofSetWindowShape(1920, 1080);
+	ofSetWindowShape(900, 900);
 	ofSetWindowPosition(0 ,0);
+
+	tileGraph = tileMap.GetGraph();
+
+	boid = std::make_shared<AIProject::DocileBoid>(AIProject::DocileBoid(ofVec2f(30.0f, 200.0f), ofColor(0, 0, 255, 255)));
+	(dynamic_cast<AIProject::DocileBoid*>(&(*boid)))->InitBrain(boid, tileMap);
+
+	blackboard = std::make_shared<AIProject::DecisionMaking::Blackboard>(AIProject::DecisionMaking::Blackboard(boid, tileMap));
+
+	patrolBoid = std::make_shared<AIProject::PatrolBoid>(AIProject::PatrolBoid(ofVec2f(450.0f, 300.0f)));
+	(dynamic_cast<AIProject::PatrolBoid*>(&(*patrolBoid)))->InitBrain(1, patrolBoid, tileMap, blackboard);
 }
 
 //--------------------------------------------------------------
 void ofApp::update()
 { 
-	flockHandler.SimulateFlocking(flock, flockSize - 1, 2000.0f, 2.0f, 15.0f);
-
-	flock[flockSize - 1].currentSteering = flock[flockSize - 1].Wander();
-
 	double frameTime = ofGetLastFrameTime();
 
-	for (int i = 0; i < flockSize; i++)
-	{
-		if (i == flockSize - 1)
-			flock[i].Update(frameTime, 20.0f);
-		else
-			flock[i].Update(frameTime, 35.0f);
-
-		if (flock[i].m_kinematic.position.x > ofGetWidth() + 10.0f)
-			flock[i].m_kinematic.position.x = -10.0f;
-
-		if (flock[i].m_kinematic.position.x < -10.0f)
-			flock[i].m_kinematic.position.x = ofGetWidth() + 10.0f;
-
-		if (flock[i].m_kinematic.position.y > ofGetHeight() + 10.0f)
-			flock[i].m_kinematic.position.y = -10.0f;
-
-		if (flock[i].m_kinematic.position.y < -10.0f)
-			flock[i].m_kinematic.position.y = ofGetHeight() + 10.0f;
-	}
+	//myBoid.Update(frameTime, 150.0f);
+	boid->Update(frameTime, 150.0f);
+	patrolBoid->Update(frameTime, 150.0f);
 }
 
 //--------------------------------------------------------------
 void ofApp::draw()
 {
-	ofBackground(0);  // Clear the screen with a black color
+	ofBackground(255);  // Clear the screen with a white color
 
-	ofColor color;
+	tileGraph.Draw();
 
-	ofSetColor(255);
+	//myBoid.Draw();
+	boid->Draw();
 
-	for (int i = 0; i < flockSize - 1; i++)
-	{
-		flock[i].Draw();
-	}
-
-	color.r = 255; color.g = 0; color.b = 0;
-	ofSetColor(color);  // Set the drawing color to yellow
-	flock[flockSize - 1].Draw();
+	patrolBoid->Draw();
 }
 
 //--------------------------------------------------------------
@@ -89,7 +62,9 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
-{}
+{
+	
+}
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){

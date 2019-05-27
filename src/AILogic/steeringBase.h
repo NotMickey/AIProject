@@ -8,11 +8,18 @@ namespace AIProject
 	{
 		ofVec2f linearAcceleration = ofVec2f();
 		float angularAcceleration = 0.0f;
+
+		void operator += (const DynamicSteeringOutput & i_rhs)
+		{
+			linearAcceleration += i_rhs.linearAcceleration;
+			angularAcceleration += i_rhs.angularAcceleration;
+		}
 	};
 
 	class SteeringBase
 	{
 	public:
+		virtual ~SteeringBase() {}
 
 		virtual DynamicSteeringOutput GetSteering() = 0;
 

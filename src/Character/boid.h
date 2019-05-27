@@ -1,61 +1,42 @@
 #pragma once
 
-#include "ofMain.h"
+#include "Base/boidBase.h"
 
 #include "../AILogic/steeringBase.h"
 
 namespace AIProject
 {
-	struct Kinematic
-	{
-		int id = 0;
+	// Ideally this class shouldn't exist and all Boid characters should directly inherit from BoidBase.
+	// But, because all dynamic steering behavior expect, as input, an object of type Boid (before there was a Boid base),
+	// this class exists as an extra layer.
+	// I will slowly remove all the specific Dynamic behavior functions and might get rid of this class entirely in the future
 
-		ofVec2f position;
-		float orientation; // in radians!
-
-		ofVec2f velocity;
-		float rotation;
-
-		void Update(const DynamicSteeringOutput &i_steering, const double &i_timeStep, const float &i_maxSpeed);
-	};
-
-	class Boid
+	class Boid : public BoidBase
 	{
 	public:
-		Boid();
-		Boid(const int &i_mass);
+		Boid(const ofVec2f &i_position = ofVec2f(), const ofColor &i_color = ofColor(255, 0, 0, 255), int i_mass = 1);
 
-		int m_mass;
+		void Update(float i_timeStep, float i_maxSpeed) override;
 
-		Kinematic m_kinematic;
+		void SetWayPoints(const std::vector<ofVec2f> &i_waypoints);
+
+		void SetSteering(const DynamicSteeringOutput i_steering);
+
+		virtual ~Boid();
 
 		DynamicSteeringOutput currentSteering;
 
-		void Update(const double &i_timeStep, const float &i_maxSpeed);
-		void Draw();
-
-		ofVec2f GetForwardVec() { return m_forwardVector; }
-
-		void SetTargetPosition(const ofVec2f &i_targetPosition);
-
-		DynamicSteeringOutput SeekAndSteer(const int &x, const int &y);
-
-		DynamicSteeringOutput SteerAndArrive(const int &x, const int &y);
-
-		DynamicSteeringOutput Wander();
+	protected:
+		DynamicSteeringOutput PathFind();
 
 	private:
 
-		bool b_reachedLimit = false;
-		bool b_seekTargetValid = false;
+		//bool m_bWander = false;
+		//DynamicSteeringOutput SeekAndSteer(const int &x, const int &y);
+		//DynamicSteeringOutput SteerAndArrive(const int &x, const int &y);
+		//DynamicSteeringOutput Wander();
 
-		int m_breadCrumbIndex = 0;
-		ofVec2f m_breadCrumbArray[200];
-
-		ofVec2f m_previousPosition;
-
-		ofVec2f m_targetPosition;
-
-		ofVec2f m_forwardVector;
+		SteeringBase* m_pPathFollow;
+		bool m_bSeekTargetValid;
 	};
 }

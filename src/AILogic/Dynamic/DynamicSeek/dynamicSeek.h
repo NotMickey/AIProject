@@ -11,7 +11,7 @@ namespace AIProject
 		DynamicSeek(Boid &i_boid, const Kinematic &i_target, const float i_maxAcceleration);
 		DynamicSeek(const DynamicSeek &i_dynamicSeek);
 
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 	private:
 		float m_maxAcceleration;

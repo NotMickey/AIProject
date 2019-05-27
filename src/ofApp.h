@@ -2,10 +2,12 @@
 
 #include "ofMain.h"
 
-#include "Character/boid.h"
-#include "AILogic/steeringBase.h"
+#include "Character/Docile/docileBoid.h"
+#include "Character/Patrol/patrolBoid.h"
 
-#include "AILogic/Flocking/flocking.h";
+#include "DecisionMaking/Blackboard/blackboard.h"
+
+#include "Graph/TileMap/tileMap.h"
 
 class ofApp : public ofBaseApp{
 
@@ -26,8 +28,14 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		int flockSize = 10;
+		AIProject::Graph::TileMap tileMap = AIProject::Graph::TileMap(30, 30, 5.0f, ofVec2f(0.0f, 0.0f));
+		AIProject::Graph::DirectedWeightedGraph tileGraph;
 
-		AIProject::Boid flock[10];
-		AIProject::Flocking flockHandler;
+		//AIProject::Boid myBoid = AIProject::Boid(ofVec2f(100.0f, 100.0f));
+
+		std::shared_ptr<AIProject::Boid> boid;
+
+		std::shared_ptr<AIProject::DecisionMaking::Blackboard> blackboard;
+		std::shared_ptr<AIProject::Boid> patrolBoid;
+		
 };

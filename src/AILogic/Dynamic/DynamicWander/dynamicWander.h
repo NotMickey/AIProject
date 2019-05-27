@@ -12,7 +12,7 @@ namespace AIProject
 			const float &i_maxAcceleration);
 		//DynamicArrive(const DynamicArrive &i_dynamicArrive);
 
-		DynamicSteeringOutput GetSteering();
+		DynamicSteeringOutput GetSteering() override;
 
 		DynamicSteeringOutput GetSteeringAlt();
 
