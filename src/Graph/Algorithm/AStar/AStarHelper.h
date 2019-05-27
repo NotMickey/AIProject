@@ -21,7 +21,7 @@ namespace AIProject
 
 			int node;
 			int costSoFar; // g(x)
-			int estimatedTotalCost; // h(x)
+			int estimatedTotalCost; // g(x) + h(x)
 			DirectedWeightedEdge incomingEdge;
 		};
 

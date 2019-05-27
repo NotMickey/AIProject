@@ -6,7 +6,7 @@
 
 // NOTE: For the templated class, the elements must have the operators >, =, and < defined. 
 
-// This is necessary because the template class needs to know about its instances
+// This is necessary because the compiler needs access to the implementation of the template to generate these classes
 template class AIProject::Graph::Heap<AIProject::Graph::NodeRecord>;
 template class AIProject::Graph::Heap<AIProject::Graph::NodeRecordDijkstra>;
 
