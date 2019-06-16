@@ -47,6 +47,8 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 
 				if (endNodeRecord.costSoFar <= g)
 					continue;
+
+				// Need to remove this node record from the open list?
 			}
 
 			endNodeRecord.costSoFar = g;

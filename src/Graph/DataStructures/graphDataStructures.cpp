@@ -16,7 +16,7 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::DirectedWe
 {
 	std::vector<DirectedWeightedEdge> list;
 
-	for (size_t i = 0; i < v_edgeList.size(); i++)
+	for (size_t i = 0; i < v_edgeList.size(); ++i)
 	{
 		if (v_edgeList[i].GetSource() == i_node)
 			list.push_back(v_edgeList[i]);
@@ -40,6 +40,8 @@ bool AIProject::Graph::DirectedWeightedGraph::AddEdge(const int & i_source, cons
 	if (i_source > v_nodeList.size() || i_sink > v_nodeList.size() || i_sink == i_source)
 		return false;
 
+	// A check is missing here which should check if the edge already exists
+
 	v_edgeList.push_back(DirectedWeightedEdge(i_source, i_sink, i_cost));
 
 	return true;
@@ -50,7 +52,7 @@ bool AIProject::Graph::DirectedWeightedGraph::InvalidateEdge(const int & i_sourc
 	if (i_sourceID > v_nodeList.size() || i_sinkID > v_nodeList.size() || i_sinkID == i_sourceID)
 		return false;
 
-	for (unsigned int i = 0; i < v_edgeList.size(); i++)
+	for (unsigned int i = 0; i < v_edgeList.size(); ++i)
 	{
 		if (v_edgeList[i].GetSink() == i_sinkID && v_edgeList[i].GetSource() == i_sourceID)
 		{
