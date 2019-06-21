@@ -51,6 +51,7 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 
 				h = endNodeRecord.estimatedTotalCost - endNodeRecord.costSoFar;
 			}
+			// Should this be another if statement??
 			else if (openList.Contains(endNodeRecord))
 			{
 				endNodeRecord = openList.Find(endNodeRecord);
@@ -58,7 +59,7 @@ std::vector<AIProject::Graph::DirectedWeightedEdge> AIProject::Graph::FindPath(c
 				if (endNodeRecord.costSoFar <= g)
 					continue;
 
-				// Need to remove it from the open list?
+				// Need to remove it from the open list? Or better yet update it on the openlist (re-evaluate priority)
 
 				h = endNodeRecord.estimatedTotalCost - endNodeRecord.costSoFar;
 			}

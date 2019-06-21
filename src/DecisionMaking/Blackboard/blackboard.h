@@ -56,9 +56,9 @@ namespace AIProject
 
 			Graph::TileMap tileMap;
 
-			std::map<Key, std::map<int, bool>> boolMap;
-			std::map<Key, std::map<int, int>> intMap;
-			std::map<Key, std::map<int, std::shared_ptr<Action>>> actionMap;
+			std::unordered_map<Key, std::map<int, bool>> boolMap;
+			std::unordered_map<Key, std::map<int, int>> intMap;
+			std::unordered_map<Key, std::map<int, std::shared_ptr<Action>>> actionMap;
 		};
 	}
 }
